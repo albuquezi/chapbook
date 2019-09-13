@@ -1,21 +1,22 @@
-# Contributing
+# Contribuir
 
-This document covers general guidelines related to reporting bugs, requesting
-features, and opening pull requests. Please read over this before doing any of
-the above!
+Este documento cobre as orientações gerais para comunicar "bugs", solicitar
+funcionalidades e abrir "pull requests". Por favor, lê bem isto antes de
+fazeres alguma das coisas indicadas cima!
 
-This project is governed by the [code of conduct](CODE_OF_CONDUCT.md). By
-participating, you are expected to uphold this code. Please report unacceptable
-behavior by emailing hello at chris klimas dot com.
+Este projeto é regido pelo [código de conduta](CODE_OF_CONDUCT.md). Ao participares,
+espera-se que o sigas o que ele estabelece. Por favor, comunica comportamentos
+inaceitáveis, escrevendo para hello at chris klimas dot com.
 
-## Reporting a Bug
+## Comunicar um Bug
 
-Please remember that the issue tracker is for tracking defects and
-enhancements with Chapbook. It is not a place to ask for help on how to do
-something, or to troubleshoot why a story you have created with Chapbook isn't
-working--unless you believe it is caused by a problem with Chapbook itself.
-There are several online communities that can help with troubleshooting a
-story-specific issue. Please take advantage of them.
+Lembra-te, por favor, que o registo de problemas serve para comunicar defeitos e
+melhorias relacionados com o Chapbook. Não é um lugar para pedir ajuda sobre
+como fazer alguma coisa, nem para vires resolver problemas que tenhas com a
+história que estás a criar com o Chapbook--a não ser que penses que é causado
+por um problema do próprio Chapbook.
+Há várias comunidades online que te pode ajudar a resolver os problemas que tenhas
+com a tua história. Tira partido deles.  
 
 Be as specific as you can about bugs, and attach a story file demonstrating them
 if possible. If a bug can't be reproduced on another person's computer, it can't
