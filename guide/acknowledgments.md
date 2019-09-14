@@ -1,22 +1,23 @@
-# Acknowledgments
+# Agradecimentos
 
-Chapbook is a confluence of ideas rather than one, wholly original one. Its vars sections are familiar territory to anyone who has used YAML front matter in a static site generator like [Hexo][hexo]. And much of its state-centered design--in opposition to an imperative design, where change occurs mostly through function calls--comes from what I've learned from [Redux][redux], the de facto standard library for managing state in the [React][react] ecosystem.
+O Chapbook é mais uma confluência de ideias do que um projeto inteiramente original. A secção das variáveis é território familiar para quem já tenha usado YAML com formatação "front matter" num gerador de sites estáticos como o [Hexo][hexo]. E muito do seu desenho estadocêntrico — por oposição a um desenho de tipo imperativo, onde as mudanças ocorrem predominantemente através de funções — vem do que eu aprendi em [Redux][redux], a biblioteca padrão para gerir estados do ecossistema [React][react].
 
-You may not be able to tell it by looking at the syntax, but the named hooks of Leon Arnott's [Harlowe story format][harlowe] inspired many of the thoughts that Chapbook is based upon. What I found so appealing about named hooks is the idea of keeping code separate from the text it affects; that logic could be kept, if only at arm's length, separate from prose.
+Talvez não se possa perceber da sintaxe, mas os ganchos com nome do [formato de história Harlowe][harlowe], do Leon Arnott, inspirou muitas das reflexões que sustentam o Chapbook. O que me cativou tanto
+nestes ganchos foi a ideia de se poder manter o código separado do texto que ele afeta; que a lógica pudesse ficar separada, mesmo que a uma distância curta, da prosa.
 
-Chapbook's default aesthetics owe a lot to the style of the interactive fiction engine [Undum][undum], by Ian Millington, as well as Liza Daly's works _[Stone Harbor][stone-harbor]_ and _[Harmonia][harmonia]_. I hope you find Chapbook's appearance half as graceful as these examples. Or if not--I hope I've left you enough hooks to customize it away into something better.
+Os princípios estéticos do Chapbook devem muito ao estilo do motor de ficção interativa [Undum][undum], de Ian Millington, bem como aos trabalhos de Liza Daly _[Stone Harbor][stone-harbor]_ e _[Harmonia][harmonia]_. Espero que vejas no aspeto visual do Chapbook metade da elegância destes exemplos. Mas se não — espero ter-te deixado ganchos suficientes para poderes personalizar a tua história como achares melhor.
 
-The notes feature of Chapbook's backstage view was inspired by [Illume][illume], which is an excellent way to review a Twine story before release.
+A funcionalidade das notas na vista dos bastidores do Chapbook  foi inspirada pelo [Illume][illume], que é uma excelente forma de rever uma história do Twine antes do lançamento.
 
-If you take a look at the [Twine Cookbook][cookbook], you’ll see more than a few similarities between its table of contents and this guide's. This is no accident. One of my design goals with Chapbook was to make common use cases easy--and the Twine Cookbook has been a wonderful signpost as to what people wanted to achieve with Twine.
+Se voltares os olhos para [o Livro de Receitas do Twine][cookbook], verás mais do que algumas semelhanças entre o seu índice e o deste guia. Não é por acaso. Um dos meus objetivos com o desenho do Chapbook foi facilitar a implementação de casos comuns — e o Livro de Receitas do Twine tem sido um maravilhoso indicador do que as pessoas querem alcançar com o Twine.
 
-You might also notice some resemblance between this guide and the [Inform Designer's Manual][dm6], written by Graham Nelson, which not only is one of my favorite works of technical writing, but is possibly the one document that's most responsible for my ongoing infatuation with interactive fiction.
+Também poderás encontrar algumas semelhanças entre este guia e o [Manual de Design do Inform][dm6], escrito por Graham Nelson, que não é apenas um dos meus trabalhos preferidos de escrita técnica, mas possivelmente o documento que detém a maior responsabilidade pela minha presente enfatuação com a ficção interativa.
 
-Finally, I want to thank my creative partner Joel Haddock for patiently playing the roles of guinea pig and sounding board in equal measure.
+Por fim, quero ainda agradecer ao meu compaheiro criativo Joel Haddock por ter pacientemente desempenhado os papéis de cobaia e de caixa de ressonância em igual medida.
 
-## Photos in this Guide
+## Fotos neste Guia
 
-The photos found in this guide come from a combination of [Pixabay][pixabay] and [Unsplash][unsplash], and are used under terms of the licenses on those web sites. The people who took these photos are:
+As fotos presentes neste guia vêm de uma combinação do [Pixabay][pixabay] e do [Unsplash][unsplash], e são usadas nos termos das licenças dessas páginas de internet. As pessoas que tiraram essas fotos são:
 
 -	[Angela Bedürftig](https://pixabay.com/en/chess-game-board-chess-game-1403622/)
 -	[Gregory Butler](https://pixabay.com/en/battleship-engine-room-historic-war-389274/)
@@ -26,7 +27,7 @@ The photos found in this guide come from a combination of [Pixabay][pixabay] and
 -	[Jason Leung](https://unsplash.com/photos/pLwh3AI1zKE)
 -	[Pexels](https://pixabay.com/zh/森林-自然-户外-路径-树-伍兹-1868028/)
 -	[Uriel Shuraki](https://pixabay.com/en/chain-chains-iron-hard-metal-link-109302/)
--	[Rudy and Peter Skitterians](https://pixabay.com/en/mic-microphone-sound-check-sing-1132528/)
+-	[Rudy e Peter Skitterians](https://pixabay.com/en/mic-microphone-sound-check-sing-1132528/)
 
 [hexo]: https://hexo.io/docs/front-matter.html
 [redux]: https://redux.js.org
