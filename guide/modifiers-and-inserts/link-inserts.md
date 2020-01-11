@@ -1,115 +1,108 @@
-# Link Inserts
+#  Insertos (link insers)
 
-Sometimes you'd like to link to a passage, but don't know its name exactly. Take the passage below:
-
-```
-You walk a bit down the alleyway. The scent of the black trash bags simmering in the summer heat is overpowering--terrible in three separate yet indescribable ways--so you [[retreat for now]].
-```
-
-All well and good, except that alleyways often have two entrances. If a player could reach this passage two different ways, how can you make sure they return to the right place? You can use an _insert_ to do this. Inserts are special instructions in passage text that are framed with curly brackets, `{like this}`, and are interpreted instead of displayed verbatim. They're called inserts because they instruct Chapbook to insert something into the text for you. In this case, we want Chapbook to insert a link to whatever passage the player was looking at before they reached this one.
-
-In this case, we'd write:
+Em alguns casos, poderás querer fazer uma ligação a uma passagem, mas ainda não sabes como se irá chamar.
+Atenta na passagem em baixo:
 
 ```
-You walk a bit down the alleyway. The scent of the black trash bags simmering in the summer heat is overpowering--terrible in three separate yet indescribable ways--so you {back link, label: 'retreat for now'}.
+Caminhas um pouco ao longo da viela. O cheiro dos sacos de lixo pretos a fervilhar sob o calor do verão é nauseabundo — horrível de três formas distintas, se bem que indescritíveis — por isso [[recuas por agora]].
 ```
 
-Inserts follow this format:
+Tudo muito bem, só que as vielas normalmente têm duas entradas. Se o jogador puder chegar a esta passagem de duas formas diferentes, como é que podes garantir que ele regressa ao sítio correto? Podes usar um _inserto_ para fazer isto. Os insertos são instruções especiais no texto da passagem que são delimitados por chavetas, `{deste modo}`, e são interpretados em vez de serem apresentados ipsis litteris. Chamam-se insertos porque dizem ao Chapbook para inserir uma ligação para aquela passagem em que jogador estava antes de chegar a esta.
+
+Então, neste caso, escreveríamos:
+
+```
+Caminhas um pouco ao longo da viela. O cheiro dos sacos de lixo pretos a fervilhar sob o calor do verão é nauseabundo — horrível de três formas distintas, se bem que indescritíveis — por isso {retroceder, rótulo: 'recuas por agora'}.
+```
+
+
+Os insertos seguem este formato:
 
 <p class="insert-example">
 	<span class="punc">{</span>
-	<span class="identifier">insert name</span>
+	<span class="identifier">nome do inserto</span>
 	<span class="punc">:</span>
-	<span class="direct-object">value</span>
+	<span class="direct-object">valor</span>
 	<span class="punc">,</span>
 	<span class="param1">
-		<span class="param-name">parameter name</span>
+		<span class="param-name">nome do parâmetro</span>
 		<span class="punc">:</span>
-		<span class="param-value">value</span>
+		<span class="param-value">valor</span>
 	</span>
 	<span class="punc">,</span>
 	<span class="param2">
-		<span class="param-name">parameter name</span>
+		<span class="param-name">nome do parâmetro</span>
 		<span class="punc">:</span>
-		<span class="param-value">value</span>
+		<span class="param-value">valor</span>
 	</span>
 	<span class="punc">}</span>
 </p>
 
--   The *insert name* signals what type of insert this is, i.e. `back link`.
--   *Parameter names* signal more specific descriptions of how the insert should
-    appear or behave, i.e. `label`. Each kind of insert accepts different
-    parameter names. Parameter names, unlike values, never have quotation marks
-    around them. An insert can have any number of parameters, including none.
-    Two are shown in the example above to demonstrate that they are divided by
-    commas.
--   *Values* are where you specify the behavior of the insert. If a parameter
-    value is text--like the words `'retreat for now'`--they must have either
-    single or double quotation marks around them, so that Chapbook knows where
-    the beginning and end of the text is. There's no difference in how single or
-    double quotation marks are handled; it's just convenient to write `{back
-    link, label: 'Exclaim, "Well, I never!"'}`.[^1] Any other types of values,
-    such as numbers, must not have quotation marks around them. 
+-   O *nome do inserto* identifica o tipo de inserto, p. ex. `retroceder`.
+-   Os *nomes dos parâmetros* indicam descrições mais específicas sobre como o inserto deve
+		ocorrer ou comportar-se, p. ex. `rótulo`. Cada tipo de inserto aceita diferentes nomes de parâmetros. Os nomes de parâmetros, ao contrário dos valores, nunca levam aspas à volta. Um inserto pode ter um qualquer número de parâmetros, incluindo nenhum. São apresentados dois no exemplo em cima para demonstrar que vão divididos por vírgulas.
 
-An insert must have its contents all on one line--no line breaks with the Enter or Return key are permitted.
+-		*Valores* servem para especificar o comportamento do inserto. Se o valor do parâmetro for texto — como as palavras `'recuas por agora'` — elas têm de estar entre aspas ou plicas, para o Chapbook saber onde o texto começa e acaba. Não há diferença na forma como as aspas e as plicas são interpretadas; É apenas por conveniência que se escreve `{retrocer, rótulo: 'Exclamar, "Bem, eu Nunca!"'}`.[^1] Quaisquer outros tipos de valores, como números, não podem ir entre aspas.
 
-Everything in the example above is optional except the insert name. Different inserts use different variations of this usage--for instance, the `back link` insert does not use a value following the insert name:
+Um inserto tem de ter todo o seu conteúdo numa só linha — não são permitidas quebras de linha com a tecla Enter ou Return.
+
+Tudo no exemplo em cima é opcional exceto o nome do inserto. Insertos diferentes usam diferentes variações desta utilização — por exemplo, o inserto `retroceder` não precisa de um valor depois do nome do inserto:
 
 <p class="insert-example">
 	<span class="punc">{</span>
-	<span class="identifier">back link</span>
+	<span class="identifier">retroceder</span>
 	<span class="punc">,</span>
 	<span class="param1">
-		<span class="param-name">label</span>
+		<span class="param-name">rótulo</span>
 		<span class="punc">:</span>
-		<span class="param-value">'retreat for now'</span>
+		<span class="param-value">'recuas por agora'</span>
 	</span>
 	<span class="punc">}</span>
 </p>
 
-You can also leave off the `label` property and just write `{back link}`: in this case, Chapbook will assume you'd like it to use the word 'Back' as the link label.
+Também podes deixar de fora a propriedade `rótulo` e apenas escrever `{retroceder}`: neste caso, o Chapbook irá assumir que queres usar a palavra 'Voltar' como rótulo da ligação.
 
-If Chapbook is unable to understand the contents of an insert, it displays it as-is. This is so that you can otherwise use curly brackets in your text.
+Se o Chapbook for incapaz de compreender o conteúdo de um inserto, irá mostrá-lo como está. Isto é para poderes usar chavetas no texto.
 
 {% hint style='danger' %}
-You cannot nest inserts inside each other.
+Não podes encaixar um inserto dentro de outro.
 {% endhint %}
 
-## Restarting the Story
+## Recomeçar a História
 
-There's another insert very similar to `{back link}` that's named `{restart link}`. Instead of going to a previous passage, it takes the player back to the very beginning of the story. You could of course link back to the first passage by name, but for now, consider this a handy shortcut. `{restart link}` also resets other aspects of Chapbook's operation, as you'll learn in [Continuity Between Sessions](../state/continuity.md).
+Há outro insert muito semelhante ao `{retroceder}` que se chama `{recomeçar}`. Em vez de ir para a passagem anterior, leva o jogador de volta para o início da história. Podias, claro está, fazer uma ligação para a primeira passagem pelo seu nome, mas por agora, encara-o como um atalho que dá jeito. O `{recomeçar}` também repõe os valores de todos os outros aspetos do funcionamento do Chapbook, como irás ver na secção [Continuidade entre Sessões](../state/continuity.md).
 
-As with `{back link}`, `{restart link}` allows you to specify a label:
-
-```
-{restart link, label: 'Oh forget it all'}
-```
-
-If you write `{restart link}` by itself, Chapbook will use the label 'Restart'.
-
-## Manual Links
-
-You can also insert a link using the insert `{link to}`. Below are some examples:
+Assim como o `{retroceder}`, o `{recomeçar}` deixa-te especificar um rótulo:
 
 ```
-You decide after entirely too much deliberation to download {link to: 'https://mozilla.org/firefox', label: 'Firefox'}.
-
-You notice that there is a {link to: 'narrow alleyway'} off to one side.
-
-A {link to: 'Bryan Mills', label: 'A man with *certain* skills'} is just who's needed.
+{recomeçar, rótulo: 'Oh esquece-te de tudo'}
 ```
 
-The third example demonstrates one use of manual link inserts: although they are more verbose than simple links, they do allow you to enter Markdown formatting into the link label. Passage links also have other uses; see [The Vars Section][vars-in-inserts] for how you can change the destination of a link dynamically.
+Se escreveres apenas `{recomeçar}`, o Chapbook irá usar o rótulo 'Recomeçar'.
 
-## Cycling Links
+## Ligações Manuais
 
-Chapbook has an insert for cycling links--that is, links that do not move the player anywhere, but change their label. See [Menus and Cycling Links][cycling] for more information.
+Também podes inserir uma ligação com o inserto `{ligar a}`. Vê alguns exemplos em baixo:
+
+```
+Decides após demorada e excessiva deliberação descarregar {ligar a: 'https://mozilla.org/firefox', rótulo: 'o Firefox'}.
+
+Reparas que há uma {ligar a: 'viela estreitinha'} de um dos lados.
+
+Um {ligar a: 'Bryan Mills', rótulo: 'homem de *certos* talentos'} é mesmo o que precisamos.
+```
+
+O terceiro exemplo demonstra o uso de ligações manuais com insertos: embora sejam mais verbosos que as ligações simples, aquelas deixam-te acrescentar formatação Markdown ao rótulo. As ligações entre passagens têm ainda outras utilizações; vê [A Secção de Variáveis][vars-in-inserts] para saberes como mudar dinamicamente o destino de uma ligação.
+
+## Ligações Rotativas
+
+O Chapbook tem um inserto para ligações rotativas, isto é, ligações que não levam o jogador a lado nenhum, mas mudam o seu rótulo. Ver [Menus e Ligações Rotativas][cycling] para mais informações.
 
 [vars-section]: ../state/the-vars-section.html
 [cycling]: ../player-input/menus-cycling-links.md
 [vars-in-inserts]: ../state/the-vars-section.html#expressions-can-be-used-in%20inserts
 
-[^1]: If you need to use a single or double quote inside a text value set off with the same punctuation mark, put a backslash (`\`) in front of it, like so: `{back link, label: '"I couldn\'t possibly comment," he replied.'}`
+[^1]: Se precisares de usar uma plica ou aspas dentro de um campo de texto que começa com o mesmo sinal de pontuação, põe uma barra invertida (`\`) à sua frente, assim: `{retroceder, rótulo: '"Eu não estava p\'ra comentar aquilo," respondeu ele.'}`
 
 <style>
 .insert-example {

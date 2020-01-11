@@ -1,31 +1,32 @@
-# Embedding Passages
+# Embutir Passagens
 
-A common need in branching narrative is for divergent paths to merge together. The easiest way to make this happen is for the two passages to link to the same one, but you can also create a less obvious stitch in your story by embedding one passage inside another.
+Uma necessidade habitual numa narrativa bifurcada é a junção de caminhos divergentes. A forma mais fácil de fazer isto é pôr as duas passagens à ligar à outra, mas podes também criar uma costura menos óbvia na tua história, embutindo uma passagem dentro de outra.
 
-For example, imagine that the main character takes either a plane or train on the way to a passage named "L.A.":
-
-```
-You spend a few hours watching the clouds drift below the wings of the plane before arriving in [[L.A.]]
-```
+Por exemplo, imagina que o protagonista pode ir de avião ou de comboio a caminho de uma passagem chamada "L.A.":
 
 ```
-The cross-country train ride leaves plenty of space for contemplation on the way to [[L.A.]]
-```
-
-You could instead merge the passages directly, using the `{embed passage}` insert:
-
-```
-You spend a few hours watching the clouds drift below the wings of the plane.
-
-{embed passage: 'L.A.'}
+Passas algumas horas a ver as nuvens a vaguear sob as asas do avião antes de chegares a [[Faro]
 ```
 
 ```
-The cross-country train ride leaves plenty of space for contemplation.
-
-{embed passage: 'L.A.'}
+A viagem no comboio intercidades oferece-te muito espaço de contemplação a caminho de [[Faro]]
 ```
 
-The two passages will show the contents of the "L.A." passage below their text. Apart from the passage name, the `embed passage` insert does not accept any other parameters.
+Poderias então unir as passagens diretamente, usando o inserto `{embutir passagem}`:
 
-Remember that like any insert, `{embed passage}` can be placed at any point in the text of a passage. It can be sandwiched between text in a passage, or even repeatedly used.
+```
+Passas algumas horas a ver as nuvens a vaguear sob as asas do avião.
+
+{embutir passagem: 'Faro'}
+```
+
+```
+A viagem no comboio intercidades oferece-te muito espaço de contemplação.
+
+{embutir passagem: 'Faro'}
+```
+
+As duas passagens irão mostrar o conteúdo da passagem "Faro" em baixo do seu texto.
+Além do nome da passagem, o inserto `embutir passage` não aceita mais nenhuns parâmetros.
+
+Lembra-te de que como qualquer outro inserto, o `{embutir passagem}` pode ser colocado em qualquer lugar no texto de uma passagem. Pode ser _sanduichado_ entre o texto num passagem, ou até usado várias vezes.

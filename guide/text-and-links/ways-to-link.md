@@ -1,13 +1,13 @@
-# Ways to Link
+# Formas de Ligar
 
-The concept of a hyperlink doesn't bear explaining, does it? Can you remember how many hyperlinks you followed to reach this guide after you opened your web browser? We take hyperlinks for granted because they are such a fundamental part of the web, and yet, we're still collectively figuring out all of their uses.
+O conceito de hiperligação não requer explicação, pois não? Lembras-te de quantas hiperligações seguiste para chegar a este guia depois de teres aberto o teu navegador? As hiperligações já são uma coisa trivial para nós porque são uma parte fundamental da Internet, e no entanto, ainda andamos todos coletivamente a tentar descobrir todas as suas possibilidades.
 
-Hypertext is still such a young medium that although the world mostly agrees that there exists categories of links, there isn't yet a consensus on what these categories are, let alone what they should be called.
+O hipertexto é ainda um meio tão jovem que apesar de a maioria das pessoas concordar que existem categorias de ligações, ainda não há um consenso sobre que categorias são essas, muito menos como elas devem ser designadas.
 
-So, some food for thought.
+Então, aqui vão algumas fontes de inspiração.
 
-* [Standard Patterns in Choice-Based Games](https://heterogenoustasks.wordpress.com/2015/01/26/standard-patterns-in-choice-based-games/) analyzes _Choose Your Own Adventure_ books and their descendants and identifies some common ways they branched.
+* [Standard Patterns in Choice-Based Games](https://heterogenoustasks.wordpress.com/2015/01/26/standard-patterns-in-choice-based-games/) analisa livros de _Escolhe A Tua Própria Aventura_ e os seus descendentes e identifica algumas das formas mais comuns de ramificação.
 
-* [Patterns of Hypertext](http://www.eastgate.com/patterns/Print.html) does something similar, but instead uses the literary hypertexts of the 1990s as its sources.
+* [Patterns of Hypertext](http://www.eastgate.com/patterns/Print.html) faz algo semelhante, mas prefere usar os hipertextos literários dos anos 1990 como fonte.
 
-* [Fun da mentals: Rhetorical Devices for Electronic Literature](http://www.deenalarsen.net/fundamentals/links.html) suggests some exercises to try to broaden your perspective on linking.
+* [Fun da mentals: Rhetorical Devices for Electronic Literature](http://www.deenalarsen.net/fundamentals/links.html) sugere alguns exercícios para tentar alargar os teus horizontes em relação às ligações.

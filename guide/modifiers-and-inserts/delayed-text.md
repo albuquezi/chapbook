@@ -1,54 +1,55 @@
-# Delayed Text
+# Texto Retardado
 
-You can also use a modifier to cause part of the text of a passage to appear after a delay. If you've never seen this effect before, take a look at the introduction to Stephen Granade's _[Will Not Let Me Go]_. The sentences fade in and out, leaving you with a single word, "remember." Although that story wasn't built with Chapbook, you can use Chapbook's delayed text functionality to achieve the same effect.
+Também podes usar um modificador para que parte do texto de uma passagem apareça após passado algum tempo. Se nunca viste este efeito antes, dá uma olhada à introdução da obra _[Will Not Let Me Go]_, de Stephen Granade. As frases vão aparecendo e desaparecendo gradualmente, até ficar apenas uma única palavra "remember." Embora essa história não tenha sido criada com o Chapbook, podes usar a funcionalidade de texto retardado do Chapbook para alcançar o mesmo efeito.
 
-Here's an example of this modifier in action:
-
-```
-You settle in for the long transatlantic flight.
-
-[after 1 second]
-You remember suddenly that you left the stove on at home.
-```
-
-The text `[after 1s]` is never shown to the player. Instead, Chapbook displays `You remember suddenly that you left the stove on at home.` after the previous text has been onscreen for one second.
-
-You can put any measurement of time you want in the `after` modifier[^1], and you can abbreviate the units of time. The below are all valid:
+Aqui vai um exemplo deste modificador em ação:
 
 ```
-[after 300 milliseconds]
-[after 300ms]
-[after 1 minute]
+Instalas-te e preparas-te para o longo voo transatlântico.
+
+[1 segundo depois]
+De repente, lembras-te que deixaste o forno ligado em casa.
 ```
 
-The `after` modifier only allows round numbers. Instead of writing `1.5 seconds`, you must write `1 second 500 milliseconds`, or shorter: `1s500ms` or `1500ms`.
+O texto `[1s depois]` nunca é mostrado ao jogador. Em vez disso, o Chapbook apresenta `De repente, lembras-te que deixaste o forno ligado em casa.` depois de o texto precedente ter sido exibido durante um segundo.
 
-## Advice on Using `after`
-
-The `after` modifier should be used sparingly, and the delays should be specified keeping in mind that everyone reads a different pace. One minute may not seem very long, but it's an eternity for fast players.
-
-Chapbook signals that more text will be coming by displaying an animated watch in the lower-right corner of the page, and impatient players can click the mouse or press a key to skip over the delay. This functionality cannot be disabled.
-
-## Modifiers Normally Create Paragraphs
-Modifiers normally cause the text that follows them to be in a separate paragraph from the text before it. There are cases, though, where you want text to appear with the preceding paragraph instead. The `append` modifier makes this happen.
+Podes pôr qualquer medida de tempo no modificador `depois`[^1], e podes abreviar as unidades de tempo. São válidas as seguintes:
 
 ```
-You've solved the mystery at last.
-
-[after 500ms; append]
-But then it hits you: why _did_ Mrs. Peacock have a lead pipe in her purse?
+[300 milissegundos depois]
+[300ms depois]
+[1 minuto depois]
 ```
 
-The semicolon allows you to join multiple modifiers together in a single line. It's equivalent to:
+O modificador `depois` apenas aceita números inteiros. Em vez de escreveres `1.5 segundos`, tens de escrever `1 segundo 500 milissegundos`, ou de forma mais curta: `1s500ms` ou `1500ms`.
+
+## Conselhos sobre a utilização de `depois`
+
+O modificador `depois` deve ser usado com moderação, e os atrasos devem ser definidos tendo presente que as pessoas leem a ritmos diferentes. Um minuto pode não parecer muito tempo, mas para jogadores rápidos é uma eternidade.
+
+O Chapbook avisa que ainda há texto por aparecer mostrando a animação de um relógio no canto inferior da página, e jogadores impacientes podem carregar no rato ou numa tecla para saltar o atraso. Esta funcionalidade não pode ser desativada.
+
+## Os Modificadores Normalmente Criam Parágrafos
+
+Os modificadores normalmente fazem com que o texto que os seguem fiquem num parágrafo separado do texto anterior. Há casos, contudo, onde vais querer que o texto fique no parágrafo anterior. O modificador `juntar` permite isto.
 
 ```
-[after 500ms]
-[append]
-But then it hits you: why _did_ Mrs. Peacock have a lead pipe in her purse?
+Resolveste o mistério finalmente.
+
+[500ms depois; juntar]
+É então que sentes o baque: mas porque é que a Sra. Peacock tinha um cano de chumbo na sua mala?
 ```
 
-It doesn't matter which order you put `append`, and unlike `after`, you enter it by itself, without any extra explanation.
+O ponto e vírgula permite-te juntar vários modificadores numa única linha. É equivalente a:
+
+```
+[500ms depois]
+[juntar]
+É então que sentes o baque: mas porque é que a Sra. Peacock tinha um cano de chumbo na sua mala?
+```
+
+Não importa em que ordem pões `juntar`, e ao contrário de `depois`, usa-lo sozinho, sem mais nenhuma informação.
 
 [will not let me go]: http://ifarchive.org/if-archive/games/competition2017/Will%20Not%20Let%20Me%20Go/Will%20Not%20Let%20Me%20Go.html
 
-[^1]: Including, fiendishly, days, months, and years. Chapbook uses a library called `timestring` to parse these delays. [Its documentation](https://github.com/mike182uk/timestring/blob/master/README.md#keywords) lists out all of the possibilities.
+[^1]: Incluindo, se quiseres ser cruel, dias, meses e anos. O Chapbook usa uma biblioteca chamada `timestring` para calcular estes atrasos. [A sua documentação](https://github.com/mike182uk/timestring/blob/master/README.md#keywords) elenca todas as possibilidades.

@@ -1,37 +1,39 @@
-# Notes
+# Anotações
 
-You may want to enter text in your story as a note to yourself as you work--for example, to note that a passage needs some revision, clarify how players could reach a passage, or just remind yourself where to pick up in your next editing session.
+Ao criares a tua história, podes querer escrever notas para ti próprio/a enquanto trabalhas — por exemplo, anotar que uma passagem precisa de revisão, clarificar como é que os jogadores podem alcançar uma certa passagem, ou apenas relembrar-te onde deves recomeçar a tua próxima sessão de revisão.
 
-To do this, use the `[note]` modifier.
+Podes fazer isto com o modificador `[nota]`.
 
 ```
-It was a dark and stormy night.
+Era uma noite escura de tempestade.
 
-[note]
-I really need a better beginning.
+[nota]
+Preciso mesmo de arranjar um início melhor.
 ```
 
-When Chapbook displays the passage, it will only show `It was a dark and stormy night.` You can write `[note to myself]` or `[n.b.]`[^1] instead of `[note]`. You can also write `[fixme]` and `[todo]`, which come from the programming world. They work identically to `[note]`, but you can easily do a search in the Twine editor for these terms to make sure you've addressed everything before a release. `[todo]` is useful for noting things yet to be implemented, while `[fixme]` is useful for problems you've noticed, but haven't yet had time to fix.
+Quando o Chapbook apresenta a passagem, irá mostrar apenas `Era uma noite escura de tempestade.` Podes escrever `[nota para mim]` ou `[n.b.]`[^1] em vez de `[nota]`. Também podes escrever `[arranjar]` e `[porfazer]`, que vêm do mundo da programação. Funcionam da mesmo maneira que `[nota]`, mas podes fazer uma pesquisa no editor do Twine por estes termos e certificares-te de que resolveste todas as coisas antes de lançares a história. O `[porfazer]` dá jeito para anotar coisas que ainda não foram realizadas, enquanto o `[arranjar]` é útil para os problemas que encontraste, mas ainda não tiveste tempo de os arranjar.
+
+Podes, claro, usar mais do que uma nota numa passagem, e até misturá-las com o texto da história:
 
 You can, of course, use more than one note in a passage, and mix them with regular text:
 
 ```
-It was a dark and stormy night.
+Era uma noite escura de tempestade.
 
-[note]
-I really need a better beginning.
+[nota]
+Preciso mesmo de arranjar um início melhor.
 
-[todo]
-Maybe have the screen flash?
+[porfazer]
+Talvez pôr o ecrã a piscar?
 
-[continue]
-And you felt quite depressed.
+[continuar]
+E tu estavas desanimado.
 ```
 
-These notes are stored separately from what is entered in the [Notes backstage tab](../text-and-links/backstage.md), unfortunately.
+Estas anotações são gravadas separadamente das que são introduzidas no [separador das notas dos bastidores](../text-and-links/backstage.md), infelizmente.
 
 {% hint style="danger" %}
-Unlike backstage comments, notes are still visible to anyone who knows how to use their web browser's development tools. Don't put anything you need to keep secret in a note.
+Contrariamente aos comentários na vista de bastidores, as notas serão sempre visíveis para uma pessoa que souber usar as ferramentas de desenvolvimento do seu navegador. Não escrevas nada que queiras manter secreto numa nota.
 {% endhint %}
 
-[^1]: Short for _nota bene_, which is a fancy way to write _pay attention to this_.
+[^1]: Abreviatura de _nota bene_, que é uma maneira catita de escrever _presta bem atenção a isto_.

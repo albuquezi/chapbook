@@ -1,5 +1,5 @@
 <div class="intro modifiers-inserts">
-    <h1>Modifiers and Inserts</h1>
+    <h1>Modificadores e Inserções</h1>
 </div>
 
-This section introduces the two ways Chapbook allows you to create more elaborate in your passages, modifiers and inserts. If you are familiar with macros in other story formats, they work in a similar kind of way.
+Esta secção apresenta as duas formas através das quais o Chapbook te permite criar passagens mais elaboradas, modificadores e insertos. Se estás familiarizado com macros de outros formatos de história, eles funcionam de uma forma semelhante.

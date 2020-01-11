@@ -1,19 +1,19 @@
-# Forks
+# Bifurcações
 
-It's a staple of interactive fiction to show a set of possible choices together, often at the end of a passage. The _Choose Your Own Adventure_ series of books would have text like this at the bottom of a page:
+É uma marca distintiva da ficção interativa apresentar um conjunto de escolhas possíveis, normalmente no fim de uma passagem. A série de livros _Escolhe a Tua Própria Aventura_ tinha texto assim no fundo de uma página:
 
-> If you decide to walk along the beach, turn to page 5.
+> Se decidires caminhar ao longo da praia, vai para a página 5.
 >
-> If you decide to climb the rocky hill, turn to page 6.
+> Se decidires subir a colina rochosa, vai para a página 6.
 
-We don't need to specify page numbers when working in a digital format, of course, but it can still be nice to set off these choices from the rest of the text. Chapbook calls these bundles of links _forks_, and they are signalled by placing each link on separate line, with `>` at its beginning:
+Não precisamos de especificar os números de página quando trabalhamos em formato digital, clar, mas, de qualquer forma, fica mais bonito se pudermos destacar estas escolhas do resto do texto. O Chapbook chama a estes conjuntos de ligações _bifurcações_, e elas podem ser sinalizadas colocando cada ligação numa linha separada, com `>` no início:
 
 ```
-> [[Walk along the beach]]
-> [[Climb the rocky hall]]
+> [[Caminhar ao longo da praia]]
+> [[Subir a colina rochosa]]
 ```
 
-Forks display light lines between the links and horizontally center the text of the links. See [Fork Style][fork-style] to learn how to change this.
+As bifurcações apresentam linhas finas entre as ligações e centram horizontalmente o texto das ligações. Vê o [Estilo da Bifurcação][fork-style] para aprenderes como mudar isto.
 
 
 [fork-style]: ../customization/fork-style.md

@@ -1,50 +1,50 @@
-# Simple Links
-At the heart of every Twine story are links. Chapbook follows the Twine conventions for typing links, which is to say, it steals shamelessly from the syntax used by wikis everywhere.
+# Ligações Simples
+No âmago de cada história do Twine estão as ligações. O Chapbook segue as convenções do Twine para escrever as ligações, ou seja, rouba descaradamente a sintaxe que é usada nas wikis por todo o lado.
 
-The simplest link notation surrounds a name of a passage with double square brackets: `[[A tiny door]]`. This displays the title of the passage directly in the text.
+A notação mais simples para fazer uma ligação consiste em envolver o nome de uma passagem com colchetes duplos: `[[Uma porta minúscula]]`. Isto irá apresentar o título da passagem diretamente no texto.
 
-Sometimes it makes sense to obscure the name of the destination in the text--perhaps because your passage is named `A Grisly End`, or the title of the passage is capitalized but you'd like to link it in the middle of a sentence. You can do this in two different, but equivalent ways.
+Por vezes, faz mais sentido ocultar o nome do destino no texto — talvez porque a tua passagem se chame `Um Final Medonho`, ou o título da passagem esteja em caixa alta, mas gostarias de fazer a ligação a meio da frase. Podes fazer isto de duas maneiras diferentes, mas equivalentes.
 
-Typed | Displayed
-------|----------
-`You [[open the door->A Grisly End]] with great confidence.` | You <a href="javascript:void(0)">open the door</a> with great confidence.
-`The [[Miss Scarlet<-young lady]] seated in the chaise seems inexplicably guilty to you.` | The <a href="javascript:void(0)">young lady</a> seated in the chaise seems inexplicably guilty to you.
+Escrito | Apresentado
+--------|------------
+`Tu [[abres a porta->Um Final Medonho]] com grande confiança.` | Tu <a href="javascript:void(0)">abres a porta</a> com grande confiança.
+`A [[Menina Scarlet<-menina]] sentada no sofá parece-te inexplicavelmente culpada.` | A <a href="javascript:void(0)">menina</a> sentada no sofá parece-te inexplicavelmente culpada.
 
-(The links don't lead anywhere in the examples above, of course.)
+(As ligações não levam a lado nenhum nos exemplos acima, claro está.)
 
-The easiest way to remember this is to think of the arrow pointing to the passage you're linking to. It doesn't matter which direction the arrow points; use the syntax that feels most comfortable to you.
+A forma mais fácil de te lembrares é pensar que a seta está a apontar para a passagem que queres ligar. Não importa a direção em que a seta aponta; usa a sintaxe que te der mais jeito.
 
-You cannot use [Markdown or other formatting characters][formatting] inside a simple link. If you'd like to italicize a certain link, for example, put the formatting around the link instead, i.e. `_[[a friend of a friend]]_`. See [Link Inserts](../modifiers-and-inserts/link-inserts.md) for how to create a link that has formatting inside it, like <a href="javascript:void(0)">a man with <em>particular</em> skills</a>.
+Não podes usar [Markdown ou outros carateres de formatação][formatting] dentro de uma ligação simples. Se quiseres apresentar um link em itálico, por exemplo, põe antes a formatação à volta da ligação, assim: `_[[um amigo de um amigo]]_`. Vê os [Link Inserts](../modifiers-and-inserts/link-inserts.md) para saberes como criar uma ligação com formatação no seu interior, como <a href="javascript:void(0)">um homem com talentos <em>especiais</em></a>.
 
-## External Links
-To link to another web page, enter a URL instead of a passage name. You can use any link syntax you'd like, though the arrow syntax makes your text more readable in most cases:
+## Ligações Externas
+Para ligar a outra página da internet, introduz um URL em vez do nome de uma passagem. Podes escrever a ligação com a sintaxe que quiseres, embora a sintaxe com a seta torne o texto mais legível, na maioria dos casos:
 
-Typed                                                       | Displayed
+Escrito                                                     | Apresentado
 ------------------------------------------------------------|----------
-`You [[open Twine->https://twinery.org]] on your computer.` | You <a href="https://twinery.org">open Twine</a> on your computer.
+`Tu [[abres o Twine->https://twinery.org]] no teu computador.` | Tu <a href="https://twinery.org">abres o Twine</a> no teu computador.
 
-## Older Link Syntax
-Chapbook also supports the link syntax from Twine 1 that used a vertical bar (or pipe character):
+## Antiga Sintaxe para Ligações
+O Chapbook também suporta a sintaxe de ligação do Twine 1 que usava a barra vertical (ou o carater tubo):
 
 <table>
 <thead>
 <tr>
-<th>Typed</th>
-<th>Displayed</th>
+<th>Escrito</th>
+<th>Apresentado</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>
-<code>You [[open the door|A Grisly End]] with great confidence.</code>
+<code>Tu [[abres a porta|Um Final Medonho]] com grande confiança.</code>
 <td>
-You <a href="javascript:void(0)">open the door</a> with great confidence.
+Tu <a href="javascript:void(0)">abres a porta</a> com grande confiança.
 </td>
 </tr>
 <tbody>
 </table>
 
-This is harder to remember than the arrow syntax, so there's little reason to use it now unless you learned it from Twine 1.
+É mais difícil de recordar do que a sintaxe da seta, por isso não há muitas razões para a usar agora a não ser que te tenhas habituado a usá-la com o Twine 1.
 
 <style>
 tr, td {

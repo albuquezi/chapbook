@@ -1,33 +1,33 @@
-# Modifiers and Text Alignment
+# Modificadores e Alinhamento de Texto
 
-One thing not mentioned in the previous section is how you would center text, or even right-align it. Alignment was never part of the original version of Markdown, and so various dialects of Markdown use their own notation for it.[^1]
+Na secção anterior, não se mencionou como se poderia centrar o texto ou, por exemplo, alinhá-lo à direita. O alinhamento nunca fez parte da versão original de Markdown, por isso vários dialetos desta linguagem desenvolveram a sua própria notação para o fazer.[^1]
 
-Chapbook uses a general-purpose notation called a _modifier_ to apply special handling to blocks of text. Modifiers are always single lines that begin and end with square brackets[^2], like so:
+O Chapbook usa uma notação generalista chamada _modificador_ para lidar com blocos de texto. Os modificadores têm sempre apenas uma linha que começa e acaba com parêntesis retos[^2], assim:
 
 ```
-Above the cave mouth, someone has carved:
+Acima da boca da caverna, alguém tinha entalhado:
 
-[align center]
+[alinhar centro]
 _Lasciate ogne speranza, voi ch'intrate_
 ```
 
-The text `[align center]` is never shown to the player. Instead, Chapbook centers the text following it. As you might have guessed, you can also write `[align right]` and `[align left]`.
+O texto `[alinhar centro]` nunca é mostrado ao jogador. Em vez disso, o Chapbook centra o texto que está a seguir. Como já deves ter adivinhado, também podes escrever `[alinhar direita]` e `[alinhar esquerda]`.
 
-## The `continue` modifier
+## O modificador `continuar`
 
-Modifiers apply to all the text that follow them, until either the end of the passage or another modifier appears in the source text. To cancel all active modifiers, use `[continue]` like so:
+Os modificadores aplicam-se a todo o texto vem a seguir, até que se chegue ao fim da passagem ou até que outro modificador apareça no texto-fonte. Para cancelar todos os modificadores ativos, deves usar `[continuar]` desta forma:
 
 ```
-Above the cave mouth, someone has carved:
+Acima da boca da caverna, alguém tinha entalhado:
 
-[align center]
+[alinhar centro]
 _Lasciate ogne speranza, voi ch'intrate_
 
-[continue]
-You feel a little less confident in your plan.
+[continuar]
+Sentes-te um pouco menos confiante com o teu plano.
 ```
 
-`[continue]` simply cancels all active modifiers. You can abbreviate it as `[cont'd]` or `[cont]`.
+`[continuar]` cancela todos os modificadores ativos. Podes abreviá-lo como `[cont'r]` ou `[cont]`.
 
-[^1]: Twine 2's default format, Harlowe, for instance, uses punctuation like ` =><= ` on the preceding line to indicate centered text, while other Markdown dialects put arrows around centered text, like `->SALE TODAY<-`.
-[^2]: If you'd like to show players a line of text with brackets in it, enter a single backslash (`\`) at the start of the line. Chapbook will display the text as-is without the backslash you entered.
+[^1]: O formato por defeito do Twine 2, Harlowe, por exemplo, usa sinais de pontuação como ` =><= ` na linha anterior para indicar que o texto será centrado, enquanto outros dialetos Markdown põe setas à volta do texto centrado, como `->ESTAMOS ABERTOS<-`.
+[^2]: Se quiseres mostrar aos jogadores uma linha de texto com parêntesis retos, põe um barra simples (`\`) no começo da linha. O Chapbook irá mostrar o texto como está escrito sem a barra que escreveste.

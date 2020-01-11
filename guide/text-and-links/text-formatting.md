@@ -1,110 +1,110 @@
-# Text Formatting
+# Formatação de Texto
 
-Of course, you can type paragraphs into a Twine passage in Chapbook and it will display them as you would expect. But for other kinds of formatting, such as bold or italics, Chapbook follows the syntax of a popular markup language called [Markdown][markdown].
+Claro que podes escrever parágrafos numa passagem do Twine no Chapbook e eles serão apresentados sem qualquer surpresa. Mas para outros tipos de formatação, como negrito ou itálico, o Chapbook segue a sintaxe de uma linguagem de marcação popular chamada  [Markdown][markdown].
 
-The term 'markup language' might sound complex, but in reality it's just a set of conventions of how to represent formatting in plain text. For example, to make part of your text italicized when displayed, you simply type asterisks around it, `*like so*`.
+O termo 'linguagem de marcação' pode parecer complexo, mas na realidade é apenas um conjunto de convenções sobre como representar a formatação em texto simples. Por exemplo, para passares uma parte do teu texto para itálico, só tens de a rodear com asteriscos, `*desta forma*`
 
-If you've never used Markdown before, try using the [dingus][dingus] as you read this section. It's an online playground with a funny name that not only allows you to quickly see how text will be rendered, but also has a cheatsheet that summarizes the different formatting available to you. Bear in mind, however, that Chapbook has a few extra formatting options available to you above and beyond the standard Markdown set.
+Se nunca usaste uma linguagem de marcação antes, tenta usar o [dingus][dingus] à medida que fores lendo esta secção. É um recreio virtual com um nome engraçado que, não só, te deixa ver rapidamente como é que o texto vai ser processado, mas também tem uma cábula que resume as diferentes formatações que podes usar.
 
-## Italics and Boldface
+## Itálico e Negrito
 
-To italicize a a phrase, type `*` or `_` (a single underscore)[^1] around it.
+Para pôr um segmento em itálico, escreve `*` ou `_` (uma linha apenas)[^1] à sua volta.
 
-| Typed                     | Displayed               |
+| Escrito                   | Apresentado             |
 | ------------------------- | ----------------------- |
-| `_Unconventional_ tastes` | _Unconventional_ tastes |
-| `*Unconventional* tastes` | _Unconventional_ tastes |
+| `Gostos _esdrúxulos_`     | Gostos _esdrúxulos_     |
+| `Gostos *esdrúxulos*`     | Gostos _esdrúxulos_     |
 
-To make a phrase boldface, type `**` or `__` (two underscores) around it.
+Para pôr um segmento em negrito, escreve `**` ou `__` (duas linhas) à sua volta.
 
-| Typed                       | Displayed                 |
-| --------------------------- | ------------------------- |
-| `__Unconventional__ tastes` | **Unconventional** tastes |
-| `**Unconventional** tastes` | **Unconventional** tastes |
+| Escrito                   | Apresentado             |
+| ------------------------- | ----------------------- |
+| `Gostos __esdrúxulos__`   | Gostos __esdrúxulos__   |
+| `Gostos **esdrúxulos**`   | Gostos __esdrúxulos__   |
 
-It doesn't matter whether you use asterisks or underscores, so long as you're consistent in a single usage, and you can mix and match them in your text.
+Não interessa se usas asteriscos ou linhas, desde que sejas consistente numa mesma ocorrência; e podes misturá-los e combiná-los no teu texto.
 
-| Typed                                  | Displayed                            |
+| Escrito                                | Apresentado                          |
 | -------------------------------------- | ------------------------------------ |
-| `**"I'll _murder_ you,"** she hissed.` | **"I'll _murder_ you,"** she hissed. |
+| `**"Vou-te _matar_,"** ela sussurrou.` | **"Vou-te _matar_,"** ela sussurrou. |
 
-## Monospaced Type
+## Fonte Mono-espaçada
 
-To set text in a monospaced typeface, `like this`, type backticks (<code>`</code>) around it.
+Para escrever um segmento com uma fonte mono-espaçada, `desta forma`, põe acentos graves (<code>`</code>) à sua volta.
 
-| Typed                                    | Displayed                   |
+| Escrito                                  | Apresentado                 |
 | ---------------------------------------- | --------------------------- |
-| <code>\`Beep boop,\` HAL commented.</code> | `Beep boop,` HAL commented. |
+| <code>\`Bip bop,\` comentou o HAL.</code> | `Bip bop,` comentou o HAL. |
 
-## Small Caps
+## Versaletes
 
-If you'd like to set some text in small caps, type `~~` (two tildes) around it.
+Se quiseres colocar parte do texto em versaletes, envolve-o com `~~` (dois tiles).
 
-| Typed                                           | Displayed                                                                                                                        |
-| ----------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `Above the door was a ~~NO TRESPASSING~~ sign.` | Above the door was a <span style="font-size: 70%; text-transform: uppercase; letter-spacing: 0.08em">NO TRESPASSING</span> sign. |
+| Escrito                                                      | Apresentado                                                                                                                                   |
+| ------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Acima da porta estava uma placa de ~~PROIBIDA A ENTRADA~~.` | Acima da porta estava uma placa de <span style="font-size: 70%; text-transform: uppercase; letter-spacing: 0.08em">PROIBIDA A ENTRADA</span>. |
 
-This convention, though not a part of original recipe Markdown, conflicts with some other Markdown dialects, which use `~~` for struck-out text, ~~like so~~. To do this, type `<del>` and `</del>` around your text:
+Esta convenção, embora não seja uma receita original em Markdown, entra em conflito com alguns outros dialetos da linguagem de marcação, que usam `~~` para texto rasurado, ~~algo assim~~. Para fazeres isto, escreve `<del>` e `</del>` à volta do teu texto:
 
-| Typed                                                                                                                                                  | Displayed                                                                                                                                            |
+| Escrito                                                                                                                                                | Apresentado                                                                                                                                            |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `At the bottom of the page, nearly completely covered by the government censor's pen, was that same code name you had seen before: <del>S-5900</del>.` | At the bottom of the page, nearly completely covered by the government censor's pen, was that same code name you had seen before: <del>S-5900</del>. |
+| `No fundo da página, quase completamente coberto pela caneta do censor do governo, estava aquele mesmo nome que tinhas visto antes: <del>S-5900</del>.` | No fundo da página, quase completamente coberto pela caneta do censor do governo, estava aquele mesmo nome que tinhas visto antes: <del>S-5900</del>. |
 
-## Section Breaks
+## Quebras de Secção
 
-A convention sometimes used in publishing to indicate a new scene, or a new line of thought is to separate the text using a series of asterisks, like this:
+Uma convenção por vezes usada em edição para indicar uma nova cena, ou uma nova linha de pensamento consiste em separar o texto usando uma série de asteriscos, assim:
 
-> It had been a long day, and I fell asleep nearly instantly.
+> Tinha sido um dia longo, e eu adormeci quase instantaneamente.
 >
 > <p style="text-align: center">* &nbsp; * &nbsp; *</p>
-> The following morning was no better than the day before.
+> A manhã seguinte não trouxe melhoras em relação ao dia anterior.
 
-To add a section break to your text, type `***` (three asterisks) on a line by itself.
+Para adicionar uma quebra de secção ao teu texto, escreve `***` (três asteriscos) numa linha sozinha.
 
-## Lists
+## Listas
 
-To created a bulleted list (or, in the parlance of the web, an unordered list), type `*`, `-`, or `+` at the beginning of a new line. It doesn't matter which character you use, but you do need to be consistent in each list.
+Para criar uma lista com tópicos (ou, no falar da Internet, uma lista não ordenada), escreve `*`, `-`, ou `+` no início de uma nova linha. Não importa o carater que usares, mas tens de ser consistente em cada lista.
 
 <table>
-	<thead><tr><th>Typed</th><th>Displayed</th></tr></thead>
+	<thead><tr><th>Escrito</th><th>Apresentado</th></tr></thead>
 	<tbody>
-	<tr><td><code>* Red</code><br><code>* Green</code><br><code>* Blue</code></td><td><ul><li>Red</li><li>Green</li><li>Blue</li></ul></td></tr>
+	<tr><td><code>* Vermelho</code><br><code>* Verde</code><br><code>* Azul</code></td><td><ul><li>Vermelho</li><li>Verde</li><li>Azul</li></ul></td></tr>
 	</tbody>
 </table>
 
-To create a numbered list (also known as an ordered list), start each line either with a number and a period, or just a `#`. The numbering you use doesn't actually matter--you can have two items starting with `2.` and the list will still be numbered correctly.
+Para criar uma lista numerada (também conhecida como lista ordenada), começa cada linha com um número e um ponto, ou apenas um `#`. A numeração que usares, na verdade, não importa — podes ter dois itens a começar por `2.` e a lista será à mesma corretamente numerada.
 
 <table>
-	<thead><tr><th>Typed</th><th>Displayed</th></tr></thead>
+	<thead><tr><th>Escrito</th><th>Apresentado</th></tr></thead>
 	<tbody>
-	<tr><td><code># Red</code><br><code># Green</code><br><code># Blue</code></td><td><ol><li>Red</li><li>Green</li><li>Blue</li></ol></td></tr>
-	<tr><td><code>1. Red</code><br><code>2. Green</code><br><code>3. Blue</code></td><td><ol><li>Red</li><li>Green</li><li>Blue</li></ol></td></tr>
+	<tr><td><code># Vermelho</code><br><code># Verde</code><br><code># Azul</code></td><td><ol><li>Vermelho</li><li>Verde</li><li>Azul</li></ol></td></tr>
+	<tr><td><code>1. Vermelho</code><br><code>2. Verde</code><br><code>3. Azul</code></td><td><ol><li>Vermelho</li><li>Verde</li><li>Azul</li></ol></td></tr>
 	</tbody>
 </table>
 
-Why bother to specially format a numbered list? Just like in word processors, using this format will cause each item to be nicely indented, so that the second line of text of each item appears to the right of the initial number.
+Valerá a pena dar-se ao trabalho de formatar uma lista numerada? Tal como nos processadores de texto, ao usares este formato cada item irá ficar corretamente alinhado, pondo a segunda linha do texto a aparecer à direita do número inicial.
 
-## Ignoring Formatting Characters
+## Ignorar Carateres de Formatação
 
-Occasionally you'll want to use Markdown formatting characters as-is, without them initiating formatting. The simplest way to do this is to put a `\` (backslash) in front of them.
+Ocasionalmente vais querer usar os próprios carateres que ativam a formatação em Markdown, sem que os mesmos causem a dita formatação. A forma mais simples de o fazer é pôr um `\` (barra invertida) antes dos carateres.
 
-| Typed                       | Displayed                 |
+| Escrito                     | Apresentado               |
 | --------------------------- | ------------------------- |
-| `\*\* PLEASE EXIT NOW \*\*` | \*\* PLEASE EXIT NOW \*\* |
+| `\*\* SAIA IMEDIATAMENTE \*\*` | \*\* SAIA IMEDIATAMENTE \*\* |
 
-## Other Custom Styling
+## Outras Estilizações Personalizadas
 
-You can also enter HTML into a passage without any extra code surrounding it. It will be displayed exactly as you type it in. The library that Chapbook uses to render Markdown is sometimes inconsistent about how it treats HTML, however. It will always let HTML tags pass through as-is, but whether it interprets the contents of these tags as Markdown or HTML can depend on the exact situation. Unfortunately, the best way to test this is to experiment.
+Também podes introduzir HTML numa passagem sem qualquer código adicional a envolvê-lo. Será apresentado exatamente como o escreveres. A biblioteca que o Chapbook usa para processar Markdown é por vezes inconsistente na forma como lida com o HTML. No entanto, etiquetas HTML passarão sempre, mas a intepretação do conteúdo dessas etiquetas como Markdown ou HTML já dependerá da situação concreta. Infelizmente, a melhor forma de testar é experimentar.
 
-## Blockquotes Don't Behave As You Might Expect
+## Os Blocos de Citação não funcionam como deviam
 
-Chapbook formatting differs from standard Markdown in how it displays blockquotes--that is, a long stretch of text, often multiple paragraphs, that is indented to indicate it isn't part of the main text. Mardkown uses `>` at the start of a line to indicate this. However, Chapbook uses the `>` to mark text as part of a [fork][forks] instead. If you'd like to display a block quotation, put `<blockquote>` and `</blockquote>` around it.
+A formatação do Chapbook difere dos padrões do Markdown no modo como apresenta os blocos de citação — isto é, um longo trecho, frequentemente com vários parágrafos, que é indentado para que se veja que não faz parte do texto principal. O Markdown usa `>` no início da linha para os marcar. No entanto, o Chapbook usa o `>` para marcar texto como parte de uma [bifurcação][forks]. Se quiseres apresentar um bloco de citação, envolve o texto com `<blockquote>` e `</blockquote>`.
 
-| Typed                                                                                                                                                                                                                                                | Displayed                                                                                                                                                                                                                                                   |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <code>&lt;blockquote&gt;Call me Ishmael. Some years ago--never mind how long precisely--having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.&lt;/blockquote&gt;</code> | <blockquote>Call me Ishmael. Some years ago--never mind how long precisely--having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.</blockquote> |
+| Escrito                                                                                                                                                                                                                                           | Displayed                                                                                                                                                                                                                                             |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <code>&lt;blockquote&gt;Tratem-me por Ismael. Há alguns anos — não interessa quando — achando-me com pouco ou nenhum dinheiro na carteira, e sem qualquer interesse particular que me prendesse à terra firme, apeteceu-me voltar a navegar e tornar a ver o mundo das águas.&lt;/blockquote&gt;</code> | <blockquote>Tratem-me por Ismael. Há alguns anos — não interessa quando — achando-me com pouco ou nenhum dinheiro na carteira, e sem qualquer interesse particular que me prendesse à terra firme, apeteceu-me voltar a navegar e tornar a ver o mundo das águas.</blockquote> |
 
-[^1]: Underscores as italics have a tangled history behind them; they resemble underlines, which were more-or-less invented as a workaround for typewriters being unable to italicize words.
+[^1]: Linhas(Underscores) como itálico têm uma história intricada no seu passado; elas assemelham-se a sublinhados, que foram mais ou menos inventados como uma alternativa devido ao facto de as máquinas de escrever não poderem italizar palavras.
 
 [markdown]: https://daringfireball.net/markdown
 [dingus]: https://daringfireball.net/projects/markdown/dingus

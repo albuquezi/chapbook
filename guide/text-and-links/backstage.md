@@ -1,26 +1,27 @@
-# Introducing Backstage
+# Introdução aos Bastidores
 
-When you launch your story from Twine using the **Test** button in the editor toolbar, Chapbook enables its *backstage view*: a panel that sits beside your story and allows you to peek into its workings and tinker with them while you interact with it as players will. This section discusses the **History** and **Notes** tabs in the backstage view. The other tabs, **State** and **Style**, are discussed later in this guide in [State Backstage][state-backstage] and [Page Style][page-style] respectively.
+Quando corres a tua história a partir do Twine usando o botão **Test**, que está na barra de ferramentas, o Chapbook  
+When you launch your story from Twine using the **Test** button in the editor toolbar, Chapbook ativa a sua *vista de bastidores*: uma painel que mora detrás da tua história e que te permite espreitar para dentro das suas engrenagens e brincar com elas enquanto interages com ela da mesma forma que um jogador. Esta secção discute os separadores **Histórico** e **Notas** na vista de bastidores. Os outros separadores, **Estado** e **Estilo**, são discutidos mais tarde neste guia em [Bastidores do Estado][state-backstage] e [Estilo de Página][page-style] respetivamente.
 
-If you would like to temporarily hide the backstage view, use the arrow button to its left, which toggles the view's visibility.
+Se quiseres ocultar temporariamente a vista de bastidores, usa o botão com a seta à sua esquerda, que comuta a visibilidade do painel.
 
 {% hint %}
-While testing your story in Twine, it's best to use the **Test** button instead of **Play**. If you use the **Play** button instead, Chapbook will try to resume play where you last left off. Usually, you'd like to start from the beginning, which Chapbook does in test mode.
+Quando estiveres a testar a tua história no Twine, é melhor usar o botão **Testar** em vez do **Jogar**. Se usares o botão **Jogar**, o Chapbook irá tentar retomar o jogo do sítio onde o deixaste. Em princípio, hás de querer começar do princípio, que é o que o Chapbook faz no modo de teste.
 {% endhint %}
 
-## The History Tab
+## O Separador do Histórico
 
-As you visit passages in your story, the History tab will show them in a tabular list, with the oldest at the top and the most recent at the bottom.
+À medida que fores visitando passagens na tua história, o separador do Histórico irá mostrá-las numa lista tabular, com a mais velha no topo e a mais recente no fundo.
 
-You may see some additional rows next to each passage name. These are explained in [State Backstage][state-backstage], but for now you can ignore them.
+Poderás ver algumas linhas adicionais ao lado do nome de cada passagem. Estas estão explicadas nos [Bastidores do Estado][state-backstage], mas, por enquanto, podes ignorá-las.
 
-Use the &#x21b3; button beside an entry in the table to rewind the story to that passage.
+Usa o botão &#x21b3; ao lado de uma entrada na tabela para fazer a história regressar até essa passagem.
 
-## The Notes Tab
+## O Separador das Notas
 
-This tab can be used to record notes on the passage you're currently viewing--noting misspellings, or any other thoughts you'd like to record. These notes are stored separately from the story itself, so that if you are collaborating with other people on a story, each of you can keep separate notes. The notes you enter are saved automatically as you type.
+Este separador pode ser usado para registar notas sobre a passagem que estás a ver no momento — apontar erros de ortografia, ou quaisquer outros pensamentos que quiseres anotar. Estas notas são gravadas separadamente da história em si, o que significa que se estás a colaborar com outras pessoas numa história, cada um de vós poderá ter as suas próprias notas. As notas que escreveres são gravadas automaticamente à medida que as vais escrevendo.
 
-You can export notes you've entered using the **Export Notes** button, and import them into someone else's browser using the **Import Notes** button. If any notes already exist for a passage, the notes you import will appear below what was previously entered. If you'd like to reset your notes, use the **Delete All Notes** button.
+Podes exportar notas que tiveres escrito usando o botão **Exportar Notas**, e importá-las para o navegador de outra pessoa usando o botão **Importar Notas**. Se já existirem notas para uma dada passagem, as notas que importares irão aparecer por baixo do que já tinha sido registado. Se quiseres limpar as tuas notas, usa o botão **Eliminar Todas as Notas**.
 
 [state-backstage]: ../state/backstage.md
 [page-style]: ../customization/page-style.md
