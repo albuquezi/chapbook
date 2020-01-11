@@ -16,20 +16,17 @@ como fazer alguma coisa, nem para vires resolver problemas que tenhas com a
 história que estás a criar com o Chapbook--a não ser que penses que é causado
 por um problema do próprio Chapbook.
 Há várias comunidades online que te pode ajudar a resolver os problemas que tenhas
-com a tua história. Tira partido deles.  
+com a tua história. Tira partido delas.  
 
-Be as specific as you can about bugs, and attach a story file demonstrating them
-if possible. If a bug can't be reproduced on another person's computer, it can't
-be fixed.
+Sê específico nas tuas explicações sobre os "bugs", e junta o ficheiro da tua história com esses problemas sempre que possível. Se um "bug" não puder ser reproduzido no computador de outra pessoa, não há forma de o arranjar.
 
-## Requesting a Feature
+## Solicitar uma funcionalidade
 
-Please take a look at [Chapbook's design goals](DESIGN_GOALS.md) before opening
-an issue--this lays out the context in which feature requests will be evaluated.
+Primeiro, por favor, lê os [objetivos do formato Chapbook](DESIGN_GOALS.md) antes de apresentares um problema--aqui está descrito o contexto que regerá a avaliação dos pedidos de novas funcionalidades.
 
-## Opening a Pull Request
+## Abrir um "Pull Request"
 
-**Pull requests will begin being accepted once Chapbook's 1.0.0 release is finalized.**
+**Os "Pull requests" começarão a ser aceites após a conclusão da versão 1.0.0 do Chapbook.**
 
 Pull requests should be test-coverage neutral at worst. Ideally, they improve
 coverage. You can check this by running `npm run test:coverage`.

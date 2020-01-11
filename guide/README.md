@@ -1,20 +1,20 @@
 <div class="intro intro-path">
-    <h1>Introduction</h1>
+    <h1>Introdução</h1>
 </div>
 
-This is a guide to the Chapbook story format for Twine 2.[^1] Story formats control how a story created with the Twine editor plays in a Web browser; once you select the **Play** button in Twine or publish your story to a file, whatever story format you have selected takes over.
+Este é um guia para o formato de história Chapbook do Twine 2.[^1] Os formatos de história controlam como uma história criada com o editor do Twine correm num navegador; quando carregas no botão **Jogar** no Twine ou publicas a tua história para um ficheiro, o formato de história que tiveres escolhido passa a controlar as coisas.
 
-Chapbook is designed to be easy to work with as an author and generate output that is a pleasure to read by players. It provides sensible default behaviors for your story that can be customized to fit your particular needs.
+O Chapbook foi concebido para ser fácil de usar e para oferecer aos jogadores uma experiência de leitura prazeirosa. Oferece à tua história, por defeito, comportamentos sensatos, mas que podem ser personalizados para se adaptarem às tuas necessidades.
 
-This guide does not assume you have any programming knowledge; however, it doesn't hurt to know CSS or JavaScript, as it uses both technologies heavily. It's split into several chapters that will gently guide you through the process of story creation.
+Este guia não assume que tenhas nenhum conhecimento de programação; no entanto, não faz mal nenhum saber CSS ou JavaScript, uma vez que o Chapbook recorre abundantemente as estas tecnologias. O guia está dividido em vários capítulos que irão suavemente guiar-te através do processo de criação de histórias.
 
-This guide does assume, however, that you're familiar with the Twine 2 editor itself. If you're new to Twine, the [Twine 2 guide](http://twinery.org/wiki/twine2:guide) is an excellent place to start. There are also numerous tutorials on the web that can be helpful.
+Este assume, sim, contudo, que estejas familiarizado com o editor do Twine 2. Se o Twine é uma coisa nova para ti, o [guia do Twine 2](http://twinery.org/wiki/twine2:guide) é um excelente sítio para começar. Há também inúmeros tutoriais na Internet que te podem ajudar.
 
-## Licensing
+## Licença
 
-Chapbook is released under the [MIT license](mit-license). Broadly speaking, it can be used to create free and commercial works alike without royalty payment of any kind. Mentioning Chapbook and Twine in the credits of your work isn't required, but it is appreciated.
+O Chapbook é disponibilizado sob [licença MIT](mit-license). Em termos gerais, quer dizer que pode ser usado tanto para criar trabalhos gratuitos e comerciais sem pagamento de direitos de autor de qualquer tipo. Mencionar o Chapbook e o Twine nos créditos do teu trabalho não é necessário, mas será apreciado.
 
-Because Chapbook is open source, its ongoing development and maintenance is supported by [Patreon supporters](https://patreon.com/klembot) like:
+Como o Chapbook é "open source", o seu desenvolvimento e a sua manutenção são apoiados por [membros do Patreon](https://patreon.com/klembot) como:
 
 <div class="patreon-supporters">
     <ul>
@@ -38,51 +38,52 @@ Because Chapbook is open source, its ongoing development and maintenance is supp
     </ul>
 </div>
 
-Supporters at particular tiers receive access to devlogs, livestreams where Chapbook and Twine development are discussed, and recognition in this guide. If you use Chapbook, please consider [supporting the project on Patreon](https://patreon.com/klembot).
+Apoiantes de diferentes escalões têm acesso aos diários de desenvolvimento, a conversas ao vivo (livestreams) onde o desenvolvimento do Chapbook e do Twine são discutidos, e são ainda mencionados neste guia. Se usas o Chapbook, talvez possas [apoiar o projeto no Patreon](https://patreon.com/klembot).
 
-## How to Use Chapbook
+## Como Usar O Chapbook
 
-For now, Chapbook must be added to the Twine editor by hand. To do this, choose the **Formats** button from the story list page you see when you first start up Twine, then the **Add a New Format** tab at the top of the dialog that appears. Paste the following address into the field and select the **Go** button:
-
+Por enquanto, o Chapbook tem de ser adicionado ao editor do Twine à mão. Para o fazeres, carrega no botão **Formatos**, na página com a lista das histórias, que é a primeira página que vês quando abres o Twine, depois escolhe o separador "Adicionar um Novo Formato" no topo da caixa de diálogo que aparece. Cola o seguinte endereço no campo e carrega no botão **Adicionar**:
 ```
 https://klembot.github.io/chapbook/use/1.0.0/format.js
 ```
 
-Once you do that, you must set the story you're working with to publish using Chapbook. Edit one of your stories, then choose **Change Story Format** from the story menu at the bottom of the editor. Choose Chapbook here. Once you do, selecting the **Play** button or publishing your story to a file will use Chapbook format.
+Uma vez isso feito, tens de configurar a história em que estás a trabalhar para usar o formato  Chapbook. Para isso, abre uma das tuas histórias, depois escolhe **Mudar o formato de história** do menu da história que fica no fundo da janela do editor. Aí escolhe o Chapbook. Feito isto, sempre que carregares no botão **Jogar** ou publicares a tua história para um ficheiro, será usado o formato Chapbook.
 
 {% hint style='working' %}
-Chapbook will eventually also offer a release edition that removes all debugging tools and reduces download size.
+O Chapbook irá eventualmente oferecer uma edição que remove todas as ferramentas de depuração e que reduz o tamanho do ficheiro a descarregar.
 {% endhint %}
 
-## Why To Use Chapbook
+## Razões para usar o Chapbook
 
-There is a relative embarassment of riches when it comes to selecting a Twine 2 story format. What are Chapbook's advantages?
+Podemos dizer que há um excesso de oferta quando se trata de escolher um formato de história para o Twine 2. Quais são as vantagens do Chapbook?
 
--   Chapbook source code is easy to read. It disallows certain practices, such
-    as nesting conditional statements[^2], and enforces others, like placing all
-    variable declarations in one place in a passage, that lead to
-    easier-to-follow code.
+-   o código-fonte do Chapbook é fácil de ler. Ele bloqueia certas práticas como
+    o encaixe de estruturas condicionais [^2], e impõe outras, como colocar todas
+    as declarações de variáveis num único lugar numa passagem, o que produz
+    um código mais fácil de seguir.
 
--   Chapbook has built-in functionality for common authoring scenarios. From
-    cycling links to delayed text, many things you'll want to do with your
-    stories will only require a single line of code.
+-   O Chapbook tem funcionalidade incorporada para os cenários criativos mais comuns.
+    Desde ligações cíclicas (cycling links) até texto retardado, muitas das coisas
+    que irás querer fazer com a tua história irão necessitar apenas de uma única linha de código.
 
--   Chapbook has a backstage view that aids in testing; it allows you to inspect
-    the state of play, change variables on the fly, and save state anywhere so
-    that you can quickly debug a particular part of your story.
+-   O Chapbook tem uma vista de bastidores que ajuda a testar as histórias; permite-te
+    inspecionar o estado da sessão de jogo, mudar as variáveis rapidamente, e gravar
+    o estado a qualquer momento para poderes depurar, num instante, uma parte específica da tua história.
 
--   Chapbook is designed to be used on a variety of devices, especially mobile
-    ones. It uses responsive design to adapt its page layout so that it's
-    readable on any type of device without having to zoom in or scroll
-    unnecessarily. It also is lightweight-- it currently contains 120K of code,
-    which takes less than a second to load on cellular networks.
+-   O Chapbook foi concebido para poder ser usado numa variedade de aparelhos,
+    especialmente telemóveis e tablets. Utiliza um "design" responsivo para adequar
+    a disposição da página e, assim, ser legível em qualquer tipo de aparelho sem
+    ser necessário fazer "zoom" ou andar a deslocar a página para cima e para baixo.
+    Também é leve — neste momento contém 120K de código, que demora menos de um
+    segundo a carregar numa rede de telemóvel.
 
--   Chapbook's appearance can be customized without knowing HTML or CSS, and has
-    built-in tools that allow you to preview style changes in your story
-    immediately, so you can craft the appearance you're looking for without
-    having to learn browser developer tools.
+-   O aspeto visual do Chapbook pode ser personalizada sem conhecimento de HTML ou CSS,
+    e o Chapbook tem integradas ferramentas que te permitem pré-vizualizar as
+    alterações à tua história imediatamente, o que significa que podes criar o
+    aspeto visual que desejas sem teres de aprender a usar as ferramentas de
+    desenvolvimento do navegador.
 
-## Why Not To Use Chapbook
+## Razões para não usar o Chapbook
 
 -   Chapbook is young. This means that resources apart from this guide are
     scarce compared to the many tutorials you'll find related to the venerable
