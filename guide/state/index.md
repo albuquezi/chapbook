@@ -1,5 +1,5 @@
 <div class="intro state">
-    <h1>State</h1>
+    <h1>Estado</h1>
 </div>
 
-In this section, you'll learn how to add state to your stories, which allows you to track more information about a playthrough of your story than just what links the player followed.
+Nesta secção, vais aprender como adicionar estado às tuas histórias, que é algo que te vai permitir ter mais informação sobre uma travessia da história do que apenas as ligações que o jogador seguiu.

@@ -1,6 +1,6 @@
-# What is State?
+# O que é Estado?
 
-You can create a compelling story with just the techniques outlined in the previous section. The [_Choose Your Own Adventure_ book series][cyoa] that has been part of Western pop culture since it exploded in popularity in the 1980s did just that. Turning to a particular page in the book is the equivalent of following a link in a digital medium, of course.
+É possível criar uma história empolgante apenas com as técnicas delineadas na secção anterior. Foi exatamente isso que fez a [série de livros de _Escolhe a tua própria aventura_ (_Choose Your Own Adventure_)][cyoa] que tem feito parte do cultura pop ocidental desde que explodiu em popularidade no início dos anos 80. Passar para uma determinada página num livro é o equivalente de seguir uma ligação num meio digital, claro está.
 
 But in the wake of _CYOA_'s popularity came another wave of interactive books written by people familiar with tabletop role-playing games like _Dungeons & Dragons_.[^1] They thought the format could be adapted to provide similar experiences to a live RPG session, but without the trouble of having to round up three or four other people to play with. They began to incorporate the trappings of RPGs--in particular, the character sheet.
 
