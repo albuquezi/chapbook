@@ -1,160 +1,161 @@
-# Conditional Display
+# Apresentação Condicional
 
-The other common use of variables in stories is to block off access to a branch, or conversely unlock a hidden part of a story. In order to do this with Chapbook, you'll need to combine a variable with a modifier.
+Um outro uso habitual de variáveis em histórias é para vedar o acesso a um ramo da história, ou pelo contrário, abrir uma parte escondida da história. Para fazeres isto com o Chapbook, precisas de combinar uma variável com um modificador.
 
-For instance, let's say you have a passage where the protagonist finds a key hidden in the weeds:
-
+Por exemplo, imagina que tens uma passagem onde o protagonista encontra uma chave escondida entre as ervas:
 ```
-hasKey: true
+temChave: verdadeiro
 --
-It's the strangest thing: there, in the weeds that surround the base of the tree, is a single rusted key.
+Uma coisa estranhíssima: ali, entre as ervas que rodeiam a base da árvore, está uma chave enferrujada.
 
-After picking it up, you decide to [[move on]].
+Depois de a apanhares, decides [[continuar]].
 ```
 
-Then later in the story, when the protagonist encounters the door the key belongs to:
+Depois mais tarde na história, quando o protagonista encontra a porta a que pertence a chave:
 
 ```
-At the end of the hall, you find a featureless steel door.
+Na parede do fundo da sala, há uma vulgar porta de aço.
 
-[if hasKey]
-You could try [[unlocking it]] with the key you found.
+[se temChave]
+Podes tentar [[destrancá-la]] com a chave que encontraste.
 
-[continue]
-You consider [[turning back]].
+[continuar]
+Consideras [[voltar para trás]].
 ```
 
-Only if the player had found the key earlier do they see "You could try unlocking it with the key you found," but in all cases they see "You consider turning back." The `if` modifier only displays the text below it if the expression in the modifier evaluates to true. You can enter anything that eventually evaluates to a boolean[^1]. Some more examples:
-  - `[if stringVariable === 'red']`
-  - `[if dollarsInPocket > 5]`
-  - `[if 2 + 2 === 4]`
+Só se o jogador tiver encontrado a chave antes é que poderá ver "Podes tentar destrancá-la com a chave que encontraste," mas em todos os casos, o jogador irá ver sempre "Consideras voltar para trás."
+O modificador `se` apenas apresenta o texto que tem em baixo se a expressão no modificador for avaliada como verdadeira. Podes escrever qualquer coisa que possa ser avaliado como uma booleana[^1]. Aqui vêm mais alguns exemplos:
 
-## Unless Conditions
+  - `[se variávelString === 'vermelho']`
+  - `[se dólaresNoBolso > 5]`
+  - `[se 2 + 2 === 4]`
 
-In certain cases, it's more expressive to use an `unless` instead of an `if`.
+## Condições "salvo se" (Unless)
 
-```
-[unless tookAntidote]
-You've run out of time. Your breath catches in your throat; your body slips from the chair, and the world turns dark.
-```
-
-`unless` modifiers work exactly the same as `if` ones, only they display the text following them if their condition evaluates to false.
-
-## Else Conditions
-
-The wording of the first example in this section is a bit awkward. We could make it flow better using an `else` modifier:
+Em certos casos, é mais expressivo dizer `salvo se` em vez de `se`.
 
 ```
-[if hasKey]
-You could try [[unlocking it]] with the the key you found, or just [[turn back]].
-
-[else]
-Nothing to do here but [[turn back]].
+[salvo se tomouAntídoto]
+Ficaste sem tempo. A tua respiração fica presa na garganta; o teu corpo escorrega da cadeira, e o mundo tolda-se de preto.
 ```
 
-`else` modifiers display the text following them if the previous `if` did not display. They have no relationship with `unless` conditions. `else`s also only apply on a per-passage basis; if you use an `if` in one passage, you cannot place the matching `else` in a different passage. If you find yourself wanting to do something along these lines, instead repeat the same condition in the second passage and use an `unless` instead of an `if`.
+Os modificadores `salvo se` funcionam exatamente como os `se`, só que eles só apresentam o texto que os segue se a sua condição for avaliada como falsa.
 
-## Modifiers (Including Conditional Ones) Cannot Be Nested
+## Condições "senão"
 
-It is not possible to directly nest conditional modifiers in Chapbook. Meaning:
-
-```
-[if hasKey]
-You could [[open the door]]...
-
-[if monsterDistance < 2]
-... and it might be your best chance for survival.
-```
-
-Would, if `hasKey` is false and `monsterDistance` is 1, only display:
+A redação do primeiro exemplo nesta secção deixa um bocadinho a desejar. Podíamos melhorá-lo se usássemos um modificador `senão`:
 
 ```
-... and it might be your best chance for survival.
+[se temChave]
+Podes tentar [[destrancá-la]] com a chave que encontraste, ou voltar [[para trás]].
+
+[senão]
+Não há nada para fazer aqui a não ser voltar [[para trás]].
 ```
 
-This is because modifiers only affect the text directly following them. They do not affect modifiers before or after them in the text, or any other text. You should instead write:
+Os modificadores `senão` mostram o texto que têm a seguir se a anterior condição `se` não correr. Eles não têm nenhuma relação com as condições `salvo se`. As condições `senão` funcionam dentro da mesma passagem; se usares um `se` numa passagem, não podes pôr o `senão` a que está ligado numa outra passagem. Se, por acaso, achares que precisas de fazer uma coisa destas, então repete a mesma condição na segunda passagem e usa uma condição `senão` em vez de um `se`.
+
+## Os Modificadores (Incluindo os Condicionais) Não Podem Ir Encaixados
+
+Não é possível encaixar diretamente modificadores no Chapbook. Ou seja:
 
 ```
-[if hasKey]
-You could [[open the door]]...
+[se temChave]
+Podias [[abrir a porta]]...
 
-[if hasKey && monsterDistance < 2]
-... and it might be your best chance for survival.
+[se distânciaDoMonstro < 2]
+... e talvez seja a melhor hipótese se quiseres continuar vivo.
 ```
-Let's take a more complicated example:
 
-* The player must have first found a certain secret door by looking.
-* Once found, the door can only be unlocked with a key they previously found.
-* Once unlocked, the door remains open.
-
-This might be written in the popular SugarCube story format as:
+Apenas iria mostrar, se `temChave` é falso e `distânciaDoMonstro` é 1, o seguinte:
 
 ```
-<<if $doorFound>>
-<<if $doorUnlocked>>
-The door stands open and unlocked, ready for you to [[enter it]].
+... e talvez seja a melhor hipótese se quiseres continuar vivo.
+```
+
+Isto é porque os modificadores apenas afetam o texto diretamente a seguir. Eles não afetam nem os modificadores que vêm antes nem os que vêm depois, nem qualquer outro texto. Nestes casos, deves escrever:
+
+```
+[se temChave]
+Podias [[abrir a porta]]...
+
+[se temChave && distânciaDoMonstro < 2]
+... e talvez seja a melhor hipótese se quiseres continuar vivo.
+```
+Vamos ver um exemplo mais complicado:
+
+* O jogador precisa de ter encontrado já uma certa porta secreta.
+* Uma vez encontrada, a porta pode apenas ser destrancada com uma chave, que foi encontrada antes.
+* Uma vez destrancada, a porta permanecerá aberta.
+
+Isto poderia ser escrito da seguinte maneira com o formato de história SugarCube:
+
+```
+<<if $portaEncontrada>>
+<<if $portaDestrancada>>
+A porta ergue-se aberta e destrancada, aguardando que te decidas a [[entrar]].
 <<else>>
-You've found a door here, <<if $hasKey>>ready to be [[unlocked]]<<else>>but you haven't found a key yet that will open it.
+Encontraste aqui uma porta, <<if $temChave>> pronta a ser [[destrancada]]<<else>>mas ainda não encontraste uma chave que a consiga abrir.
 <</if>>
 <<else>>
-There seems to be nothing of note here, but perhaps [[a search would turn up something]].
+Parece que não há nada de especial aqui, mas talvez [[uma busca possa revelar alguma coisa]].
 <</if>>
 ```
 
-(This example omits, for brevity's sake, the other passages where `$doorFound` and `$hasKey` would be set.)
+(Este exemplo omite, por uma questão de brevidade, as outras passagens onde `$portaEncontrada` e `$temChave` seriam definidas.)
 
-In Chapbook, you could instead use temporary variables to simplify some of the logic of the passage, and write:
+Com o Chapbook, poderias usar variáveis temporárias para simplificar parte da lógica da passagem e escrever:
 
 ```
-_doorOpen: doorFound && doorUnlocked
-_doorLocked: doorFound && !doorUnlocked
+_portaAberta: portaEncontrada && portaDestrancada
+_portaTrancada: portaEncontrada && !portaDestrancada
 --
-[if _doorOpen]
-The door stands open and unlocked, ready for you to [[enter it]].
+[se _portaAberta]
+A porta ergue-se aberta e destrancada, aguardando que te decidas a [[entrar]].
 
-[if _doorLocked]
-You've found a door here,
+[se _portaTrancada]
+Encontraste aqui uma porta,
 
-[if _doorLocked && hasKey; append]
-ready to be [[unlocked]].
+[se _portaTrancada && temChave; juntar]
+pronta a ser [[destrancada]].
 
-[if _doorLocked && !hasKey; append]
-but you haven't found a key yet that will open it.
+[se _portaTrancada && !temChave; juntar]
+mas ainda não encontraste uma chave que a consiga abrir.
 
-[if !doorFound]
-There seems to be nothing of note here, but perhaps [[a search would turn up something]].
+[if !portaEncontrada]
+Parece que não há nada de especial aqui, mas talvez [[uma busca possa revelar alguma coisa]].
 ```
 
-Remember that `doorFound`, `doorUnlocked`, and `hasKey` are set in other passages. And beware--you cannot use an `[else]` in front of `but you haven't found a key yet that will open it.` The `else` will display in all cases that the `[if]` does not, even when `doorFound` is `false`.
+Lembra-te que `portaEncontrada`, `portaDestrancada` e `temChave` são definidas em outras passagens. E atenção — não podes usar um `[senão]` em frente do `mas ainda não encontraste uma chave que a consiga abrir.` O `senão` irá mostrar a sua informação sempre que o `[se]` não correr, mesmo quando `portaEncontrada` seja `falso`.
 
-An alternate method is to move parts of your logic to a separate passage and [embed it][embed-passage]:
+Um método alternativo é mover partes da tua lógica para uma passagem separada e [embuti-la][embed-passage]:
 
 ```
-_doorOpen: doorFound && doorUnlocked
-_doorLocked: doorFound && !doorUnlocked
+_portaAberta: portaEncontrada && portaDestrancada
+_portaTrancada: portaEncontrada && !portaDestrancada
 --
-[if doorFound && doorUnlocked]
-The door stands open and unlocked, ready for you to [[enter it]].
+[if portaEncontrada && portaDestrancada]
+A porta ergue-se aberta e destrancada, aguardando que te decidas a [[entrar]].
 
-[if doorFound && !doorUnlocked]
-{embed passage: 'locked door logic'}
+[if portaEncontrada && !portaDestrancada]
+{embutir passagem: 'lógica porta fechada'}
 
-[if !doorFound]
-There seems to be nothing of note here, but perhaps [[a search would turn up something]].
+[if !portaEncontrada]
+Parece que não há nada de especial aqui, mas talvez [[uma busca possa revelar alguma coisa]].
 ```
 
-Which approach is best to take depends on the situation. It's not a good idea to embed passages more than one level deep.
+Qual das abordagens é melhor depende inteiramente da situação. Mas lembra-te que não é uma boa ideia embutir várias camadas de passagens, umas nas outras, como se fossem matrioscas. Um nível de profundidade é suficiente.
 
-## Disabling Conditions For Testing
+## Desativar as Condições para Efeitos de Teste
 
-It can be useful to override a conditional modifier so that it always or never displays, regardless of circumstances. To do this, change `[if]` to either `[ifalways]` or `[ifnever]`.
+Pode ser útil controlar um dado modificador condicional para que ou corra sempre ou não corra nunca, independentemente das circunstâncias. Para que isto aconteça, muda `[se]` para `[sesempre]` ou `[senunca]`.
 
 ```
-[ifnever 1 + 1 === 2]
-This would have been shown with a regular [if], but isn't.
+[senunca 1 + 1 === 2]
+Isto apareceria com um [se] normal, mas assim não vai aparecer.
 ```
 
-This affects any `[else]` modifiers that follow it.
+Isto afeta quaisquer modificadores `[senão]` que se sigam.
 
-[^1]: Truthfully, it is also possible to write `[if stringVariable]` or `[if 2 + 2]`. In these cases, any non-empty string (e.g. not `''`) is treated as true, and any non-zero number is treated as true. It's best to be explicit, however, and write `[if stringVariable !== '']` and `[if 2 + 2 !== 0]`.
+[^1]: Para dizer a verdade, também é possível escrever `[se variávelString]` ou `[se 2 + 2]`. Nestes casos, qualquer _string_ que não esteja vazia (ex. não `''`) é tratada como verdadeira, e qualquer número que não seja zero é tratado como verdadeiro. No entanto, é sempre melhor ser explícito, e escrever `[se variávelString !== '']` e `[se 2 + 2 !== 0]`.
 [embed-passage]: ../text-and-links/embedding-passages.html

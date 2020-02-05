@@ -1,38 +1,40 @@
-# Displaying Variables
+# Apresentar o Valor das Variáveis
 
-Of course, setting variables isn't very useful by itself. They need to affect the course of a story somehow. The simplest way they can do this is simply being inserted into the story. You can display the contents of a variable using an insert.
+Claro que definir variáveis não é, por si só, uma coisa muito útil. Elas têm de alguma forma influir o curso da história. A forma mais fácil de as pôr a trabalhar é introduzi-las na história. Podes apresentar o conteúdo de uma variável usando um inserto.
 
-The passage source below:
+Se puseres o seguinte código numa passagem
 
 ```
-name: 'Chris'
+nome: 'Chris'
 --
-"Hi, {name}," your guide greets you.
+"Olá, {name}," o teu guia cumprimenta-te.
 ```
 
-Will display as: `"Hi, Chris," your guide greets you.` This example is a little silly, since you could just as easily write `Chris` where <code>`name`</code> is. But the advantage of storing it in a variable is that you could keep using <code>`name`</code> later in your story. You could also use this, for example, to allow the player to choose a gender (or lack thereof) and then use the correct pronouns throughout the story.
+ela irá apresentar o seguinte: `"Olá, Chris," o teu guia cumprimenta-te.` Este exemplo é um pouco tolo, porque poderias ter escrito `Chris` onde aparece <code>`nome`</code>. Mas a vantagem de o guardar numa variável é que podes tornar a usar <code>`nome`</code> mais tarde na história. Também podes usá-la, por exemplo, para permitir ao jogador escolher o seu género (ou a sua ausência) e então usar os pronomes corretos ao longo da história.
 
-Variable inserts do not allow any parameters, as introduced in [Link Inserts][link-inserts]; the name of the variable acts as the insert name.[^1]
+Os insertos com variáveis não permitem parâmetros, como se indicou em [Link Inserts][link-inserts]; o nome da variável atua como o nome do inserto.[^1]
 
-## You Cannot Put Expressions In An Insert
+## Não Podes Pôr Expressões Num Inserto
 
-The following will not display as you might expect:
+Isto poderá não funcionar como estarias à espera:
 
 ```
-cash: 3
+dinheiro: 3
 --
-"Sorry, but I decided that I want {cash + 2} dollars for it," the salesman replies.
+"Desculpa, mas afinal decidi que quero {dinheiro + 2} dólares por isso," respondeu o vendedor.
 ```
 
-Expressions like this are not allowed in variable inserts-- you may only enter the name of a variable. It's simple enough to accomplish this with a temporary variable:
+Expressões como esta não são permitidas em insertos de variáveis, apenas podes introduzir o nome da variável. Mas podes facilmente conseguir o que queres com uma variável temporária:
 
 ```
-cash: 3
-_unreasonablePrice: cash + 3
+dinheiro: 3
+_preçoAbsurdo: dinheiro + 3
 --
-"Sorry, but I decided that I want {_unreasonablePrice} for it," the salesman replies.
+"Desculpa, mas afinal decidi que quero {_preçoAbsurdo} dólares por isso," respondeu o vendedor.
 ```
 
-[^1]: You can always distinguish a variable insert from another type of insert by looking for spaces inside it. `{back link}` could never be a variable insert because `back link` contains spaces, and thus could never be the name of a variable.
+[^1]: Podes sempre distinguir um inserto de variável de outro tipo de inserto, se vires se tem espaços. `{ligar a}` nunca poderia ser um inserto de variável porque `ligar a` contém um espaço, logo nunca poderia ser o nome de uma variável.
+
+You can always distinguish a variable insert from another type of insert by looking for spaces inside it. `{back link}` could never be a variable insert because `back link` contains spaces, and thus could never be the name of a variable.
 
 [link-inserts]: ../text-and-links/link-inserts.html

@@ -1,52 +1,52 @@
-# Conditions and Variables
+# Condições e Variáveis
 
-You cannot use inserts or modifiers in the vars section of a passage, so you cannot write something like:
+Não podes usar insertos nem modificadores na secção de variáveis de uma passagem, portanto não podes escrever algo como:
 
 ```
-[if cousins > 10]
-largeFamily: true
+[se primos > 10]
+famíliaGrande: true
 --
-You sit back in your chair and consider everyone you'll need to invite to the reunion.
+Reclinas-te na cadeira e começas a pensar em todas as pessoas que terás de convidar para a reunião.
 ```
 
-Instead, there are two ways you can assign a variable a value based on a condition. First, you can assign a variable to the result of a comparison, either true or false:
+Em vez disso, tens duas maneiras de atribuir um valor a uma variável com base numa condição. Primeiro, podes atribuir a uma variável o resultado de uma comparação, verdadeiro ou falso:
 
 ```
-largeFamily: cousins > 10
+famíliaGrande: primos > 10
 --
-You sit back in your chair and consider everyone you'll need to invite to the reunion.
+Reclinas-te na cadeira e começas a pensar em todas as pessoas que terás de convidar para a reunião.
 ```
 
-This passage sets the variable `largeFamily` to either `true` or `false`, depending on what value the variable `cousins` has. However, you may want to set variables to other types of values besides booleans. To do this, add a condition to the assignment:
+Esta passagem atribui à variável `famíliaGrande` o valor de `verdadeiro`ou `falso`, dependendo do valor da variável `primos`. No entanto, podes querer atribuir às variáveis outros tipos de valor além de booleanas. Para isso, adiciona uma condição à declaração:
 
 ```
-transportation: 'car'
-transportation (kilometers > 1000): 'plane' 
+transporte: 'carro'
+transporte (quilómetros > 1000): 'avião'
 --
-You'll need to take a {transportation} to get there.
+Vais precisar de ir de {transporte} para chegar lá.
 ```
 
-This example demonstrates two new things about vars sections:
+Este exemplo mostra duas novas coisas sobre as seccções de variáveis:
 
-- You may change a variable more than once in a single vars section. Chapbook changes the variables in the order they are written, top to bottom.
-- If you write an expression inside parentheses before the colon (`:`) that tells Chapbook what value to set, that particular line will only take effect if the expression evaluates to `true`.
+- Podes mudar uma variável mais de uma vez na mesma secção de variáveis. O Chapbook muda as variáveis pela ordem por que estão escritas, de cima para baixo.
+- Se escreveres uma expressão entre parêntesis antes de dois pontos (`:`) isso diz ao Chapbook que valor deve atribuir; essa linha em particular só irá surtir efeito se a expressão for avaliada como `verdadeira`.
 
-So first `transportation` is set to `'car'`, and then, if `kilometers` is greater than `1000`, the value of `transportation` is immediately changed to `'plane'`. Chapbook runs through each variable assignment in sequence, doing nothing else in between, so the two assignments effectively work as one.
+Então, primeiro `transporte`é definido como `'carro'`, e depois, se `quilómetros`for maior do que `1000`, o valor de `transporte` é imediatamente alterado para `'avião'`. O Chapbook lê cada uma das declarações de variáveis em sequência, e nada mais, portanto as duas declarações funcionam, na realidade, como uma.
 
-Here's a more complex example showing how multiple assignments and conditions go hand in hand.
+Aqui vai um exemplo mais complexo que mostra como múltiplas declarações e condições casam muito bem:
 
 ```
-language: 'an unknown language'
-language (country === 'Brazil'): 'Portuguese' 
-language (country === 'China'): 'Mandarin' 
-language (country === 'Ethiopia'): 'Amharic'
-language (country === 'Russia'): 'Russian'
-language (country === 'Australia' || country === 'United States'): 'English'
+língua: 'uma língua desconhecida'
+língua (país === 'Guiné Bissau'): 'Português'
+língua (país === 'China'): 'Mandarim'
+língua (país === 'Etiópia'): 'Amárico'
+língua (país === 'Rússia'): 'Russo'
+língua (país === 'Austrália' || país === 'Inglaterra'): 'Inglês'
 --
-The official language of {country} is {language}.
+A língua oficial da {país} é o {língua}.
 ```
 
-Although Chapbook sets variables in the order you write them, often times it won't matter much, as you'll usually want to write conditions that are mutually exclusive of each other--that is, only one line ever takes effect.
+Embora o Chapbook defina as variáveis pela ordem de escrita, em muitos casos isso não será relevante, porque normalmente irás escrever condições que são mutuamente exclusivas — isto é, só uma das linhas irá efetivamente irá correr.
 
-[^1]: Truthfully, it is also possible to write `[if stringVariable]` or `[if 2 + 2]`. In these cases, any non-empty string (e.g. not `''`) is treated as true, and any non-zero number is treated as true. It's best to be explicit, however, and write `[if stringVariable !== '']` and `[if 2 + 2 !== 0]`.
+[^1]: Em boa verdade, também é possível escrever `[se stringVariable]` ou `[se 2 + 2]`. Nestes casos, qualquer string que não esteja vazia (p. ex. tudo menos `''`) será tratada como verdadeiro, e qualquer número outro que zero será tratado como verdadeiro. Por isso é melhor ser explícito, e escrever `[se stringVariable !== '']` e `[se 2 + 2 !==0]`.
 [embed-passage]: ../text-and-links/embedding-passages.html

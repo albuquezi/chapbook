@@ -29,4 +29,4 @@ A viagem no comboio intercidades oferece-te muito espaço de contemplação.
 As duas passagens irão mostrar o conteúdo da passagem "Faro" em baixo do seu texto.
 Além do nome da passagem, o inserto `embutir passage` não aceita mais nenhuns parâmetros.
 
-Lembra-te de que como qualquer outro inserto, o `{embutir passagem}` pode ser colocado em qualquer lugar no texto de uma passagem. Pode ser _sanduichado_ entre o texto num passagem, ou até usado várias vezes.
+Lembra-te de que como qualquer outro inserto, o `{embutir passagem}` pode ser colocado em qualquer lugar no texto de uma passagem. Pode ser _sanduichado_ entre o texto duma passagem, ou até usado várias vezes.

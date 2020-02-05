@@ -1,42 +1,39 @@
-# The Vars Section
+# A Secção de Variáveis (Vars)
 
-The primary way that Chapbook allows you to work with state is through _vars (short for variables) sections_. These sections always come at the beginning of a passage and are separated from normal text by two dashes (`--`).
+A forma principal que o Chapbook oferece para se trabalhar com o estado é através de _secções de vars (abreviatura de variáveis)_. Estas secções vêm sempre antes do começo de uma passagem e estão separadas do texto por dois hífenes (`--`).
 
-To carry forward the example from the previous section, here's how a desperately stereotypical dungeon crawl's first passage might look:
-
+Para continuar com o exemplo da secção anterior, aqui vem um exemplo mais do que batido do que poderia ser a primeira passagem de um jogo de exploração de masmorras:
 ```
-strength: 18
-dexterity: 7
-constitution: 14
-intelligence: 9
-wisdom: 8
-charisma: 11
+força: 18
+destreza: 7
+compleição: 14
+inteligência: 9
+sabedoria: 8
+carisma: 11
 --
-After a lusty evening in the village tavern, you set off down the trail to
-the nearest dungeon. It's a bright, sunny day, and you're happy to have a
-clear destination in mind.
+Depois de uma revigorante noite na estalagem da aldeia, pões-te a caminho da masmorra mais próxima. O dia está soalheiro, e tu sentes-te feliz por teres um destino bem definido na tua cabeça.
 ```
 
-When the player visits this passage, Chapbook will add six variables to the story's state: `strength`, `dexterity`, `constitution`, and so on, and sets them to the numbers listed.
+Quando o jogador visita esta passagem, o Chapbook irá adicionar seis variáveis ao estado da história: `força`, `destreza`, `compleição`, etc., e irá atribuir-lhes o valor numérico apresentado.
 
-Vars sections never display anything to the player; this is so that, for example, you can set a variable named `doomedToDieInFiveMinutes` and the player will be none the wiser unless you wish it.
+As secções de variáveis nunca mostram nada ao jogador; isto é assim, para permitir, por exemplo, que possas criar uma variável chamada `condenadoAMorrerEmCincoMinutos`, e o jogador nada saberá sobre o seu destino iminente, a não ser que o queiras avisar.
 
 {% hint style='info' %}
-If a passage is embedded in another using the `{embed passage}` modifier, its vars section will also take effect.
+Se uma passagem estiver embutida noutra através do modificador `{embutir passagem}`, a sua secção de variáveis também irá ser tida em conta.
 {% endhint %}
 
-You may only have one vars section in each passage, but then there's really only ever need for one. The name of state variables must follow a few rules, too. They must start with a letter (upper or lowercase), underscore (`_`), or dollar sign (`$`); after the first character can come any combination of the preceding kinds of characters as well as digits.[^1]
+Só podes ter uma secção de vars em cada passagem, mas também, na realidade, só se precisa de uma. O nome das variáveis de estado têm de seguir algumas regras também. Têm de começar com uma letra (maiúscula ou minúscula), com uma linha (`underscore em inglês`) (`_`), ou com o símbolo do dólar (`$`); depois do primeiro caráter pode vir qualquer combinação dos carateres atrás mencionados, bem como algarismos. [^1]
 
-Sadly, you can't use spaces in your variable names. Because of this, a common practice called _camel casing_ (because of the camel-like humps in the resulting word) glues phrases together using capital letters, like the `doomedToDieInFiveMinutes` example above. Another school of thought, _snake casing_, prefers to use underscores instead; e.g. `doomed_to_die_in_five_minutes`. Either's perfectly fine. Use whichever feels most comfortable to you.
+Infelizmente, não se podem usar espaços nos nomes das variáveis. Por esta razão, há uma prática comum chamada _camel casing (caixa-camelo)_ (por causa da aparência do conjunto de palavras, semelhante às bossas de um camelo) que cola as palavras umas às outras com letras maiúsculas, como o exemplo acima `condenadoAMorrerEmCincoMinutos`. Outra escola de pensamento, _snake casing (caixa-cobra)_, prefere usar linhas (_underscores_), p. ex.: `condenado_a_morrer_em_cinco_minutos`. Qualquer um deles está bem. Usa aquele que for mais cómodo para ti.
 
-Another common practice is to put an underscore in front of variable names when the value will only be used in the current passage. This practice is just a hint to yourself; Chapbook does not enforce this usage.[^2]
+Outra prática comum é começar o nome das variáveis com uma linha (_underscore_), quando o valor for para ser usado apenas na presente passagem. Esta prática é apenas uma dica; o Chapbook não impõe esta prática.[^2]
 
 {% hint style='info' %}
-A variable name can contain periods (`.`), but they carry a special meaning. Until you've read [Objects and Lookup Values](objects-and-lookups.md), it's best to leave them out of variable names.
+O nome de uma variável pode conter pontos (`.`), mas eles têm um significado especial. Enquanto não tiveres lido a secção [Objetos e Valores de Busca](objects-and-lookups.md), é melhor não os usares nos nomes de variáveis.
 {% endhint %}
 
 {% hint style='danger' %}
-Chapbook and web browsers reserve certain variable names for their own use. If you try to use a variable whose name overlaps them, unpredictable things may happen, so you should avoid them. Chapbook reserves the following names:
+O Chapbook e os navegadores _web_ reservam certos nomes de variáveis para o seu próprio uso. Se tentares usar uma variável cujo nome coincida com esses dos navegadores, podem acontecer coisas imprevisíveis, por isso é melhor evitar esses nomes. O Chapbook reserva para si os seguintes nomes ingleses (o que significa que as suas traduções para português podem ser usadas à vontade):
 
 - `browser`
 - `engine`
@@ -45,130 +42,129 @@ Chapbook and web browsers reserve certain variable names for their own use. If y
 - `random`
 - `story`
 
-The browser reserves quite a few (over two hundred at time of writing), but you're unlikely to want to use most of them, like `ondeviceorientation`. See [the exhaustive list](https://developer.mozilla.org/en-US/docs/Web/API/Window#Properties) for more details.
+O navegador _web_ reserva para si também bastantes nomes (cerca de duzentos à data de escrita deste guia), mas é muito pouco provável que querias usar algum deles, pois são coisas como `ondeviceorientation`. Confere [aqui a lista exaustiva](https://developer.mozilla.org/en-US/docs/Web/API/Window#Properties) para mais pormenores.
 {% endhint %}
 
-The only time variable names are shown to a player is if an error occurs in your story while they are playing it, so choose names that are easy to remember and descriptive. There's no need for a `clueF` variable when you can have `sawFootprintsInVault` instead.
+O único momento em que os nomes das variáveis são apresentados ao jogador é se ocorrer um erro na tua história, enquanto a estiverem a jogar, por isso escolhe nomes que sejam fáceis de recordar e descritivos. Não há necessidade de usar uma variável chamada `pistaF` se podes escrever `viuPegadasNaCaixaForte`.
 
-## Variables Have Types
+## Há Tipos de Variáveis
 
-The example at the start of this section assigned numbers to variables, but variables can hold other types of values.
+O exemplo no início desta secção atribuía números a variáveis, mas as variáveis podem guardar outros tipos de valores.
 
-_Strings_ are collections of letters, numbers, spaces, and other symbols. Strings are surrounded by either apostrophes (`'`) or quotation marks (`"`) so that's it clear where they begin and end, in the same way that is used for textual parameter values. You can use either punctuation mark to mark off a string's beginning and end, but just like Markdown italics and bold, you have to be consistent with each usage. If you need to use a delimiter character inside a string, type a backslash (`\`) in front of it, e.g. `'Don\'t, just don\'t.'`.
+As _strings_ são coleções de letras, números, espaços e outros símbolos. As _strings_ vão entre plicas (`'`) ou aspas (`"`) para que seja claro onde começam e acabam, de modo semelhante aos valores dos parâmetros textuais. Podes usar qualquer um destes sinais de pontuação para marcar o início e o fim, mas como nos trechos Markdown em negrito ou itálico, tens de ser consistente em cada uso. Se precisares de usar uma caráter delimitador dentro de uma _string_, usa uma barra invertida (`\`) antes do caráter, p. ex. `'Pr\'a, mas pr\'a quê?'`
 
-Strings are great for storing names for things. For example, if you want to allow the player to set the name of the main character at the start of a story, a string would be the best type of variable to use. You can also use strings to store fuzzy kinds of values. You could record the state of a relationship between two characters as `'friendly'`, `'neutral'`, `'wary'`, or `'hostile'`.
+As _strings_ são ótimas para guardar nomes de coisas. Por exemplo, se quiseres que o jogador defina o nome do protagonista no início da história, uma _string_ seria a melhor variável a usar. Também podes usar _strings_ para guardar valores mais difusos. Podes usá-las para registar o estado de uma relação entre duas personagens como `'amigável'`, `'neutral'`, `'receoso'`, ou `'hostil'`.
 
-_Booleans_ simply record a true or false value. Like numbers, you don't need to put anything around a boolean to signal what it is; just type `true` or `false`. Booleans are good for recording whether something has occurred in a story; for example, whether the main character has found a clue.
+As _booleanas_ guardam o valor de verdadeiro ou falso. Tal como os números, não precisas de usar nenhuns sinais de pontuação para as identificares; basta escreveres `true` (verdadeiro) ou `false` (falso). As booleanas são boas para registar se uma certa coisa aconteceu na história; por exemplo, se o protagonista encontrou uma pista.
 
-There are other, more complex types of values that will be discussed later, but numbers, strings, and booleans will get you quite far. To review, here's an example of a passage whose vars section contains all three types of variables.
+Há outros tipos de valores mais complexos que serão discutidos mais tarde, mas números, _strings_ e booleanas já te poderão levar bastante longe. Para recapitular, aqui vai um exemplo de uma passagem cuja secção de vars contém todos os três tipos de variáveis.
 
 ```
-dollarsInPocket: 12
-openedPortalToAlternateDimension: true
-name: 'James'
+eurosNoBolso: 12
+abertoPortalParaOutraDimensão: true
+nome: 'Tiago'
 --
-You've nearly reached the end of your adventure.
+Estás quase a chegar ao fim da tua aventura.
 ```
 
-## Variables Can Be Calculated
+## As Variávies Podem Ser Calculadas
 
-You don't have to set variables to plain values--meaning, a vars section could look like this when the main character finds a dollar lying on the ground:
+Não precisas de dar às variáveis valores simples, ou seja, uma secção de variáveis pode ter este aspeto quando o protagonista encontrar um euro no chão:
+```
+eurosNoBolso: eurosNoBolso + 1
+```
+Esta secção de variáveis aumenta o valor de `eurosNoBolso` em 1, usando uma _expressão_. Podes pensar numa expressão como uma fórmula ou um cálculo. É qualquer coisa que pode ser transformado num único valor através de um processo de _avaliação_. Por exemplo, podes usar as operações matemáticas básicas — adição, subtração, multiplicação e divisão — com valores numéricos. Podes também usar a adição para juntar duas _strings_ — por exemplo, `nomeCompleto: primeiro + ' ' + último` — mas não podes usar mais nenhum operador matemático com _strings_.
+
+Também podes comparar dois números ou duas _strings_, cujo resultado será uma booleana.
+
+* `===`, "igual a"  
+Verdadeiro se ambos os lados forem o mesmo número ou _string_. As _strings_ têm de ser exatamente as mesmas: `'LEBRE'` não é igual a `'lebre'`, nem `'lebre '` (nota o espaço no final) é igual a `'lebre'`.
+
+* `!==`, "não igual a"  
+Verdadeiro se ambos os lados não forem iguais.
+
+* `>`, "maior que," e `>=`, "maior que ou igual a"  
+
+Verdadeiro se o lado esquerdo for maior do que o lado direito. Se usares `>=`, então também será verdadeiro quando os dois lados forem iguais.
+
+* `<`, "menor que," e `<=`, "menor que ou igual a"  
+Verdadeiro se o lado esquerdo for mais pequeno que o lado direito. Se usares `<=`, então também será verdadeiro quando os dois lados forem iguais.
+
+De uma forma geral, uma _string_ é considerada maior do que outra se vier depois na ordem alfabética. Por exemplo, `'b' > 'a'`. Mas estas comparações podem ser confusas e pouco intuitivas. Será que `'+'` é maior que `'&'`? Até é, mas como poderias sabê-lo só de olhar? Talvez te surpreenda saber que `'A' < 'a'`[^3] Portanto, o melhor é não usar operadores como "maior que" ou "menor que" com _strings_.
+
+A seguir, temos um exemplo de uma secção de variáveis que demonstra como estes operadores podem ser usados.  
 
 ```
-dollarsInPocket: dollarsInPocket + 1
-```
-
-This vars section increases the `dollarsInPocket` variable by 1 using an _expression_. You can think of an expression as a formula or calculation. It's anything that can be transformed into a single value via the _evaluation_ process. For example, you can use the basic mathematical operations--addition, subtraction, multiplication, and division--with numeric variables. You can also use addition to connect two strings together--for instance, `fullName: first + ' ' + last`--but you cannot use any other mathematical operators with strings.
-
-You can also compare two numbers or strings, yielding a boolean.
-
-* `===`, "equal to"  
-True if both sides are the same number or string. Strings have to be exactly the same: `'DOE'` does not equal `'doe'`, nor does `'doe '` (note the trailing space) equal `'doe'`.
-
-* `!==`, "not equal to"  
-True if both sides aren't the same.
-
-* `>`, "greater than," and `>=`, "greater than or equal to"  
-True if the left side is larger than the right side. If you use `>=`, then this is also true when the two sides are equal.
-
-* `<`, "less than," and `<=`, "less than or equal to"  
-True if the left side is smaller than the right side. If you use `<=`, then this is also true when the two sides are equal.
-
-Generally speaking, one string is considered larger than another if it would come after it in alphabetical order. For example, `'b' > 'a'`. But these comparisons can be confusing and unintuitive. Is `'+'` greater than `'&'`? It in fact is, but would you know at a glance? It might surprise you to learn than `'A' < 'a'`.[^3] So it is usually best not to use greater-than or less-than operators with strings.
-
-Below is an example vars section that demonstrates how these can be used.
-
-```
-correct: guess === 3
-nighttime: hour >= 18
+correto: resposta === 3
+noite: hora >= 18
 --
-The quizmaster leans back in his chair and grins.
+O apresentador do concurso encosta-se na sua cadeira e sorri.
 ```
 
-Boolean variables have their own separate set of operators.
+As variáveis booleanas têm o seu próprio conjunto de operadores.
 
-* `!`, "not"  
-Changes a true value to false and vice versa.
+* `!`, "não"  
+Muda um valor verdadeiro para falso e vice-versa.
 
-* `&&`, "and"  
-True only if both sides are true.
+* `&&`, "e"  
+Verdadeiro apenas se os dois lados forem verdadeiros.
 
-* <code>&#124;&#124;</code>, "or"  
-True if one or both sides are true.
+* <code>&#124;&#124;</code>, "ou"  
+Verdadeiro se um dos ou ambos os lados forem verdadeiros.
 
 {% hint style='danger' %}
-You cannot use inserts or modifiers in vars sections. They only work inside the displayed text of your passage.
+Não podes usar insertos nem modificadores na secção de variáveis. Eles apenas funcionam dentro do texto da passagem que será apresentado.
 {% endhint %}
 
-## Clarifying Expressions With Parentheses
+## Clarificar Expressões Com Parêntesis
 
-Often expressions are complex. For example, in a simple role-playing scenario, you might decide a character armed with a hammer does `strength * 2 + 4` damage. But if `strength` is 12, does that mean that the expression evaluates to 28 (multiply 12 by 2, then add 4) or 72 (add 2 to 4, then multiply by 12)?
+Muitas vezes as expressões são complexas. Por exemplo, num simples cenário de RPG, podes decidir que uma personagem armada com um martelo inflige `força * 2 + 4` de dano. Mas se a `força` for 12, isso significa que o resultado da expressão é 28 (multiplica 12 por 2, e depois adiciona 4) ou 72 (adiciona 2 a 4, e depois multiplica por 12)?
 
-You may remember from algebra class that mathematical operators have rules relating to precedence; specifically, multiplication occurs before addition. But you probably have never been taught what the rules are for boolean logic--e.g. what does `!true || false` evaluate to?[^4]--and even if you do know the rules, it can be tricky to correctly apply them in a complex expression.
+Talvez te lembres das aulas de álgebra que os operadores matemáticos têm regras de precedência; concretamente, a multiplicação ocorre antes da adição. Mas provavelmente nunca te foram ensinadas as regras da lógica booleana, isto é, qual é o resultado da avaliação `!true || false`?[^4]; e mesmo que saibas as regras, pode ser complicado aplicá-las corretamente numa expressão complexa.
 
-In these situations, you can use parentheses to help make an expression easy to follow, or even to override the normal order of operations. `(strength * 2) + 4` makes it clear how the expression will be evaluated--and if indeed you wanted the answer above to be 72, you can specify that by writing `strength * (2 + 4)`.
+Nestas situações, podes usar parêntesis para tornar a expressão mais fácil de seguir, ou até alterar a ordem normal das operações. `(força * 2) + 4` permite ver logo como a expressão será avaliada; e se afinal quisesses que a resposta acima fosse 72, podias especificá-la, escrevendo `força * (2 + 4)`.
 
-## Evaluation Only Happens Once
+## A Avaliação Só Ocorre Uma Vez
 
-An important thing to remember about setting a variable to an expression is that the evaluation only happens once, when you set the variable. Imagine this scenario:
+Uma coisa importante a lembrar ao se atribuir o valor de uma expressão a uma variável é que a avaliação ocorre apenas uma vez, quando defines a variável. Imagina o seguinte cenário:
 
-1. In a passage, you set the variable `teethChattering` to `temperature < 0`.
-2. In a later passage, the protagonist moves inside and sets `temperature: temperature + 20`.
+1. Numa passagem, dás à variável `dentesABater` o valor `temperatura < 0`.
+2. Numa passagem mais à frente, o protagonista entra num sítio, e o valor da temperatura é alterado: `temperatura: temperatura + 20`.
 
-The variables are now inconsistent: `teethChattering` is true but `temperature` is above 0. The best way to avoid this problem is to avoid making a variable completely derived from another. You don't need a separate variable named `teethChattering` if all it does is reflect whether `temperature` is greater than 0. A better use would be setting `hasACold: temperature < 0 && !wearingJacket`, to reflect that the protagonist caught a cold by being outside without a jacket. They may subsequently go inside or put on a jacket, but obviously neither change will affect the fact that the protagonist `hasACold`.
+As variáveis são agora inconsistentes: `dentesABater` é verdadeiro mas a `temperatura` está acima de 0. A melhor forma de evitar este problema é não criar uma variável derivada de outra. Não precisas de uma variável separada chamada `dentesABater` se tudo o que faz é refletir se a `temperatura` é maior que 0. Uma forma melhor seria definir: `estaConstipado: temperatura < 0 && !casacoVestido`, para refletir que o protagonista apanhar uma constipação porque estava na rua sem casaco. Ele pode depois entrar em casa ou vestir um casaco, mas é óbvio que nenhum desses atos não irá nem alterar nem afetar o facto de que o protagonista `estaConstipado`.
 
-## Expressions Can Be Used in Inserts
+## Expressões Podem Ser Usadas em Insertos
 
-An expression can be used in place of a value in an insert. For example, the passage below:
+Uma expressão pode ser usada em vez de um valor num inserto. Por exemplo, a seguinte passagem:
 
 ```
-target: 'another passage'
+alvo: 'outra passagem'
 --
-{embed passage: target}
+{embutir passagem: alvo}
 ```
 
-Will display the contents of the passage named 'another passage'. Remember that this usage differs from placing a variable name in quotation marks, which Chapbook treats as a string. That is, this passage:
+irá apresentar o conteúdo da passagem chamada 'outra passagem'. Lembra-te de que esta utilização é distinta da de se pôr o nome de uma variável entre aspas, que o Chapbook trata como uma _string_. Dessa forma, esta passagem:
 
 ```
-target: 'another passage'
+alvo: 'outra passagem'
 --
-{embed passage: 'target'}
+{embed passage: 'alvo'}
 ```
 
-Shows the contents of the passage named 'target' instead. This can be confusing, of course. The simplest rule to keep in mind is that quotation marks, either single or double, always go around strings. If you don't see quotation marks around something, it will be evaluated.
+irá mostrar o conteúdo da passagem chamada 'target'. Por isso, presta atenção, porque pode ser confuso. A regra mais importante a reter é que as aspas, ou as plicas, marcam sempre as _strings_. Se algo não estiver entre aspas, então ele será avaliado.
 
-As the heading advertises, inserts can use entire expressions, not just variables, as values. For instance:
+Como se diz no título, os insertos podem usar expressões, não apenas variáveis, como valores. Por exemplo:
 
 ```
-petType: 'cat'
-activity: 'Walk'
+tipoDeBicho: 'gato'
+atividade: 'Anda'
 --
-{embed passage: petType + activity}
+{embutir passagem: tipoDeBicho + atividade}
 ```
 
-Will display the contents of the passage 'catWalk'.
+irá apresentar o conteúdo da passagem  'gatoAnda'.
 
-[^1]: You can use non-Latin characters in variable names, such as `sabiduría` or `мудрость`, but bear in mind that older web browsers that do not fully support the Unicode standard--in practice, old versions of Internet Explorer that have miniscule usage rates nowadays--may be deeply confused by them.
-[^2]: The SugarCube story format popularized this practice, and in fact does discard variables whose name starts with an underscore after the player navigates to another passage. 
-[^3]: The final authority on ordering characters in a string is the Unicode standard. Characters are compared by their Unicode code points; a higher numeric code point means that a character is greater than another.
-[^4]: In case you're curious, `!true || false` evaluates to false. The not operator takes precedent over the or.
+[^1]: Podes usar outros carateres que não sejam do alfabeto latino, como `órgão` or `мудрость`, mas lembra-te que os navegadores _web_ mais velhos que não suportam a norma Unicode — na prática, versões antigas do Internet Explorer que têm uma minúscula taxa de utilização hoje em dia — podem ficar profundamente confundidos com a sua presença.
+[^2]: O formato de história SugarCube popularizou esta prática, e de facto descarta-se das variáveis cujo nome começar com uma linha (_underscore_) depois de o jogador passar para uma outra passagem.
+[^3]: A autoridade derradeira sobre a ordenação dos carateres numa dada _string_ pertence à norma Unicode. Os carateres são comparados com base no seu código Unicode; um valor numérico de código mais elevado ditará que um certo caráter é maior do que outro.
+[^4]: Caso tenhas curiosidade, `!verdadeiro || falso` é avaliado como falso. O operador _não_ tem precedência sobre o _ou_.
