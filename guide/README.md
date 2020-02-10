@@ -71,37 +71,29 @@ Podemos dizer que há um excesso de oferta quando se trata de escolher um format
     o estado a qualquer momento para poderes depurar, num instante, uma parte específica da tua história.
 
 -   O Chapbook foi concebido para poder ser usado numa variedade de aparelhos,
-    especialmente telemóveis e tablets. Utiliza um "design" responsivo para adequar
+    especialmente telemóveis e tablets. Utiliza um _design_ responsivo para adequar
     a disposição da página e, assim, ser legível em qualquer tipo de aparelho sem
     ser necessário fazer "zoom" ou andar a deslocar a página para cima e para baixo.
     Também é leve — neste momento contém 120K de código, que demora menos de um
     segundo a carregar numa rede de telemóvel.
 
--   O aspeto visual do Chapbook pode ser personalizada sem conhecimento de HTML ou CSS,
-    e o Chapbook tem integradas ferramentas que te permitem pré-vizualizar as
+-   O aspeto visual do Chapbook pode ser personalizada sem conhecimento de HTML ou CSS, e o Chapbook tem integradas ferramentas que te permitem pré-visualizar as
     alterações à tua história imediatamente, o que significa que podes criar o
     aspeto visual que desejas sem teres de aprender a usar as ferramentas de
     desenvolvimento do navegador.
 
 ## Razões para não usar o Chapbook
 
--   Chapbook is young. This means that resources apart from this guide are
-    scarce compared to the many tutorials you'll find related to the venerable
-    formats SugarCube and Harlowe. And there will be fewer people to turn to if
-    you have a question or encounter a problem.
+-   O Chapbook é jovem. Isto significa que, além deste guia, são escassos os recursos disponíveis quando comparado com os muitos tutoriais que poderás encontrar sobre os veneráveis formatos Harlowe e SugarCube. E haverá menos pessoas a quem poderás recorrer se tiveres perguntas ou encontrares algum problema.
 
--   You've invested significant time already in learning another story format.
-    There's nothing that Chapbook can do that other formats can't. It may be
-    easier to write with, depending on your point of view, but if you've already
-    spent the time to learn how to write for another story format, it may not be
-    worth the time investment.
+-   Já investiste bastante tempo a aprender outro formato de história. Não há nada que o Chapbook faça que os outros formatos não possam fazer. Pode ser mais fácil escrever com o Chapbook, dependendo do teu ponto de vista, mas se já dedicaste tempo a aprender a escrever para outro formato de história, pode não valer a pena o investimento de tempo.
 
-## An Aside on Names
+## Um Aparte sobre Nomes
 
-There's been some debate as to whether Twine produces games or merely stories: the truth is, with Twine you can make games, you can make interactive stories, and you can also make things that nobody can quite pin down. Keeping in the spirit of vexing formalists who prefer clear boundaries, this guide calls the things you'll create with Chapbook _stories_ and the people who you share them with _players_, but you shouldn't infer anything from this usage. Please make strange things with Twine and Chapbook.
+Tem havido alguma discussão sobre se o Twine cria jogos ou apenas histórias: a verdade é que, com o Twine podes fazer jogos, podes fazer histórias interativas, e também podes fazer coisas que ninguém sabe bem o que são. No espírito de vexar os formalistas que preferem fronteiras nítidas, este guia chamará às coisas que irás criar com o Chapbook _histórias_ e às pessoas com quem as irás partilhar _jogadores_, mas não deves inferir nada desta opção. Está à vontade para fazeres coisas estranhas com o Twine e com o Chapbook.
 
-[^1]: Chapbook, sadly, cannot be used with Twine 1.
-[^2]: If you have programming experience, this idea may immediately cause some alarm--how can you possibly write anything serious without this functionality? [Conditional Display](state/conditional-display.md) discusses this subject, but it may be a bit hard to follow if you skip ahead immediately.
+[^1]: O Chapbook, infelizmente, não pode ser usado com o Twine 1.
+[^2]: Se tiveres alguma experiência de programação, esta ideia pode imediatamente causar algum alarme — como é possível escrever alguma coisa séria sem esta funcionalidade? [A secção Apresentação Condicional](state/conditional-display.md) fala sobre este assunto, mas pode ser difícil de acompanhar se saltares já para lá.
 
 [mit-license]: https://en.wikipedia.org/wiki/MIT_License
 

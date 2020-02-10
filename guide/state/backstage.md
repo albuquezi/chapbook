@@ -1,25 +1,26 @@
-# State Backstage
+# Bastidores do Estado
 
-State can be very slippery to work with, as it's not normally directly visible in your story--you can only infer from its side effects. Chapbook provides tools to track and even change state as you test your story.
+Trabalhar com o Estado pode ser uma coisa complicada, pois, por norma, ele não está visível na tua história — apenas podes inferir a partir dos seus efeitos secundários. O Chapbook dá-te ferramentas para acompanhar e até mudar o estado à medida que testas a tua história.
 
-## The State Tab
+## O Separador de Estado
 
-Under the State tab, you'll find a Variables heading. This shows the current state of your story as you play. You can also select a value on the right side of the variables table and enter a new one--press the Return or Enter key when you're done to set the variable. You may only enter values in the variables table, not expressions.
+No separador de Estado, tens uma entrada para as Variáveis. Isto mostra o estado atual da tua história à medida que vais jogando. Podes também escolher um dos valores do lado direito da tabela das variáveis e introduzir um novo — carrega na tecla Return ou Enter depois de teres definido a variável. Podes apenas introduzir valores na tabela das variáveis, expressões não.
 
-If the Show Defaults checkbox is ticked, Chapbook will show various built-in variables--mainly related to Chapbook's configuration. See [Customization][customization] for more details.
+Se a caixa de verificação "Mostrar Valores por Defeito" estiver selecionada, o Chapbook irá mostrar várias variáveis integradas — principalmente aquelas relacionadas com a configuração do Chapbook. Ver [Personalização][customization] para mais informações.
 
-## State Snaphots
+## Imagens (Snapshot) do Estado
 
-Beneath the variables table is the Snapshots heading. Snapshots allow you to quickly save and restore the state of your story at any point. For example, if you'd like to skip the prologue or test a specific scene, play through your story as usual. When you've reached the point you'd like to skip to, use the Add Snapshot button. After giving your snapshot a name, it will appear under the Snapshots heading as a button. Using this button will immediately set the state of your story, including the passage you were viewing, to what it was.
+Por baixo da tabela das variáveis está a secção das Imagens. As imagens permitem-te rapidamente gravar e repor o estado da tua história em qualquer momento. Por exemplo, se quiseres saltar o prólogo ou testar uma cena específica, joga a tua história normalmente. Quando tiveres chegado ao ponto até onde queres saltar, usa o botão Adicionar Imagem. Depois de dares uma nome à tua imagem, ela irá aparecer na secção das Imagens como um botão. Este botão irá imediatamente redefinir o estado da tua história, incluindo a passagem que estás a ver, para o estado gravado.  
 
-Use the &times; button at the end of a snapshot button to remove it. Snapshots are saved to your web browser only.
+
+Usa o botão &times; depois do botão das imagens para eliminá-la. As imagens ficam apenas gravadas no teu navegador.
 
 {% hint style='working' %}
-Exporting snapshots for use by other people working on your story may come in a future version of Chapbook.
+Exportar imagens para que possam ser usadas por outras pessoas a trabalhar na tua história pode aparecer numa futura versão do Chapbook.
 {% endhint %}
 
-## State in History
+## Estado no Histórico
 
-The History tab also shows changes to state as you navigate through a story. If a passage changes a variable, you'll see a separate row in the history table showing that change. This is informational only--you cannot change variables from the History tab.
+O separador do Histórico também mostra alterações ao estado à medida que navegas por uma história. Se uma passagem mudar a variável, irás ver uma linha separada na tabela do histórico, ilustrando essa mudança. Isto é apenas informativo — não podes mudar variáveis a partir do separador do Histórico.
 
 [customization]: ../customization/index.md

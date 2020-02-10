@@ -1,4 +1,4 @@
-# Objects and Lookup Variables
+# Objetos e Variáveis Lookup (de Consulta)
 
 In addition to variables you create, Chapbook also maintains a number of built-in variables called _lookups_. Unlike regular variables, lookups cannot be changed by you. Instead, they correspond to properties in the environment--the current date and time when the player is interacting with your story, for example, or even the story itself.
 
