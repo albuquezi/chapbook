@@ -1,127 +1,126 @@
-# Audio
+# Áudio
 
-Chapbook supports two types of audio: _ambient sound_ and _sound effects_. Ambient sounds are long-running audio, such as music or background noise, that automatically loop when playback completes. Sound effects are one-off sounds, like the sound of a door opening or an explosion.
+O Chapbook suporta dois tipos de áudio: _som ambiente_ e _efeitos sonoros_. O som ambiente é um ficheiro de áudio que toca por um longo período de tempo, como uma música ou um ruído de fundo, que automaticamente recomeça quando chega ao fim. Os efeitos sonoros são sons individuais, como o ranger de uma porta a abrir ou uma explosão.
 
-There are two other differences between sound effects and ambient audio:
+Há duas outras diferenças entre efeitos sonoros e som ambiente:
+- Só pode haver um som ambiente a tocar de cada vez em circunstâncias normais.
+- Os efeitos sonoros são pré-carregados quando a tua história começa. Isto é para que no momento em que que precises de um efeito na história, haja o mínimo possível de atraso antes de começar a tocar. No entanto, isto significa que deves tomar cuidado com o tamanho dos ficheiros dos efeitos sonoros que usas. O processo de pré-carregamento ocorre em segundo plano enquanto os jogadores interagem com a tua história, portanto ficheiros de som maiores não irão atrasar o início da tua história. Mas de qualquer forma é um desperdício ter de carregar ficheiros grandes.
 
-- There can only be one ambient sound playing at a time under normal circumstances.
-- Sound effects are preloaded when your story begins. This is so that when you ask for an effect to be played in your story, there will be as little delay as possible before it begins playback. However, this means that you should be careful about the file size of the sound effects you use. The preloading process takes place in the background as players interact with your story, so large sound effects will not delay the start of your story. But it's still wasteful to load large files.
+Também deves certificar-te que todos os teus sons estão em formato MP3. Há outros tipos de formatos áudio, como o Ogg Theora ou WAV, mas a compatibilidade dos navegadores com estes formatos varia muito. O MP3 é um formato universal. Há muitas aplicações, incluindo a aplicação de código-fonte aberto [Audacity], que te pode converter ficheiros áudio para o formato MP3.
 
-You should also make sure that all your sounds are in MP3 format. There are other types of audio formats, such as Ogg Theora or WAV, but browser support varies for each of these. MP3 is as universal a format as possible. There are many applications, including the open-source [Audacity], that can convert audio files into MP3 format for you.
+## Efeitos Sonoros
 
-## Sound Effects
-
-Before playing a sound effect, you must first define it in your story state. Below is an example of how you would define a sound effect:
+Antes de tocares um efeito sonoro, tens de primeiro defini-lo no estado da tua história. Em baixo, tens um exemplo de como poderias definir um efeito sonoro:
 
 ```
-sound.effect.explosion.url: 'boom.mp3'
-sound.effect.explosion.description: 'a large explosion'
+som.efeito.explosão.url: 'bum.mp3'
+som.efeito.explosão.descrição: 'uma grande explosão'
 --
-The timer reads 0:00...
+O temporizador marca 0:00...
 ```
 
-The `explosion` keyword defines the name of the ambient sound, which you'll use later. The `url` property defines the address to load the sound from, and the `description` provides a textual description of the contents of the sound. This is so that players who have difficulty hearing, or who have muted your story, can receive an alternate version of the sound.
+O termo `explosão` define o nome do som ambiente, que iremos usar mais tarde. A propriedade `url` define o endereço de onde carregar o som, e a `descrição` providencia a descrição textual do conteúdo do som. Isto é para que os jogadores com problemas de audição, ou que estejam a jogar sem som, possam receber uma versão alternativa do som.
 
-Once you've defined your sound effect, you can play it in a passage using the `{sound effect}` insert.
+Uma vez definido o efeito sonoro, podes pô-lo a tocar numa passagem usando o inserto `{efeito sonoro}`.
 
 ```
-sound.effect.explosion.url: 'boom.mp3'
-sound.effect.explosion.description: 'a large explosion'
+som.efeito.explosão.url: 'bum.mp3'
+som.efeito.explosão.descrição: 'uma grande explosão'
 --
-The timer reads 0:00...
+O temporizador marca 0:00...
 
-{sound effect: 'explosion'}
+{efeito sonoro: 'explosão'}
 ```
 
-The exact place you put the insert matters. If a player has disabled sound, or is unable to hear your sound, they will see the text of the `description` property instead where you enter the insert.
+O local exato onde pões o inserto é importante. Se um jogador tiver desligado o som ou não conseguir ouvi-lo, ele, então, irá ver o texto da propriedade `descrição` no local onde puseste o inserto.
 
-If you insert multiple different sound effects in a single passage, they will play simultaneously. If you insert a sound effect in another passage the player reaches while the effect is stil playing, the second insert will have no effect.
+Se inserires vários efeitos sonoros diferentes numa mesma passagem, eles irão ser tocados simultaneamente. Se tiveres um efeito sonoro numa outra passagem a que o jogador chega enquanto um som ainda está a tocar, esse segundo inserto não surtirá efeito.
 
-If you need to play a sound effect repeatedly, define it multiple times. You can assign the entire object to save time. For example:
+Se precisares de pôr um efeito sonoro a tocar repetidamente, defini-o múltiplas vezes. Podes atribuir todo o objeto para poupar tempo. Por exemplo:
 
 ```
-sound.effect.explosion.url: 'boom.mp3'
-sound.effect.explosion.description: 'a large explosion'
-sound.effect.explosion2: sound.effect.explosion
+som.efeito.explosão.url: 'bum.mp3'
+som.efeito.explosão.descrição: 'uma grande explosão'
+som.efeito.explosão2: som.efeito.explosão
 --
-The timer reads 0:00...
+O temporizador marca 0:00...
 
-{sound effect: 'explosion'}
+{efeito sonoro: 'explosão'}
 
-[[Oof.]]
+[[Ui.]]
 ```
 
-(Note the lack of quotation marks around `sound.effect.explosion` in the line that sets `sound.effect.explosion2`.)
+(Atenta na falta de aspas à volta de `som.efeito.explosão` na linha que define `som.efeito.explosão2`.)
 
-Assigning the `sound.effect.explosion2` [object] wholesale, instead of setting it property-by-property, causes it to be a copy of `sound.effect.explosion`. If you ever change a property of `sound.effect.explosion`, `sound.effect.explosion2` will change too.
+Ao atribuires [o objeto] `som.efeito.explosão2` por inteiro, em vez de o definires propriedade por propriedade, torna-lo uma cópia de `som.efeito.explosão`. Se alguma vez alterares a propriedade de `som.efeito.explosão`, `som.efeito.explosão2` irá mudar também.
 
-And then, in the passage named `Oof.`, you'd write:
-
-```
-That wasn't so bad. Wait...
-
-{sound effect: 'explosion2'}
-```
-
-## Ambient Sound
-
-The process of defining an ambient sound is very similar to defining a sound effect.
+E depois, na passagem chamada `Ui.`, escreverias:
 
 ```
-sound.ambient.forest.url: 'forest.mp3'
-sound.ambient.forest.description: 'midday forest sounds'
+Afinal não foi assim tão mau. Espera...
+
+{efeito sonoro: 'explosão2'}
+```
+
+## Som Ambiente
+
+O processo de definir um som ambiente é muito semelhante a definir um efeito sonoro.
+
+```
+som.ambiente.floresta.url: 'floresta.mp3'
+som.ambiente.floresta.descrição: 'sons de floresta à tarde'
 --
-It's a beautiful day.
+Está um belo dia.
 ```
 
-Similarly, you begin playing an ambient sound with an insert:
+
+Da mesma forma, pões um som ambiente a tocar com um inserto:
 
 ```
-sound.ambient.forest.url: 'forest.mp3'
-sound.ambient.forest.description: 'midday forest sounds'
+som.ambiente.floresta.url: 'floresta.mp3'
+som.ambiente.floresta.descrição: 'sons de floresta à tarde'
 --
-{ambient sound: 'forest'}
+{som ambiente: 'floresta'}
 
-It's a beautiful day.
-
+Está um belo dia.
 ```
 
-The only difference here is that the sound will fade in, and if there was already an ambient sound playing, the two will crossfade. The exact length of the fade is determined by the state variable `sound.transitionDuration`. It is a string in the same format that the [after modifier] accepts.
+A única diferença aqui é que o som irá aumentar gradualmente, e se já houver um som ambiente a tocar, o segundo vai substituindo progressivamente o primeiro. A duração exata desta transição é determinada pela variável de estado `som.duraçãoTransição`. É uma _string_ semelhante à aceitada pelo [modificador depois].
 
-## Controlling Sound Volume
+## Controlo do Volume do Som
 
-To set the master sound volume for your story, change the state variable `sound.volume` to a decimal between 0 and 1. 0 is muted, and 1 is full volume. You can also temporarily mute all sound by setting `sound.mute` (note the lack of a D at the end) to `true`. The advantage of using `sound.mute` is that it allows you to toggle between no sound and a previously-set volume.
+Para definires o volume base do som da tua história, podes alterar a variável de estado `som.volume` para um número decimal entre 0 e 1. 0 significa silêncio, e 1 leva o volume ao máximo. Podes também silenciar temporariamente todo o som definindo `som.silêncio` como `verdadeiro`. A vantagem de usar `som.silêncio` é que ele permite-te alternar entre silêncio e um nível de volume previamente definido.
 
-You can also set a sound's volume when playing it using an insert. Both of the inserts below begin playing a sound at half normal volume.
-
-```
-{sound effect: 'explosion', volume: 0.5}
-{ambient sound: 'forest', volume: 0.5}
-```
-
-## Browser Autoplay Problems
-
-Chapbook makes every effort to resume sound playback between play sessions, so that if you begin playing an ambient sound, it resumes whenever the player comes back to your story. However, this runs afoul of strict restrictions most browsers have regarding sound that immediately plays when a web page is loaded. Some browsers have a blanket ban on this, while others take into account a player's behavior on the web site hosting your story--if a player has previously interacted a lot with the site, it may allow it, but the exact criteria for allowing it is often unclear.
-
-Playing sound after a player has followed a link or otherwise clicked or tapped a link in your story should always work, whatever a browser's autoplay policy is.
-
-## Manually Controlling Sound
-
-You may also manually play sounds, either sound effects or ambient sound, by setting their `playing` property to `true`. This property automatically becomes `false` once an effect finishes playing, but will never change for ambient sound unless you use an `{ambient sound}` insert or set its `playing` property to `false` again.
-
-You can use this for more complex effects, such as layering ambient sounds; however, you *must* make sure to include appropriate descriptions for people who are unable to hear your audio. To do this, enclose the description inside `<audio>` and `</audio>` like so:
+Também podes definir o volume de um som através de um inserto. Ambos os insertos em baixo põe um som a tocar a metade do volume normal.
 
 ```
-sound.ambient.forest.playing: true
-sound.ambient.rain.playing: true
+{efeito sonoro: 'explosão', volume: 0.5}
+{som ambiente: 'floresta', volume: 0.5}
+```
+
+## Problemas com a Reprodução Automática nos Navegadores
+
+O Chapbook tenta ao máximo continuar a reprodução do som entre sessões de jogo, para que nos casos em que há um som a tocar quando deixas de jogar, ele continue quando o jogador regressa à história. No entanto, isto entra em conflito com as severas restrições que a maioria dos navegadores tem em relação a sons que são tocados imediatamente depois de uma página ser carregada. Alguns navegadores interditam este comportamento, enquanto outros tomam em conta o comportamento do jogador na página _web_ que aloja a tua história — se um jogador tiver anteriormente interagido muito com o _site_, talvez o permita, mas os critérios exatos são muitas vezes pouco claros.
+
+Tocar um som depois de um jogador seguir uma ligação ou depois de clicar ou carregar numa ligação da tua história, em princípio, deve sempre funcionar, qualquer que seja a política de reprodução automática do navegador.
+
+## Controlar Manualmente o Som
+
+Também podes pôr o som a tocar manualmente, tanto efeitos sonoros como som ambiente, se mudares a propriedade `aTocar` para `verdadeiro`. Esta propriedade torna-se automaticamente `falsa` depois de um efeito acabar de tocar, mas nunca mudará para o som ambiente a não ser que uses um inserto `{som ambiente}` ou alteres a sua propriedade `aTocar` para `falso` outra vez.
+
+Podes usar isto para conseguir efeitos mais complexos, como, por exemplos, criar camadas de sons ambiente; no entanto, *tens de* ter a certeza que estás a incluir as descrições adequadas para as pessoas que não poderão ouvir o teu áudio. Para fazeres isto, põe a descrição entre `<audio>` e `</audio>`, assim:
+
+```
+som.ambiente.floresta.aTocar: verdadeiro
+som.ambiente.chuva.aTocar: true
 --
-You walk outside.
+Caminhas por entre as árvores.
 
-<audio>Rainy forest background sound</audio>
+<audio>Som de fundo de uma floresta com chuva</audio>
 ```
 
 The text inside the will not be displayed ordinarily.
 
 [Audacity]: https://www.audacityteam.org/
-[object]: ../state/objects-and-lookups.md
-[after modifier]: ../modifiers-and-inserts/delayed-text.md
+[objeto]: ../state/objects-and-lookups.md
+[modificador depois]: ../modifiers-and-inserts/delayed-text.md

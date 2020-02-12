@@ -1,59 +1,61 @@
-# Publishing Models
+# Modelos de Publicação
 
-Twine 2 does not currently permit embedding images, audio, or video--assets, for short--in your story files. This is so that your story loads quickly and efficiently. Twine 1 permitted this by encoding them using a technique called Base64, which converts binary data into text that can be safely embedded into HTML. This has two disadvantages:
+Neste momento, o Twine 2 não te deixa incorporar imagens, áudio, vídeo — bens, de forma abreviada — nos ficheiros da tua história. Isto é para que a tua história possa ser carregada rápida e eficientemente. O Twine 1 permitia isto, codificando-os através de uma técnica chamada Base64, que converte a informação binária em texto que pode ser incorporado de modo seguro no HTML. Só que tem duas desvantagens:
 
--   Base64 adds a 33% overhead to file sizes, causing stories to load
-    significantly slower than they could otherwise.
--   A story couldn't begin to be played until all its assets had completely
-    downloaded. This can be troublesome if a story uses many images, but this
-    would be disastrous for audio and video, where files are ten times as large.
+-   A Base64 acarreta uma carga adicional de 33% ao tamanho dos ficheiros,
+    o que o torna o carregamento das histórias bastante mais demorado.
 
-In Twine 2, any multimedia assets must exist separately from the published story file itself. There are two approaches you can take. Either one is equally viable--it depends on your situation.
+-   Uma história não pode ser jogada até que todos os seus bens tenham sido
+    completamente descarregados. Este pode ser problemático se uma história usar
+    muitas imagens, mas seria desastroso para o áudio e vídeo, cujos ficheiros são
+    dez vezes maiores.
 
-## Self-Contained Publishing
+No Twine 2, quaisquer bens multimédia têm de existir separadamente do ficheiro publicado da história. Podes escolher entre duas abordagens. Qualquer uma delas é igualmente viável — depende apenas da tua situação.
 
-In this approach, you publish assets used by your story in the same place as the published story file itself. A typical arrangement is shown below:
+## Publicação Circunscrita
+
+Nesta abordagem, publicas os bens usados pela tua história no mesmo local onde está o próprio ficheiro da história. Em baixo, apresenta-se uma organização habitual:
 
 <ul class="directory-listing">
-	<li class="file">Story.html</li>
-	<li class="directory">Assets
+	<li class="file">História.html</li>
+	<li class="directory">Bens
 	    <ul>
-	        <li class="directory">Images
+	        <li class="directory">Imagens
 	            <ul>
-	                <li class="file">Photo 1.jpeg</li>
-	                <li class="file">Photo 2.jpeg</li>
+	                <li class="file">Foto 1.jpeg</li>
+	                <li class="file">Foto 2.jpeg</li>
 	            </ul>
 	        </li>
-	        <li class="directory">Audio
+	        <li class="directory">Áudio
 	            <ul>
-	                <li class="file">Intro Song.mp3</li>
+	                <li class="file">Introdução.mp3</li>
 	            </ul>
 	        </li>
 	    </ul>
 	</li>
 </ul>
 
-One advantage of the self-contained approach is that your work can be easily packaged into an archive file, usually in ZIP format, and made available on digital marketplaces. In this scenario, a player can download your story once, unpack it, and begin playing without having to have an active Internet connection.
+Uma das vantagens da abordagem circunscrita é permitir que o teu trabalho possa ser facilmente compactado num arquivo, normalmente em formato ZIP, e disponibilizado em lojas digitais. Neste cenário, o jogador pode descarregar a tua história, descompactá-la e começar a jogar sem precisar de estar ligado à Internet.
 
-A self-contained story can be published to a web site, so that players don't have to go to the extra step of downloading the archive file and expanding it, but you should be aware of the bandwidth the site will use. Bandwidth is a measurement of how much data is transferred to and from a web site. If you publish a story with an audio file that is 1 MB in size (about a minute long) that 1,000 people play, the site will consume 1 GB of bandwidth.
+Uma história circunscrita pode ser publicada numa página _web_, portanto os jogadores não precisam desse passo adicional de descarregar e descompactar o arquivo, mas tem em atenção à utilização da largura de banda do _site_. A largura de banda é uma medida da informação que é transferida de e para uma página _web_. Se publicares uma história com um ficheiro áudio que tem 1 MB (cerca de um minuto) e se for jogado por 1000 pessoas, o _site_ irá consumir 1 GB de largura de banda.
 
-Some web site hosting providers promise unlimited bandwidth at a flat fee, but throttle connections if a site uses too much bandwidth; others will temporarily shut a site down that uses too much bandwidth. Others will keep your site available at full speed no matter how much bandwidth you consume, but charge you a variable--sometimes steep--amount of money depending on how much bandwidth it consumes.
+Alguns serviços de alojamento prometem largura de banda ilimitada a uma taxa fixa, mas reduzem a velocidade da ligação se um _site_ usar demasiada largura de banda; outros desativam temporariamente um _site_ que use largura de banda em excesso. Outros ainda mantém a velocidade do teu _site_ inalterada, mas cobram-te um montante variável — às vezes exagerado — dependendo da quantidade de largura de banda utilizada.
 
-All of which is to say: if you plan to post a self-contained story to a web site, you should understand the constraints of the hosting provider you use.
+Tudo isto para dizer que se planeares publicar uma história de forma circunscrita num _site_, deves ter conhecimento das limitações que o serviço de alojamento te pode impor.
 
-Another disadvantage to self-contained publishing is that Twine 2 doesn't currently have many tools to help you while you are creating your story. In order for assets to display correctly, you'll have to publish your story to the same folder as your assets. Testing your story inside Twine 2 will not display the assets correctly.
+Uma outra desvantagem do modelo de publicação circunscrito prende-se com o facto de o Twine 2 não ter, neste momento, muitas ferramentas que te ajudem durante o processo de criação da tua história. Para que os teus bens sejam apresentados corretamente, tens de publicar a tua história na mesma pasta onde estão os tens bens. Se testares a tua história dentro do Twine 2, os bens não serão apresentados corretamente.
 
-When you add assets to a self-contained story, you'll use a _relative URL_. You've encountered URLs before; they appear at the top of a web browser window, and indicate the location at which a resource is stored. They typically begin with `http://` or `https://`. Relative URLs, however, locate a resource in relation to your published story file. In the diagram above, the relative URL for the intro song is `Assets/Audio/Intro Song.mp3`. A relative URL does not start with any preamble; instead, each directory beneath the story file's directory is separated by a forward slash (`/`), with the file name of the asset given last. If you link to an asset in the same directory as the published story file, the filename of the asset works as a relative URL.
+Quando adicionas bens a uma história circunscrita, deves usar um _URL relativo_. Já encontraste URLs antes; eles aparecem no cimo da janela do navegador e indicam o local onde um determinado recurso está alojado. Começam normalmente com `http://` ou `https://`. No entanto, os URLs relativos alojam um recurso em relação ao ficheiro publicado da história. No diagrama acima, o URL relativo para a música de introdução é `Bens/Áudio/Introdução.mp3` Um URL relativo não começa com um preâmbulo; em vez disso, cada diretoria dentro da diretoria principal, aquela onde está o ficheiro da história, vai separada por uma barra (`/`), e o nome do ficheiro vai no fim. Se quiseres ligar a um bem que está na mesmo diretoria do ficheiro da história, o nome do ficheiro do bem funciona como um URL relativo.
 
-## Cloud Publishing
+## Publicação na Nuvem
 
-In this approach, you publish your assets to an existing service like Flickr or YouTube. Your story file can be downloaded or posted to a web site, but your assets will load from these external sites. As such, players will need to have an active Internet connection as they play.
+Nesta abordagem, publicas os teus bens num serviço já existente como o Flickr ou o Youtube. O ficheiro da tua história pode ser descarregado ou publicado numa página _web_, mas os bens da história serão carregados a partir destas páginas externas. Tal significa que os jogadores terão estar ligados à Internet enquanto jogam.
 
-Cloud publishing means you won't have to worry about bandwidth, but in exchange most services place some kind of watermark or other identifying information on your asset so that it's clear that you're using their service. Hosting services also have terms of service that may place restrictions on what kind of content you post.
+Ao publicares na nuvem não precisas de te preocupar com a largura de banda, só que a maior parte dos serviços põe alguma marca de água ou outra informação de identidade no teu bem, para mostrar que estás a usar o serviço deles. Os serviços de alojamento também têm os seus termos e condições, que podem impor restrições sobre o tipo de conteúdo que quiseres publicar.
 
-Cloud publishing also allows you to test stories inside Twine 2 without having to publish your story to a file. To do this, you'll sometimes use an _embed code_ to incorporate your assets into your story, which is a fragment of HTML source code provided by the service you use.
+A publicação na nuvem também te permite testar as histórias dentro do Twine 2 sem teres de a publicar num ficheiro. Para fazeres isto, tens de usar, às vezes, um código _código de incorporação_ para integrares os teus bens na história, que é uma linha de código em HTML fornecido pelo serviço que usas.
 
-If you choose to use assets in the cloud, it's important that you ensure that you are legally able to do so. It is tempting to _hotlink_ resources--that is, embed assets from another server without permission. This is bad form at minimum, as you are potentially incurring bandwidth costs for the site owner (as noted in _Self-Contained Publishing Above_ above), but if a site owner finds out you've done this, they can remove the assets you've linked to or replace them with something obnoxious or embarrassing.
+Se escolheres pôr os teus bens na nuvem, assegura-te que cumpres todos os requisitos legais para o fazeres. É muito tentador fazer ligações diretas (_hotlink_) para os recursos — isto é, incorporar bens de outro servidor sem autorização. Para começar, isto é uma má prática, porque poderás estar a sujeitar o dono da página a custos acrescidos de largura de banda (como referido acima em _Publicação Circunscrita_), e depois, se o dono da página descobrir que fizeste isto, pode apagar os bens ligados à tua história ou até substitui-los por alguma coisa ofensiva ou embaraçosa.
 
 <style>
 

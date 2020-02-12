@@ -1,58 +1,58 @@
-# Images
+# Imagens
 
-## Embedding Your Own Images
+## Integrar as Tuas Próprias Imagens
 
-To display an image in a passage, use the `{embed image}` insert:
-
-```
-For all you know, not a single person has entered this cave in a thousand years. The cave entrance is covered in moss and leaves.
-
-{embed image: 'cave.jpeg', alt: 'Cave entrance'}
-```
-
-The `alt` property is explained below under "Alternate Text."
-
-## Embedding Images from Flickr
-
-[Flickr][flickr] is a venerable photography service that allows people to mark their uploaded photos as embeddable. If a photo can be embedded, you will see an icon that looks a bit like an arrow in the lower right of the photo. Selecting that option will display the embed code to use, which is rather lengthy. Make sure to use the code found in the Embed tab, not the Share or BBCode ones. Once you have the code, use the `{embed Flickr image}` insert as below.
+Para apresentar uma imagem numa passagem, usa o inserto `{integrar imagem}`:
 
 ```
-The night sky is alive:
+Tanto quanto sabes, vai para milhares de anos desde que alguém entrou nesta caverna. A entrada está coberta de musgo e folhas.
 
-{embed Flickr image: '<a data-flickr-embed="true"  href="https://www.flickr.com/photos/kees-scherer/43929816675/in/photolist-29VVN1k-MxBBfR-Mxmaoa-2abPdAf-28uxzXE-MsR1ev-MqbA18-P2bWEY-29LvwHZ-P1DPQ7-2b3znq5-28jiA4E-2b4qGd6-29QQrVa-2a4C5X3-MhDEFV-2b3tVwa-MfPdhz-2aZTken-2aTGEx1-2aVbrLg-NLVUU7-289o89h-288U1wq-2aN6BuN-NH87Jm-2aQH3Ta-NDwgPd-NB3Mym-2aHjvXP-29jgSN2-29zFLg5-27TFbQw-Nw3iLs-2aD2Dfn-27SXWGo-29f84mZ-LRdL8r-2aVtHgk-2awe7hj-29ux7nq-LPVrYk-2avhxQJ-2azf7ct-2ayX3mM-2aygKz8-27Nwi91-27NmmvS-NqvSME-2axAzDV" title="The Andromeda Galaxy, Messier 31"><img src="https://farm2.staticflickr.com/1857/43929816675_07357e53b0_m.jpg" width="240" height="185" alt="The Andromeda Galaxy, Messier 31"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>', alt: 'the Andromeda galaxy'}
+{integrar imagem: 'caverna.jpeg', alt: 'Entrada da caverna'}
+```
+
+A propriedade `alt` está explicada mais em baixo em "Texto Alternativo."
+
+## Integrar Imagens do Flickr
+
+O [Flickr][flickr] é um venerável serviço de fotografia que permite que as pessoas marquem as fotos que carregam como "integráveis". Se uma foto puder ser integrada, verás um ícone que se parece um pouco a uma seta, no canto inferior direito da foto. Ao marcares essa opção, ser-te-á apresentado o código de integração, que é compridote. Certifica-te que usas o código que está no separador de integração, e não o de Partilha (Share) nem o BBC. Quando já tiveres o código, usa o inserto `{integrar imagem Flickr}` como apresentado de seguida:
+
+```
+O céu noturno resplandece de vida:
+
+{integrar imagem Flickr: '<a data-flickr-embed="true"  href="https://www.flickr.com/photos/kees-scherer/43929816675/in/photolist-29VVN1k-MxBBfR-Mxmaoa-2abPdAf-28uxzXE-MsR1ev-MqbA18-P2bWEY-29LvwHZ-P1DPQ7-2b3znq5-28jiA4E-2b4qGd6-29QQrVa-2a4C5X3-MhDEFV-2b3tVwa-MfPdhz-2aZTken-2aTGEx1-2aVbrLg-NLVUU7-289o89h-288U1wq-2aN6BuN-NH87Jm-2aQH3Ta-NDwgPd-NB3Mym-2aHjvXP-29jgSN2-29zFLg5-27TFbQw-Nw3iLs-2aD2Dfn-27SXWGo-29f84mZ-LRdL8r-2aVtHgk-2awe7hj-29ux7nq-LPVrYk-2avhxQJ-2azf7ct-2ayX3mM-2aygKz8-27Nwi91-27NmmvS-NqvSME-2axAzDV" title="The Andromeda Galaxy, Messier 31"><img src="https://farm2.staticflickr.com/1857/43929816675_07357e53b0_m.jpg" width="240" height="185" alt="The Andromeda Galaxy, Messier 31"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>', alt: 'a galáxia de Andrómeda'}
 ```
 
 {% hint style='danger' %}
-Just because Flickr allows you to embed an image does not mean you have the _right_ to use it in your story freely. Check the image's page for the license the photo's uploader is using. Some may not be allowed to be used in commercial projects, while others may not allow usage at all.
+Lá por o Flickr te deixar integrar imagens, isto não significa que tens o  _direito_ de a usar na tua história livremente. Procura na página da imagem pela licença que a pessoa que carregou a foto está a usar. Algumas poderão não ser usadas em projetos comerciais, enquanto outras não poderão ser usadas de nenhuma maneira.
 {% endhint %}
 
-## Embedding Images from Unsplash
+## Integrar Imagens do Unsplash
 
-[Unsplash][unsplash] is a stock photography service that hosts photos that can embedded into a story royalty-free. To use an image from Unsplash, combine the `{embed Unsplash image}` insert with the image's URL on unsplash.com. No embed code is required.
+O [Unsplash][unsplash] é um serviço de banco de fotografias que aloja fotos que podem ser integradas numa história sem pagamento de direitos de autor. Para usares uma imagem do Unsplash, combina o inserto `{integrar imagem Unsplash}` com o URL da imagem em unsplash.com. Não se requer nenhum código de integração.
 
 ```
-{embed Unsplash image: 'https://unsplash.com/photos/Na0BbqKbfAo', alt: 'the moon'}
+{integrar imagem Unsplash: 'https://unsplash.com/photos/Na0BbqKbfAo', alt: 'a lua'}
 
-What a horrible night to have to study for exams.
+Que noite tão terrível para se estudar para os exames.
 ```
 
 {% hint style='working' %}
-Other types of image embeds may come in a future version of Chapbook, as well as more flexibility in layout--e.g. having an image appear to the left or right of the text.
+Outros tipos de integração de imagem poderão aparecer numa versão futura do Chapbook, bem como maior flexibilidade na disposição, p. ex, fazer a imagem aparecer à esquerda ou à direita do texto.
 {% endhint %}
 
-## Alternate Text
+## Texto Alternativo
 
-Regardless of where your image comes from, you must give it _alternate text_. This is so that players who have a visual disability are able to have an equivalent experience to those who don't. [WebAIM][webaim-alt-text] has an excellent in-depth treatment of alternative text, but the gist is that it should contain a brief description of what the image depicts, that would work well for someone reading your story out loud. Because, for players with a visual disability, they often in fact will have your story read out loud by screen reader software.
+Independentemente de onde vierem as imagens, terás de lhes dar um _texto alternativo_. Isto permitirá oferecer aos jogadores que têm problemas de visão  uma experiência equivalente à dos outros jogadores. A [WebAIM][webaim-alt-text] faz uma análise aprofundada da ideia de texto alternativo, mas a ideia principal é que ele deverá conter uma breve descrição do que a imagem retrata, que ficaria bem se alguém estivesse a ler a história em voz alta. Isto porque os jogadores com problemas de visão, na realidade, irão muito provavelmente usar um programa de leitura do ecrã, para lhes ler a história em voz alta.
 
-When writing alternate text, avoid phrases like "image of Abraham Lincoln" or "Boston Harbor photo"-- just write "Abraham Lincoln" or "Boston Harbor."
+Quando escreveres o texto alternativo, evita expressões como "imagem do Abraham Lincoln" ou "foto do porto de Boston" — escreve apenas "Abraham Lincoln" ou "Porto de Boston".
 
-If your image is purely decorative--say, a fancy border--then it should have empty alternative text, so that screen readers will skip over it: This doesn't mean omitting `alt` entirely, but setting it to an empty string, as below.
+Se a tua imagem for puramente decorativa — por exemplo, uma moldura estilosa — então o texto alternativo deve ficar vazio, para que os leitores de ecrã possam passar à frente. Isto não quer significa omitir o comando `alt`, mas apenas declará-lo como uma _string_ vazia, como em baixo.
 
 ```
-{embed image: 'asterisk.jpeg', alt:''}
+{integrar imagem: 'asterisco.jpeg', alt:''}
 ```
 
-[^1]: Although several browsers, Safari most prominent among them, hide the full URL from you unless uo specifically ask for it.
+[^1]: Embora muitos navegadores, entre os mais proeminentes o Safari, escondam o URL completo, podes encontrá-lo no topo da janela do navegador.
 
 [flickr]: https://flickr.com
 [unsplash]: https://unsplash.com
