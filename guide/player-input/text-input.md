@@ -1,4 +1,4 @@
-# Text Input
+# Contribuição Textual
 
 Sometimes selecting a link isn't expressive enough to capture player intent. One common scenario is allowing the player to name a character--often, the protagonist. To do this, use the `{text input}` insert.
 
@@ -56,4 +56,4 @@ Note that as above, the variable name should be quoted, but `false` should not.
 The restriction on navigation only applies to player-initiated navigation. A required text input will not block navigation initiated by the story itself, or the player choosing to restart the story.
 {% endhint %}
 
-You also do not have to save a text input's value to a variable, if for some reason you won't need the value later. To do this, write `{text input}` or `{text input, required: true}`. 
+You also do not have to save a text input's value to a variable, if for some reason you won't need the value later. To do this, write `{text input}` or `{text input, required: true}`.

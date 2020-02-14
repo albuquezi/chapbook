@@ -1,5 +1,5 @@
 <div class="intro input">
-    <h1>Player Input</h1>
+    <h1>Contribuições do Jogador </h1>
 </div>
 
-This section describes how to ask the player for input, including text fields, dropdown menus, and cycling links.
+Esta secção descreve como podes pedir informação ao jogador, incluindo campos de texto, menus retrácteis e ligações cíclicas.

@@ -1,27 +1,27 @@
-# Video
+# Vídeo
 
-## Embedding Your Own Video
+## Integrar o Teu Próprio Vídeo
 
 {% hint style='working' %}
-Chapbook doesn't yet support embedding your own video, but it will.
+O Chapbook ainda não permite que integres os teus próprios vídeos, mas irá fazê-lo no futuro.
 {% endhint %}
 
-## Embedding a YouTube Video
+## Integrar um Vídeo do YouTube
 
-You've heard of [YouTube][youtube], right? To embed a YouTube video, use its URL with the `{embed YouTube video}` insert:
+Já ouviste falar do [YouTube][youtube], certo? Para integrar um vídeo do YouTube, usa o seu URL com o inserto `{integrar vídeo YouTube}`:
 
 ```
-Tell me if you've seen this one before.
+Avisa-me se já tiveres visto este.
 
-{embed YouTube video: 'https://www.youtube.com/watch?v=9bZkp7q19f0'}
+{integrar vídeo YouTube: 'https://www.youtube.com/watch?v=9bZkp7q19f0'}
 ```
 
 {% hint style='working' %}
-For now, it's not possible to have a YouTube video start when a passage displays. The player will need to begin playback.
+De momento, não é possível pôr um vídeo do YouTube a começar quando a passagem é apresentada. O jogador precisa de iniciar a reprodução.
 {% endhint %}
 
 {% hint style='working' %}
-Accessibility features for video will be added to a future release of Chapbook.
+Funcionalidades de acessibilidade irão ser adicionadas a uma versão futura do Chapbook.
 {% endhint %}
 
 [youtube]: https://youtube.com

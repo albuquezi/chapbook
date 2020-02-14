@@ -1,38 +1,30 @@
-# Design Considerations
+# Considerações sobre _Design_
 
-Players will spend quite a lot of time with your story simply reading its text, so they deserve a well-considered experience. Which is not to say the experience should always be comfortable. Cara Ellison's _[Sacrilege]_ has a searing purple background for its text and bright yellow links that turn green when you point at them, but all this is in service to its content. _Sacrilege's_ story is, in part, about the sensory overload of a nightclub, so it's fitting that the text itself somewhat overload the player's senses.[^1]
+Os jogadores irão passar bastante tempo com a tua história, a ler o texto, por isso eles merecem desfrutar de uma experiência de leitura bem ponderada. O que não quer dizer que a experiência tenha de ser sempre agradável. A obra [_Sacrilege_][Sacrilege], de Clara Ellison usa um púrpura berrante como fundo do texto e um amarelo intenso para as ligações, que ficam verdes quando apontas para elas, mas isto tudo está de acordo com o conteúdo. A história de _[Sacrilege]_ é, em parte, sobre a sobrecarga sensorial de uma discoteca, por isso é adequado que o o próprio texto cause uma sobrecarga nos sentidos do jogador.[^1]
 
-Fortunately, people have been designing reading experiences for centuries now, and there's quite a lot of accumulated wisdom on how to use type gracefully.
+Felizmente, os seres humanos têm andando a desenhar e a desenvolver experiências de leitura há séculos já, e há um manancial acumulado de saber sobre como usar elegantemente as fontes.
 
--   If you're new to typography, the best first port of call is Matthew
-    Butterick's [Practical Typography][practical-typography]. Butterick is
-    opinionated and a bit patrician in some of his pronouncements, but his basic
-    ideas are sound, and he takes the _Practical_ part of the name of his web
-    site seriously.
+-   Se não és da área da tipografia, o melhor ponto de partida é o
+    [Practical Typography][practical-typography], de Matthew
+    Butterick's. Butterick é dogmático nos seus julgamentos e até algo aristocrata, mas as suas ideias principais são sólidas, e ele leva a parte _Practical_ do nome do seu _site_ muito a sério.
 
--   The Yale Web Style Guide's [chapter on typography][yale-typography] is also
-    worth reading, though it is intended for web designers and developers, who
-    must build pages from the ground up.
+-   O [capítulo sobre tipografia][yale-typography] do Yale Web Style Guide's
+    merece também uma boa leitura, embora seja mais destinado a _web designers_ e a criadores, que têm de construir páginas de raiz.
 
--   If you find yourself truly intrigued by typography, it's worth tracking down
-    a copy of _[The Elements of Typographical Style][typographical-style]_.
+—   Se te sentires verdadeiramente intrigado pela tipografia, vale bem a pena
+    arranjar um exemplar de _[The Elements of Typographical Style][typographical-style]_.
 
-There is also a strange kind of science to selecting colors.
+Há também toda uma estranha ciência em torno da seleção de cores.
 
--   If you've never delved into color theory, try starting  with with the [Color
-    Schemes][color-schemes] chapter of Rune Madsen's _Programming Design
-    Systems_. It uses code examples using a programming language called
-    [Processing][processing], but you can safely skim over them. If you find
-    yourself intrigued by the subject, try the rest of Madsen's section on
-    color.
--   Khan Academy has a free [online course on the science of color][khan-color]
-    that talks about both how our eyes and brains perceive color, and the
-    different color models used to represent color.
--   There's no substitute for simply playing with color. The best tool online
-    for this is perhaps [Adobe Color CC][adobe-color], which is beginning to
-    show its age but is still useful.
--   WebAIM has a [contrast checker][webaim-contrast] that ensures that the color
-    scheme you design has sufficient contrast for low-vision players. Your colors should pass the WCAG AAA criteria for normal text.
+-   Se nunca te debruçaste sobre a teoria da cor, tenta começar com o capítulo
+    [Esquemas de Cor][color-schemes] da obra de Rune Madsen _Programming Design
+    Systems_. Usa exemplos de código através de uma linguagem de programação chamada [Processing][processing], que podes ler na diagonal, sem problema. Se o assunto te intrigar, tenta ler o resto da secção sobre cor.
+-   A Khan Academy tem um [curso _online_ sobre a ciência da cor][khan-color]
+    gratuito que fala sobre como os nossos olhos e o nosso cérebro percecional a cor, e sobre os diferentes modelos cromáticos usados para representar a cor.
+-   Não há nada que substitua o simples ato de se brincar com a cor. A melhor
+    ferramenta _online_ para isto é talvez o [Adobe Color CC][adobe-color], que já começa a mostrar a sua idade, mas ainda é útil.
+-   O WebAIM tem um [revisor de contraste][webaim-contrast] que te certifica se
+    o esquema que concebeste tem contraste suficiente para jogadores com baixa visão. As tuas cores devem passar os critérios da WCAG AAA para texto normal.
 
 [Sacrilege]: https://unwinnable.com/2013/04/25/play-at-heartbreaking-with-cara-ellison/
 [practical-typography]: https://practicaltypography.com/
@@ -44,4 +36,4 @@ There is also a strange kind of science to selecting colors.
 [adobe-color]: https://color.adobe.com/create/color-wheel/
 [webaim-contrast]: https://webaim.org/resources/contrastchecker/
 
-[^1]: Try playing it, even for a little, then go back to the plain-jane white background of a typical web site. You'll see afterimages.
+[^1]: Tenta jogá-lo, nem que seja por um bocadinho, e depois regressa ao fundo branco mais do que batido das típicas páginas _web_.     , then go back to the plain-jane white background of a typical web site. Começas a ver fantasmas da página anterior.

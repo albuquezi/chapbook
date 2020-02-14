@@ -1,35 +1,35 @@
-# Page Style
+# Estilo da Página
 
-On sufficiently wide web browser windows, Chapbook will add horizontal margins around the text of your story so that it's comfortable to read. The exact width of the text column is based upon the font size that's set in `config.style.page.font`. You can control the appearance around the text through several variables.
+Nas janelas dos navegadores que sejam suficientemente largas, o Chapbook irá acrescentar margens horizontais em torno do texto da tua história, para que a leitura seja mais agradável. A largura exata da coluna de texto depende do tamanho da fonte definida em `config.estilo.página.fonte`. Podes controlar o aspeto em torno do texto através de várias variáveis.
 
-First, the variable `config.style.pageStyle` takes one of several possible values:
+Primeiro, a variável `config.style.pageStyle` aceita um dos seguintes possíveis valores:
 
-- `'none'` creates no visible border around the page content
-- `'thin-line'` and `'thick-line'` create flat borders around the content
-- `'shadow'` adds a drop shadow around the content.
+- `'nada'` não cria uma borda visível em torno do conteúdo da página
+- `'linha-fina'` e `'linha-grossa'` cria bordas planas em torno do conteúdo da página
+- `'sombra'` adiciona uma sombra em torno do conteúdo.
 
-Chapbook's default appearance is `'shadow'`.
+O aspeto visual por defeito do Chapbook vem com `'sombra'`.
 
-If you use `'thin-line'` or `'thick-line'`, you can specify the color of the line using the variable `config.style.pageBorderColor`. This should be set to a single [color].
+Se usares `'linha-fina'` ou `'linha-grossa'`, podes especificar a cor da linha usando a variável `config.estilo.corDaBordaDaPágina`. A esta deve ser atribuída uma única [cor].
 
-The variable `config.backdrop` sets the [color] of the area around the text content. On smaller browser windows (especially mobile devices), this area is not visible, however.
+A variável `config.fundo` define a [cor] da área em torno do conteúdo do texto. Nas janelas mais pequenas dos navegadores (especialmente dispositivos móveis), esta área, porém, não é visível.
 
-When the story shows a new passage, it creates a transition between text based on what is set in the `config.body.transition.name` variable:
+Quando a história mostra uma nova passagem, cria uma transição entre o texto com base no que está definido na variável `config.corpo.transição.nome`:
 
-- `'crossfade'` causes the old text to fade out at the same time that the new text fades in
-- `'fadeInOut'` causes the old text to fade out, then the new text to fade in
-- `'none'` causes the new text to replace the old text immediately
+- `'crossfade'` substitui gradualmente o texto antigo pelo novo.
+- `'fadeInOut'` faz desaparecer gradualmente o texto antigo, e depois faz aparecer gradualmente o novo texto
+- `'nada'` substitui o texto antigo pelo novo de forma imediata
 
-Chapbook's default transition is `'crossfade'`.
+A transição por defeito do Chapbook é `'crossfade'`.
 
-If you use `'crossfade'` or `'fadeInOut'`, you can control how long the transition takes by setting `config.body.transition.duration`, which should be a string in the same format that the [after modifer][after] accepts. Remember that it doesn't understand decimals, so if you'd like a transition to take half a second, set `config.page.transition.duration` to `'500ms'`. Also keep in mind that the duration is the duration of the complete transition-- a `'crossfade'` and `'fadeInOut'` transition with the same duration might look as though they last different amounts of time, as the `'fadeInOut'` has two steps.
+Se usares ou a transição `'crossfade'` ou a `'fadeInOut'`, podes controlar o tempo da transição, alterando a variável `config.corpo.transição.duração`, que deve ser uma _string_ com o mesmo formato aceite pelo [modificador depois][after]. Lembra-te que ele não compreende números decimais, por isso se quiseres que uma transição demore meio segundo, define `config.corpo.transição.duração` para ter `'500ms'`. Recorda-te ainda que a duração é a duração completa da transição —  um `'crossfade'` e um `'fadeInOut'` com a mesma duração podem parecer que demoram tempos diferentes, porque o `'fadeInOut'` tem duas fases.
 
-You can also set how the header and footer content update using the following variables. They take the same values as their `body` counterparts.
+Também podes definir como o cabeçalho e o rodapé se atualizam, usando as seguintes variáveis. Aceitam os mesmos valores que os seus homólogos em `corpo`.
 
-- `config.header.transition.name`
-- `config.header.transition.duration`
-- `config.footer.transition.name`
-- `config.footer.transition.duration`
+- `config.cabeçalho.transição.nome`
+- `config.cabeçalho.transição.duração`
+- `config.rodapé.transição.nome`
+- `config.rodapé.transição.duração`
 
-[color]: fonts-and-colors.html#colors
-[after]: ../text-and-links/modifiers-and-delayed-text.html
+[cor]: fonts-and-colors.html#colors
+[modificador depois]: ../text-and-links/modifiers-and-delayed-text.html

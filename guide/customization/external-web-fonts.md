@@ -1,60 +1,59 @@
-# External Web Fonts
+# Fontes Web Externas
 
-Creating a good font stack is difficult because there are very few typefaces you can count on a majority of your players having installed. Fortunately, you aren't limited to what your players happen to have installed--instead, you can use web fonts.
+Criar um bom grupo de fontes é difícil porque a maior parte dos jogadores terá um número muito baixo de fontes instalado no seu computador. Felizmente, não tens de estar limitado às fontes que os jogadores têm instaladas — podes usar as fontes _web_.
 
-## Using Google Fonts
+## Usar o Google Fonts
 
-Google provides a wide variety of freely-usable fonts through their [Google Fonts][google-fonts] service. To use Google Fonts in your story, first find the embed code for the families you wish to use:
+A Google oferece uma grande variedade de fontes que podem ser usadas gratuitamente através do seu serviço [Google Fonts][google-fonts]. Para usares o Google Fonts na tua história, primeiro tens de encontrar o código de integração da família que queres usar:
 
 <p style="text-align: center">
 <img src="google-font.png" width="300" height="198" alt="Google Fonts screenshot">
 </p>
 
-Copy the embed code that Google Fonts offers you, i.e. `<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-`, and set the variable `config.style.googleFont` to it in your first passage. You can then use the font name anywhere in the rest of `config.style` as usual:
+Copia o código de integração que o Google Fonts te dá, ou seja, `<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">`, e usa-o na variável `config.estilo.googleFont`, na primeira passagem da história. Podes usar o nome da fonte em qualquer outro lugar do objeto `config.estilo`:
 
 ```
-config.style.googleFont: '<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">'
-config.style.page.font: 'Open Sans/sans-serif 18'
+config.estilo.googleFont: '<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">'
+config.estilo.página.fonte: 'Open Sans/sans-serif 18'
 --
-Welcome aboard the U.S.S. Hood.
+Bem-vindos a bordo da fragata U.S.S. Hood.
 ```
 
-Note that because `config.style.googleFont` is a string, you must put single quotes around its value. (It's much easier to type single quotes here, since the embed code has double quotes in it.)
+Nota que como `config.estilo.googleFont` é uma _string_, tens de pôr o seu valor entre plicas (É melhor usar plicas aqui, uma vez o código de integração tem aspas.)
 
-## Using Adobe Typekit Fonts
+## Usar o Adobe Typekit Fonts
 
-Adobe Typekit serves a similar purpose to Google Fonts, but most of its collection requires an Adobe Creative Cloud subscription to use. That said, it does permit free use of some of its font families.
+O Adobe Typekit serve um propósito semelhante ao do Google Fonts, mas a maioria das suas coleções exige que tenhas uma conta na Adobe Creative Cloud, para as poderes usar. Dito isto, há algumas famílias de fontes que se podem usar livremente.
 
-Once you've assembled a kit--Adobe's terminology for one or more font families you plan to use--find its embed code in Typekit.
+Assim que tenhas montado o teu _kit_ — a terminologia da Adobe para uma ou mais famílias de fontes que planeies usar — encontra o código de integração no Typekit.
 
 <p style="text-align: center">
 <img src="typekit-font.png" width="300" height="152" alt="Typekit screenshot">
 </p>
 
-Copy the default code, i.e. `<link rel="stylesheet" href="https://use.typekit.net/abcdefgh.css">`, and set the variable `config.style.typekitFont` to it in your first passage. As with Google Fonts, you can then use the font name anywhere in the rest of `config.style`.
+Copia o código por defeito, isto é, `<link rel="stylesheet" href="https://use.typekit.net/abcdefgh.css">` e atribui-o à variável `config.style.typekitFont` na primeira passagem. Como com o Google Fonts, podes depois usar o nome da fonte em qualquer outra parte do objeto `config.estilo`.
 
 ```
-config.style.typekitFont: '<link rel="stylesheet" href="https://use.typekit.net/abdefgh.css">'
-config.style.page.font: 'Open Sans/sans-serif 18'
+config.estilo.typekitFont: '<link rel="stylesheet" href="https://use.typekit.net/abdefgh.css">'
+config.estilo.página.fonte: 'Open Sans/sans-serif 18'
 --
-Welcome aboard the U.S.S. Hood.
+Bem-vindos a bordo da fragata U.S.S. Hood.
 ```
 
-## Other Web Fonts
+## Outras Fontes _Web_
 
-You can also use web fonts separately from a cloud service. Please make sure to check the license for the font; it's not uncommon, for example, to be required to pay a certain fee to use a font for personal use, but a different for use on the web, or in an app.
+Também podes usar separadamente fontes _web_ de um serviço na nuvem. Mas antes verifica sempre a licença de utilização dessa fonte; não é incomum, por exemplo, ser necessário pagar uma certa quantia para poderes usar essa fonte em projetos pessoais, mas um valor diferente para usá-la na Internet ou numa aplicação.
 
-To include a font directly by URL, add two properties to `config.style.fonts`:
+Para incluir uma fonte diretamente via URL, adiciona duas propriedade a `config.estilo.fontes`:
 
 ```
-config.style.fonts.leagueSpartan.url: 'league-spartan.woff2'
-config.style.fonts.leagueSpartan.name: 'League Spartan'
-config.style.page.font: 'League Spartan/sans-serif 16'
+config.estilo.fontes.leagueSpartan.url: 'league-spartan.woff2'
+config.estilo.fontes.leagueSpartan.nome: 'League Spartan'
+config.estilo.página.fonte: 'League Spartan/sans-serif 16'
 --
-It is the year 1969, and you are walking on the moon.
+É o ano de 1969, e tu estás a caminhar na lua.
 ```
 
-Chapbook can't infer the name of the font from the `url` property, so you must tell it what it is.
+O Chapbook não consegue inferir corretamente o nome da fonte do `url`, por isso tens de lhe dizer qual é.
 
 [google-fonts]: https://fonts.google.com

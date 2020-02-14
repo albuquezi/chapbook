@@ -1,275 +1,275 @@
-# Fonts and Colors
+# Fontes e Cores
 
-The easiest way to customize your story's fonts and colors is with the **Style** backstage tab[^1], which sets values in the `config.style` object for you. As you make changes in that tab, your story's appearance will automatically update, so you can easily experiment to find a look that fits your story. However, changes you make will not be permanently saved-- the next time you test or play your story, it will revert back to its previous appearance.
+A forma mais simples de personalizar as fontes e as cores da tua história é através do separador **Estilo** na zona dos bastidores[^1], que introduz valores no objeto `config.estilo` por ti. À medida que fores fazendo alterações nos bastidores, o aspeto da tua história atualiza-se automaticamente, por isso podes facilmente fazer experiências até encontrares uma aparência que combine com a tua história. No entanto, as alterações que fizeres não serão permanentemente gravadas — da próxima vez que testares ou jogares a tua história, ela regressará ao seu aspeto anterior.
 
-In order to make changes in the **Style** tab permanent, you must copy the code in the **Config** panel at the top of the tab into your starting passage's vars section. (This passage is shown with a rocket-ship icon in Twine's story map.) Clicking anywhere in the box the code sits in will automatically select all of it to make copying and pasting easy.
+Para que as alterações no separador **Estilo** se tornem permanentes, tens de copiar o código do painel **Config** no topo do separador para a secção de variáveis da passagem inicial (esta passagem está marcada com um foguetão no mapa da história do Twine). Se clicares em qualquer sítio na caixa que tem o código, todo o seu conteúdo será automaticamente selecionado, o que facilita o processo de copiar e colar.
 
-Doing so will cause the appropriate variables to be set when your story first begins-- which doesn't mean that it has to be the only appearance your story takes on. You can change variables in the `config.style` object in a later passage's vars section and your story's appearance will change when the passage is visited. You could use this, for example, to denote a dream sequence or flashback.
+Ao fazeres isto, as variáveis certas ficarão logo definidas no início da história — o que não significa que este possa ser o único aspeto que a tua história possa adquirir. Podes mudar as variáveis no objeto `config.estilo` na secção de variáveis de uma passagem posterior, e o aspeto da tua história irá mudar quando essa passagem for visitada. Podes usar isto, por exemplo, para assinalar a sequência de um sonho ou uma analepse.
 
-The other panels in the **Style** tab, **Page**, **Header**, and **Footer**, all have the same fields. As you might guess, **Page** sets the base style of your story and **Header** and **Footer** govern the areas above and below the main text. By default, Chapbook stories don't have a header.
+Os outros painéis do separador **Estilo**, **Página**, **Cabeçalho** e **Rodapé**, têm todos os mesmos campos. E como já adivinhaste, **Página** define o estilo base da tua história e **Cabeçalho** e **Rodapé** gerem as áreas acima e abaixo do texto principal. Por defeito, as histórias do Chapbook não têm cabeçalho.
 
 <div class="page-diagram">
-	<div class="header">header</div>
-	<div class="content">main content</div>
-	<div class="footer">footer</div>
+	<div class="header">cabeçalho</div>
+	<div class="content">conteúdo principal</div>
+	<div class="footer">rodapé</div>
 </div>
 
-The values you set for page, header, and footer styles inherit from each other. That means that if a header or footer style value isn't set, it will use the corresponding page value instead. If a page value isn't set either, Chapbook's default style will be used instead.
+Os valores que definires para os estilos de página, cabeçalho e rodapé passam de uns para os outros. Isto significa que se o valor do estilo de um cabeçalho ou rodapé não estiver definido, irá usar o valor correspondente da página. Se o valor da página também não estiver definido, então, irá ser usado o valor de estilo por defeito do Chapbook.
 
-## Setting Text Style
+## Definir o Estilo de Texto
 
 {% hint style="info" %}
-Applies to:
+Aplica-se a:
 
-- `config.style.page.font`
-- `config.style.page.link.font`
-- `config.style.page.link.active.font`
-- `config.style.header.font`
-- `config.style.header.link.font`
-- `config.style.header.link.active.font`
+- `config.estilo.página.fonte`
+- `config.estilo.página.ligação.fonte`
+- `config.estilo.página.ligação.ativa.fonte`
+- `config.estilo.cabeçalho.fonte`
+- `config.estilo.cabeçalho.ligação.fonte`
+- `config.estilo.cabeçalho.ligação.ativa.fonte`
 {% endhint %}
 
-Chapbook uses a concise notation for specifying text style. Below is a simple example:
+O Chapbook usa uma notação concisa para especificar o estilo do texto. Em baixo, segue um exemplo simples:
 
 ```
 Palatino 18
 ```
 
-This sets a Palatino typeface at 18 pixels tall.[^2] But in actual use, you ought to use something like this instead:
+Isto escolhe a fonte Palatino com 18 pixéis de altura.[^2] Mas, numa situação real, seria melhor algo como isto:
 
 ```
 Palatino/serif 18
 ```
 
-Slashes separate alternate typefaces in what is called a _font stack_. Before the advent of web fonts, font stacks were a crucial part of web design. At that time, web browsers were only capable of displaying fonts installed in the operating system, so designers had to specify alternate typefaces in order to create a consistent appearance across different operating systems.
+As barras separam fontes alternativas naquilo se chama um _grupo de fontes_. Antes do advento das fontes _web_, os grupos de fontes eram uma parte crucial do _web design_. Nesse tempo, os navegadores são conseguiam apresentar as fontes instaladas no sistema operativo, por isso os _designers_ tinham de especificar uma fonte alternativa para conseguirem criar uma aparência consistente nos vários sistemas operativos.
 
-In our current times, font stacks affect more what a page looks like at first glance--typically, text appears immediately in a system font, then in a web font after it finishes loading. (See [External Web Fonts][external-web-fonts.md] for details on how to use a web font with Chapbook.) But there are players who will have disabled web fonts, either out of personal preference or a need to save network bandwidth, and it's good practice to design your story to accommodate that.
+Nos nossos tempos, os grupos de fontes afetam o aspeto que uma página tem à primeira vista — normalmente, o texto aparece imediatamente numa fonte do sistema, e depois numa fonte _web_, quando a página já está carregada. (Ver [Fontes Web Externas][external-web-fonts.md] para mais pormenores sobre como usar uma fonte _web_ com o Chapbook.) Mas há jogadores que terão as fontes _web_ desligadas, ou por preferência própria ou para pouparem largura de banda, e, por isso, é boa prática desenhar a tua história para dar resposta a isso.
 
-The example above indicates that if a typeface named Palatino isn't available to the player's web browser, `serif` signals it should fall back to a generic serif font.[^3] If you'd like to set your story in Helvetica, you might use:
+O exemplo acima indica que caso a fonte chamada Palatino não esteja disponível no navegador do jogador, a palavra `serif` sinaliza que deve reverter para uma fonte serifada genérica.[^3] Se quiseres que a tua história apareça em Helvetica, podes usar:
 
 ```
 Helvetica/Arial/sans-serif 14
 ```
 
-Many people viewing your story using a Windows computer won't have Helvetica available, but they almost certainly will have Arial, Microsoft's [Helvetica competitor][helvetica-vs-arial], and if for some reason they have neither, the story will use whatever sans serif font is available.
+Muitas das pessoas que virem a tua história num computador com o Windows não vão ter a fonte Helvetica, mas de certeza que terão a Arial, a [concorrente da Helvetica][helvetica-vs-arial], da Microsoft. E se por alguma razão não tiverem nem uma nem outra, a história irá usar qualquer fonte não serifada que estiver disponível.
 
-When specifying typefaces that have spaces in their name, you don't need to do anything special:
+Quando quiseres especificar fontes que tenham espaços no nome, não tens de fazer nada de especial:
 
 ```
 Times/Times New Roman/serif 20
 ```
 
-You can also modify a font with the words `bold`, `italic`, `underline` or `small caps`. If you'd like to use multiple styles, just put spaces between them:
+Também podes modificar uma fonte com as palavras `negrito`, `itálico`, `sublinhado` ou `versaletes`. Se quiseres vários estilos, basta que os separes com espaços:
 
 ```
-Palatino 18 bold italic
+Palatino 18 negrito itálico
 ```
 
-There is a special font style named `regular`, which removes any bold, italic, underline, or small-cap styling that the font would normally inherit. Font styles _must_ be entered in all-lowercase. This is because you can omit parts of the declaration. All of the below are valid font notations:
+Há um estilo especial de fonte chamado `regular`, que remove qualquer estilo de negrito, itálico, sublinhado ou versaletes que uma fonte pode herdar. Os estilos de fonte _têm de_ ser digitados só com letras minúsculas. Isto é porque podes omitir partes da declaração. Todos os exemplos em baixo são notação de fonte válidas:
 
 - `Palatino`
 - `18`
-- `bold italic`
-- `Palatino bold`
-- `18 small caps`
+- `negrito itálico`
+- `Palatino negrito`
+- `18 versaletes`
 
-The omitted parts are inherited as described above.
+As partes omitidas são herdadas como descrito acima.
 
-## Colors
+## Cores
 
 {% hint style="info" %}
-Applies to: 
-- `config.style.backdrop`
-- `config.style.page.color`
-- `config.style.page.link.color`
-- `config.style.page.link.lineColor`
-- `config.style.page.link.active.color`
-- `config.style.page.link.active.lineColor`
-- `config.style.page.color`
-- `config.style.page.link.color`
-- `config.style.page.link.lineColor`
-- `config.style.page.link.active.color`
-- `config.style.page.link.active.lineColor`
+Aplica-se a:
+- `config.estilo.fundo`
+- `config.estilo.página.cor`
+- `config.estilo.página.ligação.cor`
+- `config.estilo.página.ligação.corDaLinha`
+- `config.estilo.página.ligação.ativa.cor`
+- `config.estilo.página.ligação.ativa.corDaLinha`
+- `config.estilo.página.cor`
+- `config.estilo.página.ligação.cor`
+- `config.estilo.página.ligação.corDaLinha`
+- `config.estilo.página.ligação.ativa.cor`
+- `config.estilo.página.ligação.ativa.corDaLinha`
 {% endhint %}
 
-Although you don't have to use it, Chapbook has a built-in color palette called [Open Color][open-color]. It has a versatile range of hues that are designed to harmonize with each other.
+Embora não tenhas de a usar, o Chapbook tem uma paleta de cor integrada chamada [Open Color][open-color]. Tem uma versátil gama de cores que foram concebidos para combinar bem uns com os outros.
 
-Besides `black` and `white`, Open Color has 13 base hues:
+Além do `preto` e do `branco`, a paleta Open Color tem 13 cores base:
 
 <div class="swatch-row last">
-<div class="swatch" style="background: #212529">gray</div>
-<div class="swatch" style="background: #c92a2a">red</div>
-<div class="swatch" style="background: #a61e4d">pink</div>
-<div class="swatch" style="background: #862e9c">grape</div>
-<div class="swatch" style="background: #5f3dc4">violet</div>
-<div class="swatch" style="background: #5f3dc4">indigo</div>
-<div class="swatch" style="background: #1864ab">blue</div>
-<div class="swatch" style="background: #0b7285">cyan</div>
-<div class="swatch" style="background: #087f5b">teal</div>
-<div class="swatch" style="background: #2b8a3e">green</div>
-<div class="swatch" style="background: #5c940d">lime</div>
-<div class="swatch" style="background: #e67700">yellow</div>
-<div class="swatch" style="background: #d9480f">orange</div>
+<div class="swatch" style="background: #212529">cinza</div>
+<div class="swatch" style="background: #c92a2a">vermelho</div>
+<div class="swatch" style="background: #a61e4d">rosa</div>
+<div class="swatch" style="background: #862e9c">uva</div>
+<div class="swatch" style="background: #5f3dc4">violeta</div>
+<div class="swatch" style="background: #5f3dc4">anil</div>
+<div class="swatch" style="background: #1864ab">azul</div>
+<div class="swatch" style="background: #0b7285">ciano</div>
+<div class="swatch" style="background: #087f5b">petróleo</div>
+<div class="swatch" style="background: #2b8a3e">verde</div>
+<div class="swatch" style="background: #5c940d">lima</div>
+<div class="swatch" style="background: #e67700">amarelo</div>
+<div class="swatch" style="background: #d9480f">laranja</div>
 </div>
 
-To use them, enter the appropriate name. Open Color also offers 10 shades per hue:
+Para usá-los, introduz o nome adequado. A Open Color também disponibiliza 10 tons por cor:
 
 <div class="swatch-row light">
-<div class="swatch" style="background: #f8f9fa">gray-0</div>
-<div class="swatch" style="background: #fff5f5">red-0</div>
-<div class="swatch" style="background: #fff0f6">pink-0</div>
-<div class="swatch" style="background: #f8f0fc">grape-0</div>
-<div class="swatch" style="background: #f3f0ff">violet-0</div>
-<div class="swatch" style="background: #edf2ff">indigo-0</div>
-<div class="swatch" style="background: #e7f5ff">blue-0</div>
-<div class="swatch" style="background: #e3fafc">cyan-0</div>
-<div class="swatch" style="background: #e6fcf5">teal-0</div>
-<div class="swatch" style="background: #ebfbee">green-0</div>
-<div class="swatch" style="background: #f4fce3">lime-0</div>
-<div class="swatch" style="background: #fff9db">yellow-0</div>
-<div class="swatch" style="background: #fff4e6">orange-0</div>
+<div class="swatch" style="background: #f8f9fa">cinza-0</div>
+<div class="swatch" style="background: #fff5f5">vermelho-0</div>
+<div class="swatch" style="background: #fff0f6">rosa-0</div>
+<div class="swatch" style="background: #f8f0fc">uva-0</div>
+<div class="swatch" style="background: #f3f0ff">violeta-0</div>
+<div class="swatch" style="background: #edf2ff">anil-0</div>
+<div class="swatch" style="background: #e7f5ff">azul-0</div>
+<div class="swatch" style="background: #e3fafc">ciano-0</div>
+<div class="swatch" style="background: #e6fcf5">petróelo-0</div>
+<div class="swatch" style="background: #ebfbee">verde-0</div>
+<div class="swatch" style="background: #f4fce3">lima-0</div>
+<div class="swatch" style="background: #fff9db">amarelo-0</div>
+<div class="swatch" style="background: #fff4e6">laranja-0</div>
 </div>
 <div class="swatch-row light">
-<div class="swatch" style="background: #f1f3f5">gray-1</div>
-<div class="swatch" style="background: #ffe3e3">red-1</div>
-<div class="swatch" style="background: #ffdeeb">pink-1</div>
-<div class="swatch" style="background: #f3d9fa">grape-1</div>
-<div class="swatch" style="background: #e5dbff">violet-1</div>
-<div class="swatch" style="background: #dbe4ff">indigo-1</div>
-<div class="swatch" style="background: #d0ebff">blue-1</div>
-<div class="swatch" style="background: #c5f6fa">cyan-1</div>
-<div class="swatch" style="background: #c3fae8">teal-1</div>
-<div class="swatch" style="background: #d3f9d8">green-1</div>
-<div class="swatch" style="background: #e9fac8">lime-1</div>
-<div class="swatch" style="background: #fff3bf">yellow-1</div>
-<div class="swatch" style="background: #ffe8cc">orange-1</div>
+<div class="swatch" style="background: #f1f3f5">cinza-1</div>
+<div class="swatch" style="background: #ffe3e3">vermelho-1</div>
+<div class="swatch" style="background: #ffdeeb">rosa-1</div>
+<div class="swatch" style="background: #f3d9fa">uva-1</div>
+<div class="swatch" style="background: #e5dbff">violeta-1</div>
+<div class="swatch" style="background: #dbe4ff">anil-1</div>
+<div class="swatch" style="background: #d0ebff">azul-1</div>
+<div class="swatch" style="background: #c5f6fa">ciano-1</div>
+<div class="swatch" style="background: #c3fae8">petróleo-1</div>
+<div class="swatch" style="background: #d3f9d8">verde-1</div>
+<div class="swatch" style="background: #e9fac8">lima-1</div>
+<div class="swatch" style="background: #fff3bf">amarelo-1</div>
+<div class="swatch" style="background: #ffe8cc">laranja-1</div>
 </div>
 <div class="swatch-row light">
-<div class="swatch" style="background: #e9ecef">gray-2</div>
-<div class="swatch" style="background: #ffc9c9">red-2</div>
-<div class="swatch" style="background: #fcc2d7">pink-2</div>
-<div class="swatch" style="background: #eebefa">grape-2</div>
-<div class="swatch" style="background: #d0bfff">violet-2</div>
-<div class="swatch" style="background: #bac8ff">indigo-2</div>
-<div class="swatch" style="background: #a5d8ff">blue-2</div>
-<div class="swatch" style="background: #99e9f2">cyan-2</div>
-<div class="swatch" style="background: #96f2d7">teal-2</div>
-<div class="swatch" style="background: #b2f2bb">green-2</div>
-<div class="swatch" style="background: #d8f5a2">lime-2</div>
-<div class="swatch" style="background: #ffec99">yellow-2</div>
-<div class="swatch" style="background: #ffd8a8">orange-2</div>
+<div class="swatch" style="background: #e9ecef">cinza-2</div>
+<div class="swatch" style="background: #ffc9c9">vermelho-2</div>
+<div class="swatch" style="background: #fcc2d7">rosa-2</div>
+<div class="swatch" style="background: #eebefa">uva-2</div>
+<div class="swatch" style="background: #d0bfff">violeta-2</div>
+<div class="swatch" style="background: #bac8ff">anil-2</div>
+<div class="swatch" style="background: #a5d8ff">azul-2</div>
+<div class="swatch" style="background: #99e9f2">ciano-2</div>
+<div class="swatch" style="background: #96f2d7">petróleo-2</div>
+<div class="swatch" style="background: #b2f2bb">verde-2</div>
+<div class="swatch" style="background: #d8f5a2">lima-2</div>
+<div class="swatch" style="background: #ffec99">amarelo-2</div>
+<div class="swatch" style="background: #ffd8a8">laranja-2</div>
 </div>
 <div class="swatch-row light">
-<div class="swatch" style="background: #dee2e6">gray-3</div>
-<div class="swatch" style="background: #ffa8a8">red-3</div>
-<div class="swatch" style="background: #faa2c1">pink-3</div>
-<div class="swatch" style="background: #e599f7">grape-3</div>
-<div class="swatch" style="background: #b197fc">violet-3</div>
-<div class="swatch" style="background: #91a7ff">indigo-3</div>
-<div class="swatch" style="background: #74c0fc">blue-3</div>
-<div class="swatch" style="background: #66d9e8">cyan-3</div>
-<div class="swatch" style="background: #63e6be">teal-3</div>
-<div class="swatch" style="background: #8ce99a">green-3</div>
-<div class="swatch" style="background: #c0eb75">lime-3</div>
-<div class="swatch" style="background: #ffe066">yellow-3</div>
-<div class="swatch" style="background: #ffc078">orange-3</div>
+<div class="swatch" style="background: #dee2e6">cinza-3</div>
+<div class="swatch" style="background: #ffa8a8">vermelho-3</div>
+<div class="swatch" style="background: #faa2c1">rosa-3</div>
+<div class="swatch" style="background: #e599f7">uva-3</div>
+<div class="swatch" style="background: #b197fc">violeta-3</div>
+<div class="swatch" style="background: #91a7ff">anil-3</div>
+<div class="swatch" style="background: #74c0fc">azul-3</div>
+<div class="swatch" style="background: #66d9e8">ciano-3</div>
+<div class="swatch" style="background: #63e6be">petróleo-3</div>
+<div class="swatch" style="background: #8ce99a">verde-3</div>
+<div class="swatch" style="background: #c0eb75">lima-3</div>
+<div class="swatch" style="background: #ffe066">amarelo-3</div>
+<div class="swatch" style="background: #ffc078">laranja-3</div>
 </div>
 <div class="swatch-row">
-<div class="swatch" style="background: #ced4da">gray-4</div>
-<div class="swatch" style="background: #ff8787">red-4</div>
-<div class="swatch" style="background: #f783ac">pink-4</div>
-<div class="swatch" style="background: #da77f2">grape-4</div>
-<div class="swatch" style="background: #9775fa">violet-4</div>
-<div class="swatch" style="background: #748ffc">indigo-4</div>
-<div class="swatch" style="background: #4dabf7">blue-4</div>
-<div class="swatch" style="background: #3bc9db">cyan-4</div>
-<div class="swatch" style="background: #38d9a9">teal-4</div>
-<div class="swatch" style="background: #69db7c">green-4</div>
-<div class="swatch" style="background: #a9e34b">lime-4</div>
-<div class="swatch" style="background: #ffd43b">yellow-4</div>
-<div class="swatch" style="background: #ffa94d">orange-4</div>
+<div class="swatch" style="background: #ced4da">cinza-4</div>
+<div class="swatch" style="background: #ff8787">vermelho-4</div>
+<div class="swatch" style="background: #f783ac">rosa-4</div>
+<div class="swatch" style="background: #da77f2">uva-4</div>
+<div class="swatch" style="background: #9775fa">violeta-4</div>
+<div class="swatch" style="background: #748ffc">anil-4</div>
+<div class="swatch" style="background: #4dabf7">azul-4</div>
+<div class="swatch" style="background: #3bc9db">ciano-4</div>
+<div class="swatch" style="background: #38d9a9">petróleo-4</div>
+<div class="swatch" style="background: #69db7c">verde-4</div>
+<div class="swatch" style="background: #a9e34b">lima-4</div>
+<div class="swatch" style="background: #ffd43b">amarelo-4</div>
+<div class="swatch" style="background: #ffa94d">laranja-4</div>
 </div>
 <div class="swatch-row">
-<div class="swatch" style="background: #adb5bd">gray-5</div>
-<div class="swatch" style="background: #ff6b6b">red-5</div>
-<div class="swatch" style="background: #f06595">pink-5</div>
-<div class="swatch" style="background: #cc5de8">grape-5</div>
-<div class="swatch" style="background: #845ef7">violet-5</div>
-<div class="swatch" style="background: #5c7cfa">indigo-5</div>
-<div class="swatch" style="background: #339af0">blue-5</div>
-<div class="swatch" style="background: #22b8cf">cyan-5</div>
-<div class="swatch" style="background: #20c997">teal-5</div>
-<div class="swatch" style="background: #51cf66">green-5</div>
-<div class="swatch" style="background: #94d82d">lime-5</div>
-<div class="swatch" style="background: #fcc419">yellow-5</div>
-<div class="swatch" style="background: #ff922b">orange-5</div>
+<div class="swatch" style="background: #adb5bd">cinza-5</div>
+<div class="swatch" style="background: #ff6b6b">vermelho-5</div>
+<div class="swatch" style="background: #f06595">rosa-5</div>
+<div class="swatch" style="background: #cc5de8">uva-5</div>
+<div class="swatch" style="background: #845ef7">violeta-5</div>
+<div class="swatch" style="background: #5c7cfa">anil-5</div>
+<div class="swatch" style="background: #339af0">azul-5</div>
+<div class="swatch" style="background: #22b8cf">ciano-5</div>
+<div class="swatch" style="background: #20c997">petróleo-5</div>
+<div class="swatch" style="background: #51cf66">verde-5</div>
+<div class="swatch" style="background: #94d82d">lima-5</div>
+<div class="swatch" style="background: #fcc419">amarelo-5</div>
+<div class="swatch" style="background: #ff922b">laranja-5</div>
 </div>
 <div class="swatch-row">
-<div class="swatch" style="background: #868e96">gray-6</div>
-<div class="swatch" style="background: #fa5252">red-6</div>
-<div class="swatch" style="background: #e64980">pink-6</div>
-<div class="swatch" style="background: #be4bdb">grape-6</div>
-<div class="swatch" style="background: #7950f2">violet-6</div>
-<div class="swatch" style="background: #4c6ef5">indigo-6</div>
-<div class="swatch" style="background: #228be6">blue-6</div>
-<div class="swatch" style="background: #15aabf">cyan-6</div>
-<div class="swatch" style="background: #12b886">teal-6</div>
-<div class="swatch" style="background: #40c057">green-6</div>
-<div class="swatch" style="background: #82c91e">lime-6</div>
-<div class="swatch" style="background: #fab005">yellow-6</div>
-<div class="swatch" style="background: #fd7e14">orange-6</div>
+<div class="swatch" style="background: #868e96">cinza-6</div>
+<div class="swatch" style="background: #fa5252">vermelho-6</div>
+<div class="swatch" style="background: #e64980">rosa-6</div>
+<div class="swatch" style="background: #be4bdb">uva-6</div>
+<div class="swatch" style="background: #7950f2">violeta-6</div>
+<div class="swatch" style="background: #4c6ef5">anil-6</div>
+<div class="swatch" style="background: #228be6">azul-6</div>
+<div class="swatch" style="background: #15aabf">ciano-6</div>
+<div class="swatch" style="background: #12b886">petróleo-6</div>
+<div class="swatch" style="background: #40c057">verde-6</div>
+<div class="swatch" style="background: #82c91e">lima-6</div>
+<div class="swatch" style="background: #fab005">amarelo-6</div>
+<div class="swatch" style="background: #fd7e14">laranja-6</div>
 </div>
 <div class="swatch-row">
-<div class="swatch" style="background: #495057">gray-7</div>
-<div class="swatch" style="background: #f03e3e">red-7</div>
-<div class="swatch" style="background: #d6336c">pink-7</div>
-<div class="swatch" style="background: #ae3ec9">grape-7</div>
-<div class="swatch" style="background: #7048e8">violet-7</div>
-<div class="swatch" style="background: #4263eb">indigo-7</div>
-<div class="swatch" style="background: #1c7ed6">blue-7</div>
-<div class="swatch" style="background: #1098ad">cyan-7</div>
-<div class="swatch" style="background: #0ca678">teal-7</div>
-<div class="swatch" style="background: #37b24d">green-7</div>
-<div class="swatch" style="background: #74b816">lime-7</div>
-<div class="swatch" style="background: #f59f00">yellow-7</div>
-<div class="swatch" style="background: #f76707">orange-7</div>
+<div class="swatch" style="background: #495057">cinza-7</div>
+<div class="swatch" style="background: #f03e3e">vermelho-7</div>
+<div class="swatch" style="background: #d6336c">rosa-7</div>
+<div class="swatch" style="background: #ae3ec9">uva-7</div>
+<div class="swatch" style="background: #7048e8">violeta-7</div>
+<div class="swatch" style="background: #4263eb">anil-7</div>
+<div class="swatch" style="background: #1c7ed6">azul-7</div>
+<div class="swatch" style="background: #1098ad">ciano-7</div>
+<div class="swatch" style="background: #0ca678">petróleo-7</div>
+<div class="swatch" style="background: #37b24d">verde-7</div>
+<div class="swatch" style="background: #74b816">lima-7</div>
+<div class="swatch" style="background: #f59f00">amarelo-7</div>
+<div class="swatch" style="background: #f76707">laranja-7</div>
 </div>
 <div class="swatch-row">
-<div class="swatch" style="background: #343a40">gray-8</div>
-<div class="swatch" style="background: #e03131">red-8</div>
-<div class="swatch" style="background: #c2255c">pink-8</div>
-<div class="swatch" style="background: #9c36b5">grape-8</div>
-<div class="swatch" style="background: #6741d9">violet-8</div>
-<div class="swatch" style="background: #3b5bdb">indigo-8</div>
-<div class="swatch" style="background: #1971c2">blue-8</div>
-<div class="swatch" style="background: #0c8599">cyan-8</div>
-<div class="swatch" style="background: #099268">teal-8</div>
-<div class="swatch" style="background: #2f9e44">green-8</div>
-<div class="swatch" style="background: #66a80f">lime-8</div>
-<div class="swatch" style="background: #f08c00">yellow-8</div>
-<div class="swatch" style="background: #e8590c">orange-8</div>
+<div class="swatch" style="background: #343a40">cinza-8</div>
+<div class="swatch" style="background: #e03131">vermelho-8</div>
+<div class="swatch" style="background: #c2255c">rosa-8</div>
+<div class="swatch" style="background: #9c36b5">uva-8</div>
+<div class="swatch" style="background: #6741d9">violeta-8</div>
+<div class="swatch" style="background: #3b5bdb">anil-8</div>
+<div class="swatch" style="background: #1971c2">azul-8</div>
+<div class="swatch" style="background: #0c8599">ciano-8</div>
+<div class="swatch" style="background: #099268">petróleo-8</div>
+<div class="swatch" style="background: #2f9e44">verde-8</div>
+<div class="swatch" style="background: #66a80f">lima-8</div>
+<div class="swatch" style="background: #f08c00">amarelo-8</div>
+<div class="swatch" style="background: #e8590c">laranja-8</div>
 </div>
 <div class="swatch-row last">
-<div class="swatch" style="background: #212529">gray-9</div>
-<div class="swatch" style="background: #c92a2a">red-9</div>
-<div class="swatch" style="background: #a61e4d">pink-9</div>
-<div class="swatch" style="background: #862e9c">grape-9</div>
-<div class="swatch" style="background: #5f3dc4">violet-9</div>
-<div class="swatch" style="background: #364fc7">indigo-9</div>
-<div class="swatch" style="background: #1864ab">blue-9</div>
-<div class="swatch" style="background: #0b7285">cyan-9</div>
-<div class="swatch" style="background: #087f5b">teal-9</div>
-<div class="swatch" style="background: #2b8a3e">green-9</div>
-<div class="swatch" style="background: #5c940d">lime-9</div>
-<div class="swatch" style="background: #e67700">yellow-9</div>
-<div class="swatch" style="background: #d9480f">orange-9</div>
+<div class="swatch" style="background: #212529">cinza-9</div>
+<div class="swatch" style="background: #c92a2a">vermelho-9</div>
+<div class="swatch" style="background: #a61e4d">rosa-9</div>
+<div class="swatch" style="background: #862e9c">uva-9</div>
+<div class="swatch" style="background: #5f3dc4">violeta-9</div>
+<div class="swatch" style="background: #364fc7">anil-9</div>
+<div class="swatch" style="background: #1864ab">azul-9</div>
+<div class="swatch" style="background: #0b7285">ciano-9</div>
+<div class="swatch" style="background: #087f5b">petróleo-9</div>
+<div class="swatch" style="background: #2b8a3e">verde-9</div>
+<div class="swatch" style="background: #5c940d">lima-9</div>
+<div class="swatch" style="background: #e67700">amarelo-9</div>
+<div class="swatch" style="background: #d9480f">laranja-9</div>
 </div>
 
-As above, to use a particular shade, enter the name in its box, e.g. `yellow-6`. You can also use [any other color notation][color-notation] that web browsers understand, from the traditional hex triplet notation (e.g. `#0b7285`) to more modern ones, such as `hsla(0%, 65%, 48%, 0.75)`.
+Como acima, para usar um tom em particular, escreve o nome na sua caixa, p. ex. `amarelo-6`. Também podes usar [qualquer outra notação de cor][color-notation] que os navegadores compreendam, desde a tradicional notação hexadecimal (p. ex. `0b7285`) até às  mais modernas, como a `hsla(0%, 65%, 48%, 0.75)`.
 
-When setting colors in `config`, often you can specify both a background and foreground. For instance, you can set `config.style.page.color` to `'orange-9 on orange-0'`. However, when specifying a border color, for instance `config.style.page.link.lineColor`, only the foreground is used.
+Quando estiveres a definir as cores em `config`, podes especificar tanto a do fundo, como a que fica em primeiro plano. Por exemplo, podes definir  `config.estilo.página.cor` como `'laranja-9 sobre laranja-0'`. No entanto, quando especificares a cor da borda, por exemplo `config.estilo.página.ligação.corDaLinha`, só a cor de primeiro plano será usada.
 
-As with fonts, you can omit parts of a color declaration. Setting `config.style.page.link.color` to `'on blue-4'` causes links to use the page's foreground color, whatever it may be, but use a medium blue as background.
+No que diz respeito às fontes, podes omitir as partes sobre a declaração de cor. Se definires `config.estilo.página.ligação.cor` como `'sobre azul-4'` isto dará às ligações a cor de primeiro plano da página, qualquer que ela seja, mas usará um azul intermédio como fundo.
 
 <style>
 .page-diagram {
@@ -321,11 +321,11 @@ As with fonts, you can omit parts of a color declaration. Setting `config.style.
 }
 </style>
 
-[^1]: To review, launching your story with Twine's **Test** button will cause the backstage view to appear, including the **Style** tab.
+[^1]: Para recapitular, se começares a tua história através do botão do Twine **Testar**, fará aparecer a vista de bastidores, incluindo o separador de **Estilo**
 
-[^2]: If you are familiar with [CSS units](https://developer.mozilla.org/en-US/docs/Web/CSS/length), you can also use them, e.g. `Palatino 1rem` or `Palatino 25%`.
+[^2]: Se estiveres familiarizado com as [unidades CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/length), também poderás usá-las, p. ex. `Palatino 1rem` ou `Palatino 25%`.
 
-[^3]: What's a serif? [Wikipedia](https://en.wikipedia.org/wiki/Serif) aptly answers.
+[^3]: O que é uma serifa? A [Wikipedia](https://en.wikipedia.org/wiki/Serif) prontamente responde.
 
 [open-color]: https://yeun.github.io/open-color/
 [color-notation]: https://developer.mozilla.org/en-US/docs/Web/HTML/Applying_color#How_to_describe_a_color

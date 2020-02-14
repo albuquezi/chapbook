@@ -1,44 +1,45 @@
-# The Header and Footer
+# O Cabeçalho e o Rodapé
 
-Normally, Chapbook displays your story's title and a link to restart it at the bottom of the page. This area, called the _footer_, can be changed to include additional information and links. You can also add information at the top of the page, in its _header_, in a similar manner. The _[Cloak of Darkness]_ example, for instance, displays the current location in the header.
+Por norma, o Chapbook apresenta o título da tua história e uma ligação para a reiniciar no fundo da página. Esta área, chamada _rodapé_, pode ser alterada para incluir informação adicional e ligações. Também podes acrescentar informação no topo da página, no seu _cabeçalho_, de um modo semelhante. A história _[O Manto da Escuridão]_, por exemplo, mostra a localização atual no cabeçalho.
 
-The header and footer are further divided into three areas: _left_, _center_, and _right_. You do not need to place content into each area--Chapbook does its best to evenly space your content regardless of which areas you use.
+O cabeçalho e o rodapé estão divididos em três áreas: _esquerda_, _centro_ e _direita_. Não precisas de preencher cada uma destas áreas — O Chapbook fará o seu melhor para espaçar uniformemente o conteúdo Independentemente das áreas que usares.
 
-To change a header or footer area, set the corresponding variable in the `config` object.
+Para mudar uma área do cabeçalho ou do rodapé, define a variável correspondente no interior do objeto `config`.
+
 
 <table style="border: 1px solid #ddd; text-align: center">
 	<tbody>
 		<tr>
-			<td><code>config.header.left</code></td>
-			<td><code>config.header.center</code></td>
-			<td><code>config.header.right</code></td>
+			<td><code>config.cabeçalho.esquerda</code></td>
+			<td><code>config.cabeçalho.centro</code></td>
+			<td><code>config.cabeçalho.direita</code></td>
 		</tr>
 		<tr>
-			<td colspan="3"><i>main passage text</i></td>
+			<td colspan="3"><i>texto da passagem</i></td>
 		</tr>
 		<tr>
-			<td><code>config.footer.left</code></td>
-			<td><code>config.footer.center</code></td>
-			<td><code>config.footer.right</code></td>
+			<td><code>config.rodapé.esquerda</code></td>
+			<td><code>config.rodapé.centro</code></td>
+			<td><code>config.rodapé.direita</code></td>
 		</tr>
 	</tbody>
 </table>
 
-Remember that you must set the object property to a string for it to function correctly--meaning, you must put single or double quotes around the value. For example:
+Lembra-te de tens de atribuir uma _string_ à propriedade do objeto para funcionar corretamente — ou seja, tens de pôr o valoe entre aspas ou plicas. Por exemplo:
 
 ```
-config.header.center: "Midday"
+config.cabeçalho.centro: "Meio-dia"
 ```
 
-The contents of the variable are interpreted the same way that passage text is, so you can use links, [inserts], and, technically, [modifiers] in the variables:
+O conteúdo da variável é interpretado da mesma maneira que o texto da passagem, portanto podes usar ligações, [insertos] e tecnicamente [modificadores] nas variáveis:
 
 ```
-config.header.right: "Money left: {money}"
-config.footer.center: "[[Other stories in this anthology]]"
+config.cabeçalho.direita: "Dinheiro restante: {dinheiro}"
+config.rodapé.centro: "[[Outras histórias nesta antologia]]"
 ```
 
-The header and footer are designed to display a single line of text, though, so modifiers are probably of limited use. The header and footer are updated every time a new passage is shown in the body of the page, so variable inserts like the one shown above will automatically update during play.
+Atenção que o cabeçalho e o rodapé foram pensados para apresentar uma única linha de texto, portanto os modificadores terão uma apllicação limitada. O cabeçalho e o rodapé são atualizados sempre que uma nova passagem é apresentada no corpo da página, logo insertos com variáveis como o apresentado em cima irá ser automaticamente atualizado durante o jogo..
 
-[cloak of darkness]: https://klembot.github.io/chapbook/examples/cloak-of-darkness.html
-[inserts]: ../modifiers-and-inserts/link-inserts.md
-[modifiers]:../modifiers-and-inserts/modifiers-and-text-alignment.md
+[o manto da escuridão]: https://klembot.github.io/chapbook/examples/cloak-of-darkness.html
+[insertos]: ../modifiers-and-inserts/link-inserts.md
+[modificadores]:../modifiers-and-inserts/modifiers-and-text-alignment.md

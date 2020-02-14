@@ -1,15 +1,15 @@
-# Fork Style
+# Estilo da Bifurcação
 
-The way [forks] display can be customized through several variables.
+O modo como as [bifurcações] são apresentadas podem ser personalizadas através de várias variáveis.
 
-First, `config.style.page.fork.divider.style` sets the style of the dividing line between links. It can be set to any of these values:
+Primeiro, a variável `config.estilo.página.bifurcação.divisor.estilo` define o estilo da divisão entre ligações. Pode ser-lhe atribuída qualquer um destes valores:
 
--	`dashed`
--	`dotted`
--	`double`, which displays two thin horizontal lines
--	`solid`
--	`none`, which hides the dividers completely
+-	`tracejado`
+-	`ponteado`
+-	`duplo`, que mostra duas linhas horizontais finas
+-	`sólido`
+-	`nada`, que escondem completamente os divisores
 
-`config.style.page.fork.divider.size` sets the thickness of the dividing line, and `config.style.page.fork.divider.color` sets its color.
+`config.estilo.página.bifurcação.divisor.tamanho` define a espessura da linha divisória, e `config.estilo.página.bifurcação.divisor.cor` define a sua cor.
 
-[forks]: ../text-and-links/forks.md
+[bifurcações]: ../text-and-links/forks.md

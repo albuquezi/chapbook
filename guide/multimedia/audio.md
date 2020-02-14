@@ -119,7 +119,7 @@ Caminhas por entre as árvores.
 <audio>Som de fundo de uma floresta com chuva</audio>
 ```
 
-The text inside the will not be displayed ordinarily.
+O texto dentro entre as etiquetas não será exibido da forma comum.
 
 [Audacity]: https://www.audacityteam.org/
 [objeto]: ../state/objects-and-lookups.md
