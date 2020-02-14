@@ -1,7 +1,7 @@
 <div class="intro advanced">
-    <h1>Advanced Topics</h1>
+    <h1>Tópicos Avançados</h1>
 </div>
 
-This section covers topics that require existing knowledge of Web technologies such as JavaScript and CSS. Learning these is more than this documentation can handle; the [Mozilla Developer Network][mdn] is one place to start if you're interested in learning.
+Esta secção cobre tópicos que requerem conhecimento prévio de tecnologias da Internet como JavaScript e CSS. Aprendê-las exige muito mais do que esta documentação pode fazer; A [Mozilla Developer Network][mdn] é um dos sítios por onde podes começar se estiveres interessado(a) em aprender.
 
-[mdn]: https://developer.mozilla.org/en-US/
+[mdn]: https://developer.mozilla.org/pt-PT/

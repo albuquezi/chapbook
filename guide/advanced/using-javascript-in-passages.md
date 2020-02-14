@@ -1,4 +1,4 @@
-# Using JavaScript in Passages
+# Usar JavaScript nas Passagens
 
 As a last resort, Chapbook allows you to mix JavaScript into the text of your passage. To do this, use a `[JavaScript]` modifier:
 

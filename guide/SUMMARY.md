@@ -39,7 +39,7 @@
     -   [Considerações sobre o Design](customization/design-considerations.md)
 -   [Input do Jogador](player-input/index.md)
     -   [Input textual](player-input/text-input.md)
-    -   [Menus retrácteis e ligações rotativas](player-input/dropdown-menus-cycling-links.md)
+    -   [Menus retrácteis e ligações cíclicas](player-input/dropdown-menus-cycling-links.md)
 -   [Tópicos avançados](advanced/index.md)
     -   [Usar JavaScript nas Passagens](advanced/using-javascript-in-passages.md)
     -   [Usar CSS nas Passagens](advanced/using-css-in-passages.md)

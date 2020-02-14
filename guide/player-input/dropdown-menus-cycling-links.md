@@ -1,39 +1,39 @@
-# Dropdown Menus and Cycling Links
+# Menus Retrácteis e Ligações Cíclicas
 
-Instead of allowing any kind of input at all from a player, you may want to contrain them to a specific set of choices. Chapbook has two mechanisms for this that look different to the player, but behave identically behind the scenes: menus and cycling links.
+Em vez de permitir qualquer tipo de contribuição do jogador, talvez seja melhor limitar a sua liberdade a um conjunto específico de escolhas. O Chapbook tem dois mecanismos para isto, que se apresentam ao jogador de modo distinto, mas se comportam de forma idêntica nos bastidores: menus e ligações cíclicas.
 
-In order to do this, we need to introduce a new type of variable, an _array_. An array is similar to an object[^1] in that it's a container for other variables. However, where objects contain named variables, arrays are simply an ordered list of values. This array lists the colors of the rainbow:
-
-```
-['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
-```
-
-Arrays are easy to spot: they simply put square brackets around a list of values separated by commas. An array can contain any type of value: `['red', 3, true]` is a valid array. Arrays can also be empty, though in practice you'll rarely encounter this. The way to express an empty array is by writing `[]`.
-
-## Dropdown Menus
-
-The `{dropdown menu}` insert displays a menu of choices to the player.
+Para podermos continuar, é preciso introduzir um novo tipo de variável, um _vetor (array)_ . Um vetor é muito parecido a um objeto[^1] pois também é um contentor para outras variáveis. No entanto, onde os objetos contêm variáveis com nomes, os vetores são simplesmente uma lista ordenada de valores. Este vetor lista as cores do arco-íris:
 
 ```
-What meal do you enjoy most?
-
-{dropdown menu for: 'meal', choices: ['Breakfast', 'Lunch', 'Dinner']}
+['vermelho', 'laranja', 'amarelo', 'verde', 'azul', 'anil', 'violeta']
 ```
 
-As with text inputs, `{dropdown menu}` inserts save the selected value to a variable--in the example above, a variable named `meal`. If `meal` were previously set to a value in the menu, that value will be automatically preselected for the player. Otherwise, the menu shows the first option you list in the array of choices.
+Os vetores são fáceis de distinguir: são uma lista de valores separados por vírgulas que vão entre parêntesis retos. Um vetor pode contear qualquer tipo de valor: `['vermelho', 3, verdadeiro]` is um vetor válido. Os vetores também podem estar vazios, embora, na prática, raramente ocorrem assim. Para representar um vetor vazio, escreves `[]`.
 
-Unlike a text input, a dropdown menu does not block navigation to another passage, since it always has some value set.
+## Menus Retrácteis
 
-## Cycling Links
-
-The `{cycling link}` insert works exactly the same way as `{dropdown menu}`, only it shows a text link that the player selects to change. As the name implies, when the player reaches the last value in the `choices` array, the link starts over at the first element in the array.
+O inserto do `{menu retráctil}` apresenta ao jogador um menu com escolhas.
 
 ```
-I enjoy {cycling link for: 'meal', choices: ['Breakfast', 'Lunch', 'Dinner']} the most.
+Qual é a tua refeição predileta?
+
+{menu retráctil para: 'refeição', escolhas: ['Pequeno-almoço', 'Almoço', 'Jantar']}
 ```
 
-## Optional Parts
+Como as entradas de texto, os insertos `{menu retráctil}` gravam o valor selecionado numa variável — no exemplo acima, a variável chamada `refeição`. Se `refeição` tiver anteriormente recebido um valor, esse valor será apresentado automaticamente ao jogador. Se não, o menu irá mostrar a primeira opção dos valores do vetor.   
 
-Just like text inputs, dropdown menus and cycling links don't require that their value be saved to a variable. To do this, omit the `for:` part of the insert. For example, `{cycling link, choices: ['Breakfast', 'Lunch', 'Dinner']}`.
+Ao contrário das entradas de texto, um menu retráctil não bloqueia a navegação para outra passagem, uma vez que tem sempre um valor pré-definido.
 
-[^1]: It is a peculiarity of JavaScript, the programming language of web browsers, that arrays are in fact implemented as objects, so in a sense arrays _are_ objects. However, it's best to think of them at this stage as a distinct concept.
+## Ligações cíclicas
+
+O inserto `{ligação cíclica}` funciona exatamente do mesmo modo que os `{menus retrácteis}`, só que mostra uma ligação de texto que o jogador escolhe para a poder alterar. Como o nome indica, quando o jogador chega ao último valor do vetor das `escolhas`, a ligação volta ao início e apresenta o primeiro elemento do vetor.
+
+```
+Para mim, o {ligação cíclica para: 'refeição', escolhas: ['pequeno-almoço', 'almoço', 'jantar']]} é a minha refeição predileta.
+```
+
+## Partes Opcionais
+
+À semelhança das entradas de texto, os menus retrácteis e as ligações cíclicas não exigem que o seu valor seja gravado numa variável. Para fazeres isto, retira a parte com `para:` do inserto. Por exemplo, `{ligação cíclica, escolhas: ['pequeno-almoço', 'almoço', 'jantar']}`.
+
+[^1]: É uma peculiaridade do JavaScript, a linguagem de programação dos navegadores _web_, que os vetores sejam, de facto, implementados como objetos, portanto, num certo sentido, _são_ objetos. No entanto, nesta fase, é melhor pensar neles como um conceito distinto.

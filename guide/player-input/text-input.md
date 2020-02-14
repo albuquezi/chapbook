@@ -1,59 +1,60 @@
-# Contribuição Textual
+# Entradas de Texto
 
-Sometimes selecting a link isn't expressive enough to capture player intent. One common scenario is allowing the player to name a character--often, the protagonist. To do this, use the `{text input}` insert.
-
-```
-What would you like to name your loyal canine companion?
-
-{text input for: 'dogName'}
-
-[[Continue]]
-```
-
-This displays a text field after the first paragraph that, once the player moves to another passage, saves its contents to the variable named `dogName`. Take careful note of the quotation marks around `'dogName'` in the insert. These are needed so that the variable name is passed as-is to the insert, instead of being evaluated. Consider this contrived passage:
+Por vezes, escolher uma ligação não é algo expressivo o suficiente para captar a intenção do jogador. Um cenário comum é permitir que o jogador dê nomes às personagens — muitas vezes, ao protagonista. Para fazer isto, usa o inserto `{entrada de texto}`
 
 ```
-petType: 'cat'
+Que nome vais dar ao teu leal companheiro canino?
+
+{entrada de texto para: 'nomeDoCão'}
+
+[[Continuar]]
+```
+
+Isto irá mostrar um campo de texto depois do primeiro parágrafo que, depois de o jogador se mover para outra passagem, grava o seu conteúdo numa variável chamada `nomeDoCão`. Nota bem as aspas à volta de `'nomeDoCão'` no inserto. Elas são necessárias para que o nome da variável seja passado inalterado ao inserto, em vez de ser avaliado. Repara nesta passagem bastante artificial:
+
+```
+tipoDeAnimal: 'gato'
 --
-What would you like to name your loyal {petType} companion?
+Que nome vais dar ao teu leal companheiro {tipoDeAnimal}?
 
-{text input for: petType}
+{entrada de texto para: tipoDeAnimal}
 
-[[Continue]]
+[[Continuar]]
 ```
 
-This would save what the player entered to a variable named `cat`, not `petType`, because the variable `petType` is evaluated by the insert.
+Isto iria gravar o que o jogador escreveu num variável chamada `gato`, e não em `tipoDeAnimal` porque a variável `tipoDeAnimal` está a ser avaliada pelo inserto.
 
-If the variable that the text input is saving to already has a value, the text input will start with that value already filled in. For example:
+Se a variável na qual a entrada de texto vai gravar a informação já tiver um valor, a entrada de texto irá começar com o valor que lhe foi dado. Por exemplo:
 
 ```
-dogName: 'Lassie'
+nomeDoCão: 'Lassie'
 --
-What would you like to name your loyal canine companion?
+Que nome vais dar ao teu leal companheiro canino?
 
-{text input for: 'dogName'}
+{entrada de texto para: 'nomeDoCão'}
 
-[[Continue]]
+[[Continuar]]
 ```
 
-Will suggest a default name of 'Lassie' for the player's dog.
+Isto irá sugerir, por defeito, 'Lassie' como o nome do cão do jogador.
 
-Unless you specify otherwise, players must enter some text into a text input before moving onto another passage. If navigation is blocked, the player's web browser will show a message highlighting the text input that's empty. The exact appearance of this message varies from browser to browser, and can't be customized.
+Salvo indicação em contrário, os jogadores terão de introduzir algum texto na entrada de texto antes de poderem mover-se para outra passagem. Se a navegação estiver bloqueada, o navegador do jogador irá mostrar uma mensagem, para alertar que o campo de texto está vazio. O aspeto visual desta mensagem varia consoante o navegador, e não pode ser personalizado.
 
-## Optional Parts
 
-To allow the player to skip entering anything into a text input, set the insert's `required` property to `false`.
+## Partes Opcionais
+
+Para permitir que o jogador possa avançar sem ter de escrever alguma coisa, altera o valor da propriedade `necessário` do inserto para `falso`.
 
 ```
-What's your darkest secret? You don't have to tell me now if you don't want to.
+Qual é o teu segredo mais escuro? Não precisas de mo dizer agora se não te apetecer.
 
-{text input for: 'secret', required: false}
+{entrada de texto para: 'segredo', necessário: falso}
 ```
 
-Note that as above, the variable name should be quoted, but `false` should not.
+Repara que, como acima, o nome da variável deve ir entre aspas, mas `falso`não.
 
 {% hint style='info' %}
-The restriction on navigation only applies to player-initiated navigation. A required text input will not block navigation initiated by the story itself, or the player choosing to restart the story.
+A restrição de navegação só se aplica à que vier da iniciativa do jogador. Uma entrada de texto obrigatória não irá bloquear a navegação iniciada pela própria história nem caso o jogador decida reiniciar a história.
 {% endhint %}
 
-You also do not have to save a text input's value to a variable, if for some reason you won't need the value later. To do this, write `{text input}` or `{text input, required: true}`.
+Também não é obrigatório gravar o valor da entrada de texto numa variável, se não fores fazer uso dela mais tarde. Para fazer isto, escreve `{entrada de texto}` ou `{entrada de texto, necessário: verdade}`.
