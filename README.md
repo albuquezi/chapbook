@@ -1,24 +1,25 @@
-# Chapbook, a story format for Twine 2
+# Chapbook, um formato de história para o Twine 2
 
 ![][logo.svg]
 
-_by Chris Klimas_
+_por Chris Klimas_
+_tradução para português de Portugal por José Carlos Dias_
 
-Chapbook is a story format for Twine 2, which means that it plays stories created in Twine in a web browser. To use it, add this URL as a story format:
+O Chapbook é um formato de história para o Twine 2, o que quer dizer que corre, num navegador, histórias criadas no Twine. Para o usares, adiciona este URL como um formato de história:
 
 `https://klembot.github.io/chapbook/use/1.0.0/format.js`
 
-Chapbook is released under the [MIT license](https://en.wikipedia.org/wiki/MIT_License). It can be used to create commercial works without royalty payment or other arrangement.
+O Chapbook é publicado sob uma [licença MIT](https://en.wikipedia.org/wiki/MIT_License). Pode ser usado para criar trabalhos comerciais sem necessidade de pagamento de direitos de autor ou qualquer acordo.
 
--   ## Learn about Chapbook
+-   ## Aprender sobre o Chapbook
 
-    [The guide](https://klembot.github.io/chapbook/guide/) is a gentle introduction to creating with Chapbook. Start here if you'd like to start creating with Chapbook.
+    [O guia](https://klembot.github.io/chapbook/guide/) é uma introdução suave ao processo de criação com o Chapbook. Começa aqui se quiseres começar a criar histórias com o Chapbook.
 
--   ## _Cloak of Darkness_, a sample story 
-    Want a quick look at the output Chapbook produces, or the way you write a code for it? Take a look at the [story](https://klembot.github.io/chapbook/examples/cloak-of-darkness.html) and its [Twee source code](https://klembot.github.io/chapbook/examples/cloak-of-darkness.txt). If you've never used Twee before, it's a compact text-only format for Twine stories. The main thing to keep in mind is that each line beginning with `::` describes a new passage.
+-   ## _O Manto da Escuridão_, uma história de exemplo
+    Queres dar uma olhadela rápida ao tipo de histórias que podes criar com o Chapbook ou à forma como as podes programar? Vê aqui esta [história](https://klembot.github.io/chapbook/examples/cloak-of-darkness.html) e o seu [código-fonte em formato Twee](https://klembot.github.io/chapbook/examples/cloak-of-darkness.txt). Se nunca usaste o Twee antes, é um formato compacto e só de texto para as histórias do Twine. O importante a reter com o formato é que cada linha que começa com `::` descreve uma nova passagem.
 
--   ## Report a bug or suggest a feature
-    Please take a look at the [contributing guidelines](https://github.com/klembot/chapbook/blob/develop/CONTRIBUTING.md) before [opening an issue](https://github.com/klembot/chapbook/issues).
+-   ## Comunica _bugs_ ou sugere funcionalidades
+    Por favor, dá uma olhadela às [linhas de orientação para contribuir](https://github.com/klembot/chapbook/blob/develop/CONTRIBUTING.md) antes de [lançares uma questão](https://github.com/klembot/chapbook/issues).
 
--	## Support Chapbook development
-	[Become a Patreon backer](https://patreon.com/klembot) to gain access to devlogs and other benefits.
+-	## Apoio o desenvolvimento do Chapbook
+	[Apoio o projeto no Patreon](https://patreon.com/klembot) para ganhares acesso aos diários de desenvolvimento e outros benefícios.
