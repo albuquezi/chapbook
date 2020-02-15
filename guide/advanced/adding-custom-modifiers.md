@@ -1,6 +1,7 @@
-# Adding Custom Modifiers
+# Adicionar Modificadores Personalizados
 
-Chapbook can also be extended with custom modifiers. Below is code that adds a modifier that turns its text uppercase:
+O Chapbook pode ser expandido com modificadores personalizados. Em baixo, tens um código que adiciona um modificador que passa todo o texto para maiúsculas:
+
 
 ```
 [JavaScript]
@@ -14,21 +15,21 @@ engine.extend('1.0.0', () => {
 });
 ```
 
-You can also place code like this into your story's JavaScript in Twine--this uses the `[JavaScript]` modifier for clarity.[^1]
+Também podes pôr código como este na página de JavaScript do Twine — este exemplo aqui está a usar o modificador `[JavaScript]`[^1].
 
-See [the first part of Adding Custom Inserts](adding-custom-inserts.md) for an explanation of the `engine.extend()` function call, and how `config.template.modifiers` is changed. The `match` property works the same way as the `match` property for an insert; Chapbook compares possible modifier text with `match` properties until it finds a match.
+Vê [a primeira parte sobre como Adicionar Insertos Personalizados][adding-custom-inserts.md] para compreenderes como funciona a função `engine.extend()`, e como se altera `config.template.modifiers`. A propriedade `match` funciona da mesma maneira que a propriedade `match` de um inserto; o Chapbook compara vários textos do modificador com a propriedade `match` até encontrar o valor que corresponda.
 
-The `process()` property is where the work of a modifier occurs. The `output` argument it is passed has three properties. Each one is Markdown source code, _not_ HTML as it will be finally rendered.
+A propriedade `process()` é onde ocorre o trabalho do modificador. O argumento `output`, que é passado, tem três propriedades. Cada uma delas está em código-fonte Markdown, _não_ em HTML, como acabará por ser processado.
 
--   `text`, the text that the modifier is being applied to.
--	`startsNewParagraph`, a Boolean value indicating whether this block of text should begin a new paragraph. (The [append modifier], for example, sets this to `false`.)
+-   `text`, o texto ao qual se está a aplicar o modificador.
+-	`startsNewParagraph`, um valor booleano que indica se este bloco de texto deve abrir um novo parágrafo. (O [modificador juntar], por exemplo, marca isto como  `falso`.)
 
-Modifiers also receive two other arguments which the example above didn't show:
+Os modificadores também recebem dois outros argumentos que o exemplo acima não mostrou:
 
--   `state`, a private state object that is carried over invocations of a modifier in a single passage
--   `invocation`, the exact text that was typed in the modifier, without the square brackets surrounding it
+-   `state`, um objeto privado sobre o estado, que é transportado pelas chamadas de um modificador numa única passagem
+-   `invocation`, o texto exato que foi inserido no modificador, sem estar entre parêntesis retos
 
-Below is an example showing how `state` and `invocation` can be used to remove more and more letters from a passage.
+Em baixo, segue um exemplo que ilustra como `state` e `invocation` podem ser usados para removerem mais e mais letras de uma passagem.
 
 ```
 [JavaScript]
@@ -47,7 +48,7 @@ engine.extend('1.0.0', () => {
 });
 ```
 
-So that the following passage (from Kurt Vonnegut's _Slaughterhouse Five_)...
+O que significa que a seguinte passagem (da obra de Kurt Vonnegut _Slaughterhouse Five_)...
 
 ```
 [remove aeiou]
@@ -60,7 +61,7 @@ The formation flew backwards over a German city that was in flames. The bombers 
 When the bombers got back to their base, the steel cylinders were taken from the racks and shipped back to the United States of America, where factories were operating night and day, dismantling the cylinders, separating the dangerous contents into minerals. Touchingly, it was mainly women who did this work. The minerals were then shipped to specialists in remote areas. It was their business to put them into the ground, to hide them cleverly, so they would never hurt anybody ever again.
 ```
 
-... Would display as:
+... iria ser apresentada assim:
 
 	XmXrXcXn plXnXs, fXll Xf hXlXs Xnd wXXndXd mXn Xnd cXrpsXs tXXk Xff bXckwXrds frXm Xn XXrfXXld Xn XnglXnd. XvXr FrXncX X fXw GXrmXn fXghtXr plXnXs flXw Xt thXm bXckwXrds, sXckXd bXllXts Xnd shXll frXgmXnts frXm sXmX Xf thX plXnXs Xnd crXwmXn. ThXy dXd thX sXmX fXr wrXckXd XmXrXcXn bXmbXrs Xn thX grXXnd, Xnd thXsX plXnXs flXw Xp bXckwXrds tX jXXn thX fXrmXtXXn.
 
@@ -68,7 +69,7 @@ When the bombers got back to their base, the steel cylinders were taken from the
 
 	WXXn XXX bXmbXXX gXX bXck XX XXXXX bXXX, XXX XXXXX cyXXnXXXX wXXX XXkXn fXXm XXX XXckX XnX XXXppXX bXck XX XXX XnXXXX XXXXXX Xf XmXXXcX, wXXXX fXcXXXXXX wXXX XpXXXXXng nXgXX XnX XXy, XXXmXnXXXng XXX cyXXnXXXX, XXpXXXXXng XXX XXngXXXXX cXnXXnXX XnXX mXnXXXXX. XXXcXXngXy, XX wXX mXXnXy wXmXn wXX XXX XXXX wXXk. XXX mXnXXXXX wXXX XXXn XXXppXX XX XpXcXXXXXXX Xn XXmXXX XXXXX. XX wXX XXXXX bXXXnXXX XX pXX XXXm XnXX XXX gXXXnX, XX XXXX XXXm cXXvXXXy, XX XXXy wXXXX nXvXX XXXX XnybXXy XvXX XgXXn.
 
-Finally, in some cases, you may want a modifier to modify the source text as it was exactly entered by the author, before inserts and links are transformed into Markdown/HTML equivalents. To do this, write a `processRaw()` function instead of `process`. It takes the same exact arguments that `process()` does.
+Por fim, em alguns casos, podes querer que um modificador altere o texto-fonte introduzido pelo autor, antes de os insertos e as ligações serem transformadas no seu equivalente em Markdown/HTML. Para o fazeres, escreve uma função `processRaw()` em vez de `process`. Leva exatamente os mesmos argumento que `process()`.
 
-[^1]: Word of warning--you cannot define a modifier in the same passage that you use it in.
-[append modifier]: ../modifiers-and-inserts/delayed-text.md
+[^1]: Uma palavra de alerta — não podes definir um modificador na mesma passagem que irás usá-lo.
+[modificador juntar]: ../modifiers-and-inserts/delayed-text.md

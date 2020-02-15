@@ -1,5 +1,5 @@
 <div class="intro references">
-    <h1>References</h1>
+    <h1>Referências</h1>
 </div>
 
-This section contains quick references to specific Chapbook topics.
+Esta secção contêm referências rápidas a tópicos específicos do Chapbook.

@@ -1,6 +1,6 @@
-# Using CSS in Passages
+# Usar CSS nas Passagens
 
-Most of the time, the best way to customize the appearance of your story is to use [Chapbook's built-in functionality][customization] or the _Edit Stylesheet_ menu item in Twine. However, it is also possible to create passage-specific CSS using the `[CSS]` modifier.
+Na maior parte dos casos, a melhor forma de personalizar o aspeto visual da tua história é usar [a funcionalidade integrada do Chapbook][customization] ou o menu _Editar a Folha de Estilo_ no Twine. No entanto, também é possível criar código CSS específico para uma passagem, usando o modificador `[CSS]`.
 
 ```
 [CSS]
@@ -8,10 +8,10 @@ Most of the time, the best way to customize the appearance of your story is to u
 	color: green;
 }
 
-[continued]
-This text will be in green.
+[continuado]
+O texto aparecerá em verde.
 ```
 
-The CSS in this modifier will be applied globally--hence why the `.page article` selector is needed.
+O CSS neste modificador será aplicado globalmente — daí a razão de se usar o seletor `.page article`.
 
 [customization]: ../customization

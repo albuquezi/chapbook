@@ -1,136 +1,136 @@
-# Inserts
+# Insertos
 
-All of the below cause text or other types of content to appear in your passage. See [Modifiers and Inserts][mods-inserts] for more information.
+Todos os exemplos abaixo fazem aparecer, numa passagem da tua história, texto ou outros tipos de conteúdo. Consulta [Modificadores e Insertos][mods-inserts] para mais informações.
 
 <dl>
 
 <dt>
-<code>{ambient sound: 'sound name'<i>, volume: 0.5</i>}</code>
+<code>{som ambiente: 'nome do som'<i>, volume: 0.5</i>}</code>
 </dt>
 
 <dd>
-Begins playing a <a href="../multimedia/audio.html">previously-defined ambient sound</a>. <code>volume</code> can be omitted; by default, the ambient sound is played at full volume.
+Começa a tocar um <a href="../multimedia/audio.html">som ambiente previamente definido</a>. O <code>volume</code> pode ser omitido; por defeito, o som ambiente é reproduzido no máximo.
 </dd>
 
 <dt>
-<code>{back link<i>, label: 'Back'</i>}</code>
+<code>{retroceder<i>, rótulo: 'Voltar'</i>}</code>
 </dt>
 
 <dd>
-Renders a link to the previous passage. <code>label</code> can be omitted; Chapbook will default to using 'Back'.
+Apresenta uma ligação à passagem anterior. O <code>rótulo</code> pode ser omitido; O  Chapbook irá reverter para o valor 'Voltar'.
 </dd>
 
 <dt>
-<code>{cycling link<i> for 'variableName'</i>, choices: ['one', 'two', 'three']}</code>
+<code>{ligação cíclica para 'nomeDaVariável', escolhas: ['um', 'dois', 'três']}</code>
 </td>
 
 <dd>
-Renders a cycling link that runs through the options listed in <code>choices</code>, saving the option the player selected to the variable named. <code>for 'variable name'</code> can be omitted; Chapbook will not save the selected value anywhere.
+Apresenta uma ligação cíclica que corre todas as opções listadas em <code>escolhas</code>, e depois grava a opção selecionada pelo jogador na variável apresentada. <code>para 'nomeDaVariável'</code> pode ser omitido; o Chapbook não irá gravar o valor selecionado.
 </dd>
 
 <dt>
-<code>{dropdown menu<i> for 'variableName'</i>, choices: ['one', 'two', 'three']}</code>
+<code>{menu retráctil para 'nomeDaVariável', escolhas: ['um', 'dois', 'três']}</code>
 </td>
 
 <dd>
-Renders a dropdown menu that runs through the options listed in <code>choices</code>, saving the option the player selected to the variable named. <code>for 'variable name'</code> can be omitted; Chapbook will not save the selected value anywhere.
+Apresenta um menu retráctil que corre todas as opções listadas em <code>escolhas</code>, e depois grava a opção selecionada pelo jogador na variável apresentada. <code>para 'nomeDaVariável'</code> pode ser omitido; o Chapbook não irá gravar o valor selecionado.
 </dd>
 
 <dt>
-<code>{embed Flickr image: 'embed code', alt: 'alternate text'}</code>
+<code>{integrar image Flickr: 'código de integração', alt: 'texto alternativo'}</code>
 <br>
-abbreviated: <code>{embed Flickr: 'embed code', alt: 'alternate text'}</code>
+abreviado: <code>{integrar Flickr: 'código de integração', alt: 'texto alternativo'}</code>
 </dt>
 
 <dd>
-Renders an image hosted on Flickr with alt text specified by <code>alt</code>.
+Apresenta uma imagem alojada no Flickr com um texto alternativo especificado via <code>alt</code>.
 </dd>
 
 <dt>
-<code>{embed image: 'url', alt: 'alternate text'}</code>
+<code>{integrar imagem: 'url', alt: 'texto alternativo'}</code>
 </dt>
 
 <dd>
-Renders an image at a particular URL with alt text specified by <code>alt</code>.
+Apresenta uma imagem de um URL específico com um texto alternativo especificado via <code>alt</code>.
 </dd>
 
 <dt>
-<code>{embed passage named: 'passage name'}</code>
+<code>{integrar passagem chamada: 'nome da passagem'}</code>
 <br>
-abbreviated: <code>{embed passage: 'passage name'}</code>
+abreviado: <code>{integrar passagem: 'nome da passagem'}</code>
 </dt>
 
 <dd>
-Renders the passage named in the insert. This executes any vars section in that passage.
+Apresenta a passagem com o nome que vem no inserto. Isto irá fará correr quaisquer variáveis que haja na secção de variáveis dessa passagem.
 </dd>
 
 <dt>
 <dt>
-<code>{embed Unsplash image: 'URL', alt: 'alternate text'}</code>
+<code>{integrar imagem Unsplash: 'URL', alt: 'texto alternativo'}</code>
 <br>
-abbreviated: <code>{embed Unsplash: 'URL', alt: 'alternate text'}</code>
+abreviado: <code>{integrar Unsplash: 'URL', alt: 'texto alternativo'}</code>
 </dt>
 
 <dd>
-Renders an image hosted on Unsplash with alt text specified by <code>alt</code>.
+Apresenta uma imagem alojada no Unsplash com um texto alternativo especificado via <code>alt</code>.
 </dd>
 
 <dt>
 <code>{embed YouTube video: 'URL'}</code>
 <br>
-abbreviated: <code>{embed YouTube: 'URL'}</code>
+abbreviated: <code>{integrar YouTube: 'URL'}</code>
 </dt>
 
 <dd>
-Renders a video player for a video hosted on YouTube.
+Apresenta um reprodutor de vídeo para um vídeo alojado no YouTube.
 </dd>
 
 <dt>
-<code>{link to: 'passage name or URL'<i>, label: 'label'</i>}</code>
+<code>{ligar a: 'nome da passagem ou URL', rótulo: 'rótulo'}</code>
 </dt>
 
 <dd>
-Renders a link to a passage name or address. <code>label</code> may be omitted; Chapbook will use the passage name or URL as label instead.
+Apresenta uma ligação à passagem identificada ou a um endereço de Internet. O <code>rótulo</code> pode ser omitido; O Chapbook irá usar o nome da passagem ou o URL como rótulo, nestes casos.
 </dd>
 
 <dt>
-<code>{restart link<i>, label: 'label'</i>}</code>
+<code>{recomeçar, rótulo: 'rótulo'}</code>
 </dt>
 
 <dd>
-Renders a link that restarts the story. <code>label</code> may be omitted; Chapbook will use 'Restart' in that instance.
+Apresenta uma ligação que recomeça a história. O <code>rótulo</code> pode ser omitido; O Chapbook irá usar 'Recomeçar' nesse caso.
 </dd>
 
 <dt>
-<code>{reveal link: 'label', text: 'revealed text'}</code>
+<code>{revelar: 'rótulo', texto: 'texto revelado'}</code>
 </dt>
 
 <dd>
-Renders a link that expands to show the <code>text</code> property when clicked or tapped.
+Apresenta uma ligação que, quando clicada, se expande para mostrar o conteúdo da propriedade <code>texto</code>.
 </dd>
 
 <dt>
-<code>{reveal link: 'label', passage: 'passage name'}</code>
+<code>{reveal: 'rótulo', passagem: 'nome da passagem'}</code>
 </dt>
 
 <dd>
-Renders a link that expands to show the contents of the passage that has the name specified by the <code>passage</code> property when clicked or tapped.
+Apresenta uma ligação que, quando clicada, se expande para mostrar o conteúdo da passagem que foi especificada na propriedade <code>passagem</code>.
 </dd>
 
 <dt>
-<code>{sound effect: 'sound name'<i>, volume: 0.5</i>}</code>
+<code>{efeito sonoro: 'nome do som', volume: 0.5}</code>
 </dt>
 
 <dd>
-Begins playing a [previously-defined sound effect][sound]. <code>volume</code> can be omitted; by default, the ambient sound is played at full volume.
+Começa a tocar um [efeito sonoro previamente definido][sound]. O <code>volume</code> pode ser omitido; por defeito, o efeito sonoro é reproduzido no máximo.
 </dd>
 
 <dt>
-<code>{text input<i> for 'variable name'</i>, <i>required: false</i>}</code>
+<code>{entrada de texto para 'nome da variável', necessário: falso}</code>
 </td>
 
 <dd>
-Renders a text field, saving the text entered to the variable named. <code>for 'variable name'</code> can be omitted; Chapbook will not save the selected value anywhere. <code>required</code> can also be omitted; Chapbook will make the field required unless you specify otherwise.
+Apresenta um campo de texto, e grava o texto introduzido na variável indicada. <code>para 'nome da variável'</code> pode ser omitido; o Chapbook não irá gravar o texto introduzido. O valor <code>necessário</code> também pode ser omitido; o Chapbook, por defeito, marca o campo como obrigatório, salvo indicação em contrário.
 </dd>
 
 </dl>

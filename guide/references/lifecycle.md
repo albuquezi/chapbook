@@ -1,5 +1,5 @@
-# The Chapbook Lifecycle
+# Ciclo de Vida do Chapbook
 
-The diagram below shows the overall flow of execution in Chapbook beginning from when the web browser first loads the page, and is mainly of use when extending Chapbook.
+O diagrama em baixo mostra o fluxo geral de execução do Chapbook desde o primeiro momento em que o navegador lê a página, e serve essencialmente propósitos de expansão do Chapbook.
 
 ![Lifecycle Diagram](lifecycle.svg)

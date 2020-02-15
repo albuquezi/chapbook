@@ -1,12 +1,10 @@
-# Version History
+# Histórico das Versões
 
-## 0.0.2, 19 October 2018
+## 0.0.2, 19 de outubro de 2018
 
--   Fixes a bug where hard restarts in stories deleted the entire local storage
-    object, which could trash, among other things, the Twine story library if
-    you're using the web version (yikes). Thanks to Brendan Hennessy for
-    identifying this early.
+-   Reparado um _bug_ em que um _hard restart_ nas histórias apagava por completo
+    o objeto de armazenamento local, que podia apagar, entre outras coisas, a biblioteca de histórias do Twine se estivesses a usar a versão _web_ (livra!). Obrigado ao Brendan Hennessy por ter identificado logo isto.
 
-## 0.0.1, 14 October 2018
+## 0.0.1, 14 de outubro de 2018
 
-Initial public prerelease.
+Primeiro pré-lançamento público.

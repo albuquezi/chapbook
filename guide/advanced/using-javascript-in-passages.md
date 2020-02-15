@@ -1,21 +1,21 @@
 # Usar JavaScript nas Passagens
 
-As a last resort, Chapbook allows you to mix JavaScript into the text of your passage. To do this, use a `[JavaScript]` modifier:
+Em último recurso, o Chapbook permite-te misturar JavaScript com o texto da tua passagem. Para fazeres isto, usa o modificador `[JavaScript]`:
 
 ```
 [JavaScript]
-document.title = 'A Sticky Pickle';
+documento.título = 'Um picle peganhento';
 
-[continued]
-"Oh dear," you think to yourself. "That stain will never come out."
+[continuado]
+"Ora bolas," pensas contigo mesmo. "Nunca vou conseguir tirar aquela nódoa."
 ```
 
-The JavaScript modifier normally does not output anything in Chapbook; however, if you would like to output text, the modifier provides a function `write()`--just plain `write()`, not `document.write()`--that will output HTML source code. Text output via `write()` _will_ be processed for links and Markdown.
+O modificador JavaScript normalmente não faz aparecer nada no Chapbook; no entanto, se quisesses apresentar texto, o modificador tem uma função `write()` — apenas `write()`, não `document.write()` — que irá apresentar código-fonte HTML. O texto produzido pelo comando `write()` _irá_ permitir correr ligações e Markdown.
 
-Below is an example showing how `write()` works:
+Em baixo, segue um exemplo que mostra como o `write()` funciona:
 
 ```
-Before you lose your temper, you count to yourself:
+Antes que percas a cabeça, começas a contar para ti:
 
 [JavaScript]
 for (let i = 1; i <= 10; i++) {
@@ -23,28 +23,28 @@ for (let i = 1; i <= 10; i++) {
 }
 ```
 
-You can refer to variables defined in vars sections as you would expect in JavaScript. Changing them in JavaScript will persist changes as you'd expect, as well.
+Podes comunicar-te com as variáveis definidas na secção de variáveis como seria de esperar em JavaScript. Se as alterares via JavaScript, as mudanças manter-se-ão.
 
 ```
-color: 'red
+cor: 'vermelho'
 --
 [JavaScript]
-write(`The sky is ${color}.`);
+write(`O céu é ${color}.`);
 ```
 
-As a result, if you would like your JavaScript code to communicate back with the rest of your story, the easiest way to do this is to set the variable to an initial value in a vars section. If you absolutely need to create new variables in JavaScript, you can call `engine.state.set()` as below. This usage may change in future versions of Chapbook, though, whereas setting a variable initially in a vars section will always work.
+Desta forma, se quiseres que o teu código JavaScript comunique de volta com o resto da tua história, o mais fácil é dar à variável um valor inicial na secção de variáveis. Se te vires obrigado a criar novas variáveis em JavaScript, podes invocar o comando `engine.state.set()` como se mostra em baixo. Mas esta utilização pode mudar em versões futuras do Chapbook, ao passo que definir a variável inicialmente na secção de variáveis irá sempre funcionar.
 
 ```
 [JavaScript]
-let color = 'red';
-engine.state.set('weather', 'sunny');
+let color = 'vermelho';
+engine.state.set('tempo', 'soalheiro');
 
-[continued]
-It was a {weather} day. The sky was {color}.
+[continuado]
+O dia estava {tempo}. O céu estava {cor}.
 ```
 
-This would display:
+Isto ira mostrar:
 
-> It was a sunny day. The sky was {color}.
+> O dia estava soalheiro. O céu estava {cor}.
 
-`{color}` is displayed as-is because if Chapbook cannot find a matching insert or variable name, it displays the source text as it was entered. Any variables declared using `let` or `const` will *not* be visible to other Chapbook code, and will not be persisted across browser sessions.
+`{cor}` é apresentado assim porque se o Chapbook não consegue encontrar um nome de variável nem um inserto que correspondam, ele irá mostrar o texto-fonte como foi introduzido. Quaisquer variáveis declaradas, usando `let` ou `const` *não* ficarão disponíveis para outras parte do código do Chapbook, e não serão persistentes  entre sessões do navegador.

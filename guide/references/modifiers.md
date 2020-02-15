@@ -1,39 +1,39 @@
-# Modifiers
+# Modificadores
 
-All of the below affect the text following them. See [Modifiers and Inserts][mods-inserts] for more information.
+Todos os exemplos de modificadores abaixo afetam o texto que ocorre imediatamente a seguir à sua posição. Consulta a secção [Modificadores e Insertos][mods-inserts] para mais informação.
 
 <dl>
 
 <dt>
-<code>[after <i>time</i>]</code>
+<code>[tempo depois]</code>
 </dt>
 
 <dd>
-Causes the text to appear after a certain amount of time has passed after the passage is first displayed.
+Faz aparecer o texto depois de um certo período de tempo a contar desde o momento em que a passagem é apresentada pela primeira vez.
 </dd>
 
 <dt>
-<code>[align center]</code>, <code>[align left]</code>, <code>[align right]</code>
+<code>[alinhar centro]</code>, <code>[alinhar esquerda]</code>, <code>[alinhar direita]</code>
 </dt>
 
 <dd>
-Causes the text to be aligned a particular way. Aligning left isn't needed under normal circumstances, but is included for compeleteness's sake--use <code>[continue]</code> instead.
+Alinha o texto de uma forma particular. Em circunstâncias normais, não é necessário alinhar à esquerda, mas está incluído por um questão de completude — neste caso, usa o comando <code>[continuar]</code>.
 </dd>
 
 <dt>
-<code>[append]</code>
+<code>[juntar]</code>
 </dt>
 
 <dd>
-Used in conjunction with another modifier to have text immediately follow the text preceding it, instead of appearing in a new paragraph.
+Deve ser usado em conjugação com outro modificador para fazer aparecer o texto imediatamente a seguir ao texto que o precede, em vez de o fazer aparecer num novo parágrafo.
 </dd>
 
 <dt>
-<code>[continue]</code>, <code>[cont'd]</code>, <code>[cont]</code>
+<code>[continuar]</code>, <code>[cont'r]</code>, <code>[cont]</code>
 </dt>
 
 <dd>
-Clears all previously active modifiers.
+Desativa todos os modificadores anteriores que estejam ativos.
 </dd>
 
 <dt>
@@ -41,39 +41,39 @@ Clears all previously active modifiers.
 </dt>
 
 <dd>
-Acts like a <code>&lt;style&gt;</code> tag in the passage; the contents of the text will be interpreted as CSS rules instead of normal text.
+Atua como uma etiqueta de <code>&lt;style&gt;</code> na passagem; o seu conteúdo será interpretado como linguagem CSS e não como texto.
 </dd>
 
 <dt>
-<code>[else]</code>
+<code>[senão]</code>
 </dt>
 
 <dd>
-Only displays the text if the previous <code>[if]</code> condition was not met. If no previous <code>[if]</code> appeared in the passage's source code, an error occurs.
+Apenas apresenta o texto se a anterior condição <code>[se]</code> não for verificada. Se não tiver ocorrido antes uma condição <code>[se]</code> no código-fonte da passagem, irá ocorrer um erro.
 </dd>
 
 <dt>
-<code>[if <i>expression</i>]</code>
+<code>[expressão se]</code>
 </dt>
 
 <dd>
-Only displays the text if <i>expression</i> evaluates to true, or a truthy (<a href="https://developer.mozilla.org/en-US/docs/Glossary/Truthy">as defined by Javascript</a>) value.
+Apenas apresenta o texto se a expressão for avaliada como verdadeira ou considerada verdadeira (ver o conceito de _truthy_<a href="https://developer.mozilla.org/en-US/docs/Glossary/Truthy"> em JavaScript</a>).
 </dd>
 
 <dt>
-<code>[ifalways <i>expression</i>]</code>
+<code>[expressão sesempre]</code>
 </dt>
 
 <dd>
-Acts like the <code>[if]</code> modifier, except that it always displays the text it affects, regardless of the condition. This can be useful for quick testing.
+Atua como o modificador <code>[se]</code>, só que apresenta sempre o texto que afeta, independentemente da condição. Pode ser útil para realizar testes rápidos.
 </dd>
 
 <dt>
-<code>[ifnever <i>expression</i>]</code>
+<code>[expressão senunca]</code>
 </dt>
 
 <dd>
-Acts like the <code>[if]</code> modifier, except that it never displays the text it affects, regardless of the condition. This can be useful for quick testing.
+Atua como o modificador <code>[se]</code>, só que nunca apresenta o texto que afeta, independentemente da condição. Pode ser útil para realizar testes rápidos.
 </dd>
 
 <dt>
@@ -81,25 +81,24 @@ Acts like the <code>[if]</code> modifier, except that it never displays the text
 </dt>
 
 <dd>
-Acts like a <code>&lt;script&gt;</code> tag in the passage; the contents of the text will be interpreted as JavaScript code instead of normal text. To write output from inside the text, use the function `write()`.
+Atua como a etiqueta <code>&lt;script&gt;</code> na passagem; o seu conteúdo será interpretado como linguagem JavaScript e não como texto. Para escrever _output_ do interior do texto, usa a função `write()`.
 </dd>
 
 <dt>
-<code>[note to self]</code>, <code>[note]</code>, <code>[todo]</code>, <code>[fixme]</code>
+<code>[nota para mim]</code>, <code>[nota]</code>, <code>[porfazer]</code>, <code>[arranjar]</code>
 </dt>
 
 <dd>
-Causes the text to never be visible to the player. This is useful for leaving notes or other information for yourself.
+O texto que segue um destes modificadores nunca será apresentado ao jogador. É útil para deixares notas ou outra informação para ti próprio(a).
 </dd>
 
 <dt>
-<code>[unless <i>expression</i>]</code>
+<code>[expressão salvo se]</code>
 </dt>
 
 <dd>
-Only displays the text if <i>expression</i> evaluates to false, or a falsy (<a href="https://developer.mozilla.org/en-US/docs/Glossary">as defined by Javascript</a>) value.
+Apenas irá mostrar o texto se a <i>expressão</i> for avaliada como falsa ou considerada falsa (ver o conceito de<a href="https://developer.mozilla.org/en-US/docs/Glossary">em JavaScript</a>)
 </dd>
-
 </dl>
 
 [mods-inserts]: ../modifiers-and-inserts/index.md
