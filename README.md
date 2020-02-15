@@ -2,7 +2,7 @@
 
 ![][logo.svg]
 
-_por Chris Klimas_
+_por Chris Klimas_  
 _tradução para português de Portugal por José Carlos Dias_
 
 O Chapbook é um formato de história para o Twine 2, o que quer dizer que corre, num navegador, histórias criadas no Twine. Para o usares, adiciona este URL como um formato de história:
