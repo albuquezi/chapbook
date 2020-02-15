@@ -7,12 +7,12 @@ Se puseres o seguinte código numa passagem
 ```
 nome: 'Chris'
 --
-"Olá, {name}," o teu guia cumprimenta-te.
+"Olá, {nome}," o teu guia cumprimenta-te.
 ```
 
 ela irá apresentar o seguinte: `"Olá, Chris," o teu guia cumprimenta-te.` Este exemplo é um pouco tolo, porque poderias ter escrito `Chris` onde aparece <code>`nome`</code>. Mas a vantagem de o guardar numa variável é que podes tornar a usar <code>`nome`</code> mais tarde na história. Também podes usá-la, por exemplo, para permitir ao jogador escolher o seu género (ou a sua ausência) e então usar os pronomes corretos ao longo da história.
 
-Os insertos com variáveis não permitem parâmetros, como se indicou em [Link Inserts][link-inserts]; o nome da variável atua como o nome do inserto.[^1]
+Os insertos com variáveis não permitem parâmetros, como se indicou na secção de [Insertos][link-inserts]; o nome da variável atua como o nome do inserto.[^1]
 
 ## Não Podes Pôr Expressões Num Inserto
 
