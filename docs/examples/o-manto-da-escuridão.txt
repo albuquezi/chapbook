@@ -1,0 +1,104 @@
+:: Start {"position":"668,307","sizing":"100,100"}
+quarto: ''
+tensManto: true
+config.header.center: '{quarto}'
+config.footer.right: '{restart link, label: "Recomeçar"}'
+--
+[align center]
+# O Manto da Escuridão
+
+{embed unsplash image: 'https://unsplash.com/photos/rF1OwUp065Q'}
+
+_baseado no trabalho de [[Iain Merrick->http://www.philome.la/iainmerrick/cloak-of-darkness/play]]_  
+_fotografia de [[Alessia Cocconi->https://unsplash.com/photos/rF1OwUp065Q]]_
+
+**[[Começar->Exterior]]**
+
+
+:: Exterior {"position":"668,459","sizing":"100,100"}
+quarto: 'Exterior'
+--
+Apressando-te pela noite chuvosa de novembro, alegras-te quando vês o brilho das luzes do edifício da [[Ópera->Átrio]]. Ficas surpreendo que não haja mais pessoas, mas, também, o que é que estavas à espera de um mero jogo de demonstração...?
+
+
+:: Átrio {"position":"668,608","sizing":"100,100"}
+_quartoAnterior: quarto
+quarto: 'Átrio da Ópera'
+fora: false
+--
+[if _quartoAnterior === 'Exterior']
+Sacudindo a chuva do teu [[manto->Manto]], entras graciosamente no interior do edifício.
+
+[cont'd]
+Estás num átrio espaçoso, esplendidamente decorado em tons de vermelho e dourado, com lustres cintilantes pendurados no teto. A entrada da Ópera fica para [[norte->Exterior]], e há portas para [[sul->Bar]] e para [[oeste->Bengaleiro]].
+
+
+:: Manto {"position":"479,724","sizing":"100,100"}
+Um belo manto de veludo adornado com cetim, e ligeiramente salpicado de chuva. O seu negro é tão profundo que até parece sugar toda a luz do quarto.  
+
+[align center]
+{back link, label: "Voltar"}
+
+
+:: Bar {"position":"668,757","sizing":"100,100"}
+quarto: 'Bar'
+--
+[if tensManto]
+{embed passage: 'Escuridão'}
+
+[else]
+O bar, bem mais tosco do que esperarias depois da opulência do átrio que ficou para norte, está completamente vazio. Parece que há uma [[mensagem->ler mensagem]] qualquer rabiscada na serradura espalhada no chão.
+
+
+:: Bengaleiro {"position":"818,757","sizing":"100,100"}
+quarto: 'Bengaleiro'
+--
+As paredes deste pequeno quarto estiveram, em tempos, alinhadas com ganchos, porém agora [[resta apenas um->Gancho do Bengaleiro]].
+
+[if !tensManto; append]
+E nele está o teu [[manto->Manto]].
+
+[cont'd]
+A saída é pela porta para [[este->Átrio]].
+
+
+:: Gancho do Bengaleiro {"position":"820,911","sizing":"100,100"}
+Não passa de um pequeno gancho de latão, aparafusado à parede.
+
+[if tensManto]
+Podias [[pendurar->pendurar manto]] o teu [[manto->Manto]] aqui.
+
+[else]
+[align center]
+{back link, label: "Voltar"}
+
+
+:: pendurar manto {"position":"818,1057","sizing":"100,100"}
+tensManto: false
+--
+{embed passage: 'Bengaleiro'}
+
+
+:: ler mensagem {"position":"668,907","sizing":"100,100"}
+A mensagem, marcada com precisão na serradura, diz...
+
+[align center]
+_Ganhaste_
+
+
+:: Escuridão {"position":"1111,497","sizing":"100,100"}
+quarto: 'Escuridão'
+--
+Não consegues ver um palmo à frente do nariz! Nem mesmo a porta pela qual entraste — estava para [[norte->Átrio]], [[sul->Escuridão 2]], [[este->Escuridão 2]] ou [[oeste->Escuridão 2]]?
+
+
+:: Escuridão 2 {"position":"1111,647","sizing":"100,100"}
+Andar às apalpadelas no escuro não é nada boa ideia! Não sabes dizer a [[esquerda->Escuridão 3]] da [[direita->Escuridão 3]], muito menos o [[este->Escuridão 3]] do [[oeste->Escuridão 3]] ou o [[norte->Átrio]] do [[sul->Escuridão 3]].
+
+
+:: Escuridão 3 {"position":"1111,797","sizing":"100,100"}
+Não, isto não te vai levar a lado nenhum... Vamos ver, a porta estava para [[sul->Escuridão 4]], não estava? Portanto, a saída tem de ficar para [[norte->Átrio]], a não ser que tenhas [[dado a volta->Escuridão 4]].
+
+
+:: Escuridão 4 {"position":"1111,947","sizing":"100,100"}
+Ups, isto é só uma parede vazia! Mas talvez se a fores [[seguindo->Átrio]]...
