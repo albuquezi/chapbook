@@ -11,7 +11,7 @@ Instalas-te e preparas-te para o longo voo transatlântico.
 De repente, lembras-te que deixaste o forno ligado em casa.
 ```
 
-O texto `[1s depois]` nunca é mostrado ao jogador. Em vez disso, o Chapbook apresenta `De repente, lembras-te que deixaste o forno ligado em casa.` depois de o texto precedente ter sido exibido durante um segundo.
+O texto `[1 segundo depois]` nunca é mostrado ao jogador. Em vez disso, o Chapbook apresenta `De repente, lembras-te que deixaste o forno ligado em casa.` depois de o texto precedente ter sido exibido durante um segundo.
 
 Podes pôr qualquer medida de tempo no modificador `depois`[^1], e podes abreviar as unidades de tempo. São válidas as seguintes:
 
@@ -27,17 +27,17 @@ O modificador `depois` apenas aceita números inteiros. Em vez de escreveres `1.
 
 O modificador `depois` deve ser usado com moderação, e os atrasos devem ser definidos tendo presente que as pessoas leem a ritmos diferentes. Um minuto pode não parecer muito tempo, mas para jogadores rápidos é uma eternidade.
 
-O Chapbook avisa que ainda há texto por aparecer mostrando a animação de um relógio no canto inferior da página, e jogadores impacientes podem carregar no rato ou numa tecla para saltar o atraso. Esta funcionalidade não pode ser desativada.
+O Chapbook avisa que ainda há texto por aparecer, mostrando a animação de um relógio no canto inferior da página, e os jogadores mais impacientes podem carregar no botão do rato ou numa tecla para saltar o atraso. Esta funcionalidade não pode ser desativada.
 
 ## Os Modificadores Normalmente Criam Parágrafos
 
-Os modificadores normalmente fazem com que o texto que os seguem fiquem num parágrafo separado do texto anterior. Há casos, contudo, onde vais querer que o texto fique no parágrafo anterior. O modificador `juntar` permite isto.
+Os modificadores normalmente fazem com que o texto subsequente fique num parágrafo separado do texto anterior. Há casos, contudo, onde vais querer que o texto fique no mesmo parágrafo. O modificador `juntar` permite isto.
 
 ```
 Resolveste o mistério finalmente.
 
 [500ms depois; juntar]
-É então que sentes o baque: mas porque é que a Sra. Peacock tinha um cano de chumbo na sua mala?
+E é então que sentes o baque: mas porque é que a Sra. Peacock tinha um cano de chumbo na sua mala?
 ```
 
 O ponto e vírgula permite-te juntar vários modificadores numa única linha. É equivalente a:
@@ -45,10 +45,10 @@ O ponto e vírgula permite-te juntar vários modificadores numa única linha. É
 ```
 [500ms depois]
 [juntar]
-É então que sentes o baque: mas porque é que a Sra. Peacock tinha um cano de chumbo na sua mala?
+E é então que sentes o baque: mas porque é que a Sra. Peacock tinha um cano de chumbo na sua mala?
 ```
 
-Não importa em que ordem pões `juntar`, e ao contrário de `depois`, usa-lo sozinho, sem mais nenhuma informação.
+Não importa em que ordem pões `juntar`. E ao contrário de `depois`, deves usá-lo sozinho, sem mais nenhuma informação.
 
 [will not let me go]: http://ifarchive.org/if-archive/games/competition2017/Will%20Not%20Let%20Me%20Go/Will%20Not%20Let%20Me%20Go.html
 

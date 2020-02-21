@@ -1,13 +1,13 @@
 # Agradecimentos
 
-O Chapbook é mais uma confluência de ideias do que um projeto inteiramente original. A secção das variáveis é território familiar para quem já tenha usado YAML com formatação "front matter" num gerador de sites estáticos como o [Hexo][hexo]. E muito do seu desenho estadocêntrico — por oposição a um desenho de tipo imperativo, onde as mudanças ocorrem predominantemente através de funções — vem do que eu aprendi em [Redux][redux], a biblioteca padrão para gerir estados do ecossistema [React][react].
+O Chapbook é mais uma confluência de ideias do que um projeto inteiramente original. A secção de variáveis é território familiar para quem já tenha usado YAML com formatação "front matter" num gerador de sites estáticos como o [Hexo][hexo]. E muito do seu desenho estadocêntrico — por oposição a um desenho de tipo imperativo, onde as mudanças ocorrem predominantemente através de funções — vem do que eu aprendi com o [Redux][redux], a biblioteca padrão para gerir estados do ecossistema [React][react].
 
-Talvez não se possa perceber da sintaxe, mas os ganchos com nome do [formato de história Harlowe][harlowe], do Leon Arnott, inspirou muitas das reflexões que sustentam o Chapbook. O que me cativou tanto
+Talvez não se possa perceber da sintaxe, mas os ganchos com nome, do [formato de história Harlowe][harlowe], do Leon Arnott, inspirou muitas das reflexões que sustentam o Chapbook. O que me cativou tanto
 nestes ganchos foi a ideia de se poder manter o código separado do texto que ele afeta; que a lógica pudesse ficar separada, mesmo que a uma distância curta, da prosa.
 
 Os princípios estéticos do Chapbook devem muito ao estilo do motor de ficção interativa [Undum][undum], de Ian Millington, bem como aos trabalhos de Liza Daly _[Stone Harbor][stone-harbor]_ e _[Harmonia][harmonia]_. Espero que vejas no aspeto visual do Chapbook metade da elegância destes exemplos. Mas se não — espero ter-te deixado ganchos suficientes para poderes personalizar a tua história como achares melhor.
 
-A funcionalidade das notas na vista dos bastidores do Chapbook  foi inspirada pelo [Illume][illume], que é uma excelente forma de rever uma história do Twine antes do lançamento.
+A funcionalidade das notas na vista dos bastidores do Chapbook  foi inspirada pelo [Illume][illume], que é uma excelente forma de rever uma história do Twine antes da publicação.
 
 Se voltares os olhos para [o Livro de Receitas do Twine][cookbook], verás mais do que algumas semelhanças entre o seu índice e o deste guia. Não é por acaso. Um dos meus objetivos com o desenho do Chapbook foi facilitar a implementação de casos comuns — e o Livro de Receitas do Twine tem sido um maravilhoso indicador do que as pessoas querem alcançar com o Twine.
 
@@ -17,7 +17,7 @@ Por fim, quero ainda agradecer ao meu compaheiro criativo Joel Haddock por ter p
 
 ## Fotos neste Guia
 
-As fotos presentes neste guia vêm de uma combinação do [Pixabay][pixabay] e do [Unsplash][unsplash], e são usadas nos termos das licenças dessas páginas de internet. As pessoas que tiraram essas fotos são:
+As fotos presentes neste guia vêm de uma combinação do [Pixabay][pixabay] e do [Unsplash][unsplash], e são usadas nos termos das licenças desses _sites_. As pessoas que tiraram as fotos são:
 
 -	[Angela Bedürftig](https://pixabay.com/en/chess-game-board-chess-game-1403622/)
 -	[Gregory Butler](https://pixabay.com/en/battleship-engine-room-historic-war-389274/)

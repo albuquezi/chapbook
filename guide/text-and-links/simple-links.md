@@ -1,7 +1,7 @@
 # Ligações Simples
-No âmago de cada história do Twine estão as ligações. O Chapbook segue as convenções do Twine para escrever as ligações, ou seja, rouba descaradamente a sintaxe que é usada nas wikis por todo o lado.
+No âmago de cada história do Twine estão as ligações. O Chapbook segue as convenções do Twine na escrita das ligações, ou seja, é um roubo descarado da sintaxe usada nas _wikis_ por todo o lado.
 
-A notação mais simples para fazer uma ligação consiste em envolver o nome de uma passagem com colchetes duplos: `[[Uma porta minúscula]]`. Isto irá apresentar o título da passagem diretamente no texto.
+A notação mais simples para fazer uma ligação consiste em pôr o nome de uma passagem entre colchetes duplos: `[[Uma porta minúscula]]`. Isto irá apresentar o título da passagem diretamente no texto.
 
 Por vezes, faz mais sentido ocultar o nome do destino no texto — talvez porque a tua passagem se chame `Um Final Medonho`, ou o título da passagem esteja em caixa alta, mas gostarias de fazer a ligação a meio da frase. Podes fazer isto de duas maneiras diferentes, mas equivalentes.
 
@@ -12,12 +12,12 @@ Escrito | Apresentado
 
 (As ligações não levam a lado nenhum nos exemplos acima, claro está.)
 
-A forma mais fácil de te lembrares é pensar que a seta está a apontar para a passagem que queres ligar. Não importa a direção em que a seta aponta; usa a sintaxe que te der mais jeito.
+A forma mais fácil de te lembrares é pensar que a seta está a apontar para a passagem a que queres ligar. Não importa a direção em que a seta aponta; usa a sintaxe que te der mais jeito.
 
-Não podes usar [Markdown ou outros carateres de formatação][formatting] dentro de uma ligação simples. Se quiseres apresentar um link em itálico, por exemplo, põe antes a formatação à volta da ligação, assim: `_[[um amigo de um amigo]]_`. Vê os [Link Inserts](../modifiers-and-inserts/link-inserts.md) para saberes como criar uma ligação com formatação no seu interior, como <a href="javascript:void(0)">um homem com talentos <em>especiais</em></a>.
+Não podes usar [Markdown ou outros carateres de formatação][formatting] dentro de uma ligação simples. Se, por exemplo, quiseres apresentar uma ligação em itálico, deves pôr a formatação à volta da ligação, desta maneira: `_[[um amigo de um amigo]]_`. Vê os [Insertos](../modifiers-and-inserts/link-inserts.md) para saberes como criar uma ligação com formatação no seu interior, como <a href="javascript:void(0)">um homem com talentos <em>especiais</em></a>.
 
 ## Ligações Externas
-Para ligar a outra página da internet, introduz um URL em vez do nome de uma passagem. Podes escrever a ligação com a sintaxe que quiseres, embora a sintaxe com a seta torne o texto mais legível, na maioria dos casos:
+Para ligares a outra página da Internet, introduz um URL em vez do nome de uma passagem. Podes escrever a ligação com a sintaxe que quiseres, embora a sintaxe com a seta torne o texto mais legível, na maioria dos casos:
 
 Escrito                                                     | Apresentado
 ------------------------------------------------------------|----------
@@ -44,7 +44,7 @@ Tu <a href="javascript:void(0)">abres a porta</a> com grande confiança.
 <tbody>
 </table>
 
-É mais difícil de recordar do que a sintaxe da seta, por isso não há muitas razões para a usar agora a não ser que te tenhas habituado a usá-la com o Twine 1.
+Esta é mais difícil de ter presente do que a sintaxe da seta, por isso não há muitas razões para a usar, a não ser que te tenhas habituado a usá-la com o Twine 1.
 
 <style>
 tr, td {
