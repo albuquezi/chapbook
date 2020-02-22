@@ -2,7 +2,7 @@
 
 A aleatoriedade é uma poderosa ferramenta para criar experiências interativas. Pode ajudar numa simulação — decidir se as ações de uma personagem foram ou não bem sucedidas, como num jogo de tabuleiro de _role-play_ — mas também pode ser usado com propósitos estéticos, desde alterar expressões do texto até criar narrativas inteiramente aleatórias.
 
-A forma principal de fazer uso da aleatoriedade com o Chapbook é através das [variáveis de consulta][lookup variables] no objeto `aleatório`. Por exemplo:
+A forma principal de fazer uso da aleatoriedade com o Chapbook é através das [variáveis de consulta][lookups] no objeto `aleatório`. Por exemplo:
 
 
 ```
@@ -13,9 +13,9 @@ Cara!
 Coroa!
 ```
 
-... irá mostrar "Cara!" metade das vezes que a história for jogada e "Coroa!" a outra metade. O valor de  `aleatório.moedaAoAr` muda potencialmente em cada vez que o seu valor é usado.[^1]
+... irá mostrar "Cara!" metade das vezes que a história for jogada, e "Coroa!" a outra metade. O valor de  `aleatório.moedaAoAr` muda potencialmente cada vez que a expressão for usada.[^1]
 
-Para uma aleatoriedade mais apurada, podes também usar variáveis de consulta como `aleatório.d100`, que será um número inteiro aleatório entre 1 e 100. A lista completa é a seguinte:
+Para uma aleatoriedade mais apurada, podes também usar variáveis de consulta como `aleatório.d100`, que irá gerar um número inteiro aleatório entre 1 e 100. A lista completa é a seguinte:
 
 Consulta             | Gama
 ---------------------|------
@@ -94,14 +94,14 @@ Quatro.
 
 ## O Chapbook É Pseudoaleatório
 
-A aleatoriedade do Chapbook não é verdadeiramente aleatória: de facto, o processo pelo qual ele gera números aleatórios é completamente previsível. Isto pode parecer ridículo, mas é assim que quase todos os números aleatórios gerados por computador funcionam. O Chapbook usa o que se chama um gerador de números pseudoaleatórios, que gera um fluxo de números aparentemente aleatórios com base num valor semente.
+A aleatoriedade do Chapbook não é verdadeiramente aleatória: de facto, o processo pelo qual se geram números aleatórios é completamente previsível. Isto pode parecer ridículo, mas é assim que quase todos os números aleatórios gerados por computador funcionam. O Chapbook usa o que se chama um gerador de números pseudoaleatórios, que gera um fluxo de números aparentemente aleatórios com base num valor de semente.
 
-O gerador de números pseudoaleatórios irá gerar sempre os mesmos valores com um determinado valor semente. Salvo informação em contrário, o Chapbook irá sempre escolher um valor semente com base na data e na hora em que alguém começa a jogar, por isso cada sessão irá conter diferentes valores pseudoaleatórios. O Chapbook guarda este valor semente em `config.random.seed`. Esta variável pode ser tanto lida como alterada.
+O gerador de números pseudoaleatórios irá gerar sempre os mesmos valores com o mesmo valor de semente. Salvo informação em contrário, o Chapbook irá sempre escolher um valor de semente com base na data e na hora em que alguém começa a jogar, por isso cada sessão irá conter diferentes valores pseudoaleatórios. O Chapbook guarda este valor semente em `config.random.seed`. Esta variável pode ser tanto lida como alterada.
 
-Mas por que razão haverias de querer alterar a semente pseudoaleatória? Pode ajudar a testar — por exemplo, se alguém comunicar um problema com a tua história, podes substituir o teu valor semente pelo da pessoa e então já podes repetir as coisas exatamente como lhe aconteceram. Também podes definir o valor semente manualmente numa versão da tua história que passas a outros para a testarem, e assim fica garantido que todos terão uma experiência consistente.
+Mas por que razão haverias de querer alterar a semente pseudoaleatória? Pode ajudar-te a testar a história. Por exemplo, se alguém te comunicar um problema da tua história, podes substituir o teu valor de semente pelo da pessoa, e então já podes repetir as coisas exatamente como lhe aconteceram. Também podes definir o valor de semente manualmente numa versão da tua história que passas a outros para a testarem, e assim fica garantido que todos terão uma experiência consistente.
 
 [^1]: O que significa que é possível, como ficou demonstrado em _[Rosencrantz and Guildenstern Are Dead][rosencrantz]_, em que `aleatório.moedaAoAr` mantém o mesmo valor depois de ser lida.
-[^2]: Este exemplo tem uma linha (_underscore_) no nome da variável para sinalizar que é uma variável temporária, mas lembra-te que isto não passa de uma convenção.
+[^2]: Este exemplo tem uma linha no nome da variável, para sinalizar que é uma variável temporária, mas lembra-te que isto não passa de uma convenção.
 
 [lookups]: objects-and-lookups.html
 [rosencrantz]: https://en.wikipedia.org/wiki/Rosencrantz_and_Guildenstern_Are_Dead#Act_One

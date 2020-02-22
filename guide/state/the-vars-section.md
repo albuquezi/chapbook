@@ -1,6 +1,6 @@
 # A Secção de Variáveis (Vars)
 
-A forma principal que o Chapbook oferece para se trabalhar com o estado é através de _secções de vars (abreviatura de variáveis)_. Estas secções vêm sempre antes do começo de uma passagem e estão separadas do texto por dois hífenes (`--`).
+A forma principal que o Chapbook oferece para se trabalhar com o estado é através da _secções de vars (abreviatura de variáveis)_. Estas secções vêm sempre antes do começo de uma passagem e estão separadas do texto por dois hífenes (`--`).
 
 Para continuar com o exemplo da secção anterior, aqui vem um exemplo mais do que batido do que poderia ser a primeira passagem de um jogo de exploração de masmorras:
 ```
@@ -19,21 +19,21 @@ Quando o jogador visita esta passagem, o Chapbook irá adicionar seis variáveis
 As secções de variáveis nunca mostram nada ao jogador; isto é assim, para permitir, por exemplo, que possas criar uma variável chamada `condenadoAMorrerEmCincoMinutos`, e o jogador nada saberá sobre o seu destino iminente, a não ser que o queiras avisar.
 
 {% hint style='info' %}
-Se uma passagem estiver embutida noutra através do modificador `{embutir passagem}`, a sua secção de variáveis também irá ser tida em conta.
+Se uma passagem estiver integrada noutra através do modificador `{integrar passagem}`, a sua secção de variáveis também irá ser tida em conta.
 {% endhint %}
 
-Só podes ter uma secção de vars em cada passagem, mas também, na realidade, só se precisa de uma. O nome das variáveis de estado têm de seguir algumas regras também. Têm de começar com uma letra (maiúscula ou minúscula), com uma linha (`underscore em inglês`) (`_`), ou com o símbolo do dólar (`$`); depois do primeiro caráter pode vir qualquer combinação dos carateres atrás mencionados, bem como algarismos. [^1]
+Só podes ter uma secção de vars em cada passagem, mas também, na realidade, só se precisa de uma. O nome das variáveis de estado têm de seguir algumas regras também. Podem começar com uma letra (maiúscula ou minúscula), com uma linha (`_`), ou com o símbolo do dólar (`$`); depois do primeiro caráter pode vir qualquer combinação dos carateres atrás mencionados, bem como algarismos. [^1]
 
-Infelizmente, não se podem usar espaços nos nomes das variáveis. Por esta razão, há uma prática comum chamada _camel casing (caixa-camelo)_ (por causa da aparência do conjunto de palavras, semelhante às bossas de um camelo) que cola as palavras umas às outras com letras maiúsculas, como o exemplo acima `condenadoAMorrerEmCincoMinutos`. Outra escola de pensamento, _snake casing (caixa-cobra)_, prefere usar linhas (_underscores_), p. ex.: `condenado_a_morrer_em_cinco_minutos`. Qualquer um deles está bem. Usa aquele que for mais cómodo para ti.
+Infelizmente, não se podem usar espaços nos nomes das variáveis. Por esta razão, há uma prática comum chamada _caixa-camelo (camel casing)_ (por causa da aparência do conjunto de palavras, semelhante às bossas de um camelo) que cola as palavras umas às outras com letras maiúsculas, como o exemplo acima `condenadoAMorrerEmCincoMinutos`. Outra escola de pensamento, _caixa-cobra (snake casing)_, prefere usar linhas, p. ex.: `condenado_a_morrer_em_cinco_minutos`. Qualquer uma serve. Usa aquela que for mais cómoda para ti.
 
-Outra prática comum é começar o nome das variáveis com uma linha (_underscore_), quando o valor for para ser usado apenas na presente passagem. Esta prática é apenas uma dica; o Chapbook não impõe esta prática.[^2]
+Outra prática comum é começar o nome das variáveis com uma linha, se a variável for usada apenas na presente passagem. Esta prática é apenas uma prática comum; o Chapbook não a impõe.[^2]
 
 {% hint style='info' %}
 O nome de uma variável pode conter pontos (`.`), mas eles têm um significado especial. Enquanto não tiveres lido a secção [Objetos e Valores de Busca](objects-and-lookups.md), é melhor não os usares nos nomes de variáveis.
 {% endhint %}
 
 {% hint style='danger' %}
-O Chapbook e os navegadores _web_ reservam certos nomes de variáveis para o seu próprio uso. Se tentares usar uma variável cujo nome coincida com esses dos navegadores, podem acontecer coisas imprevisíveis, por isso é melhor evitar esses nomes. O Chapbook reserva para si os seguintes nomes ingleses (o que significa que as suas traduções para português podem ser usadas à vontade):
+O Chapbook e os navegadores _web_ reservam certos nomes de variáveis para o seu próprio uso. Se tentares usar uma variável cujo nome coincida com esses usados pelos navegadores, podem acontecer coisas imprevisíveis, por isso, o melhor é evitares esses nomes. O Chapbook reserva para si os seguintes nomes ingleses (o que significa que as suas traduções para português podem ser usadas à vontade):
 
 - `browser`
 - `engine`
@@ -51,13 +51,13 @@ O único momento em que os nomes das variáveis são apresentados ao jogador é 
 
 O exemplo no início desta secção atribuía números a variáveis, mas as variáveis podem guardar outros tipos de valores.
 
-As _strings_ são coleções de letras, números, espaços e outros símbolos. As _strings_ vão entre plicas (`'`) ou aspas (`"`) para que seja claro onde começam e acabam, de modo semelhante aos valores dos parâmetros textuais. Podes usar qualquer um destes sinais de pontuação para marcar o início e o fim, mas como nos trechos Markdown em negrito ou itálico, tens de ser consistente em cada uso. Se precisares de usar uma caráter delimitador dentro de uma _string_, usa uma barra invertida (`\`) antes do caráter, p. ex. `'Pr\'a, mas pr\'a quê?'`
+As _sequências (strings)_ são coleções de letras, números, espaços e outros símbolos. As sequências vão entre plicas (`'`) ou aspas (`"`) para que seja claro onde começam e acabam, como se fez com os valores dos parâmetros textuais. Podes usar qualquer um destes sinais de pontuação para marcar o início e o fim, mas, como nos trechos Markdown em negrito ou itálico, tens de ser consistente em cada uso. Se precisares de usar uma caráter delimitador dentro de uma sequência, usa uma barra invertida (`\`) antes do caráter, p. ex. `'Pr\'a, mas pr\'a quê?'`
 
-As _strings_ são ótimas para guardar nomes de coisas. Por exemplo, se quiseres que o jogador defina o nome do protagonista no início da história, uma _string_ seria a melhor variável a usar. Também podes usar _strings_ para guardar valores mais difusos. Podes usá-las para registar o estado de uma relação entre duas personagens como `'amigável'`, `'neutral'`, `'receoso'`, ou `'hostil'`.
+As sequências são ótimas para guardar nomes de coisas. Por exemplo, se quiseres que o jogador defina o nome do protagonista no início da história, uma sequência seria a melhor variável a usar. Também podes usar sequências para guardar valores mais difusos. Podes usá-las para registar o estado de uma relação entre duas personagens como `'amigável'`, `'neutral'`, `'receoso'`, ou `'hostil'`.
 
 As _booleanas_ guardam o valor de verdadeiro ou falso. Tal como os números, não precisas de usar nenhuns sinais de pontuação para as identificares; basta escreveres `true` (verdadeiro) ou `false` (falso). As booleanas são boas para registar se uma certa coisa aconteceu na história; por exemplo, se o protagonista encontrou uma pista.
 
-Há outros tipos de valores mais complexos que serão discutidos mais tarde, mas números, _strings_ e booleanas já te poderão levar bastante longe. Para recapitular, aqui vai um exemplo de uma passagem cuja secção de vars contém todos os três tipos de variáveis.
+Há outros tipos de valores mais complexos que serão discutidos mais tarde, mas números, sequências e booleanas já te poderão levar bastante longe. Para recapitular, aqui vai um exemplo de uma passagem cuja secção de vars contém todos os três tipos de variáveis.
 
 ```
 eurosNoBolso: 12
@@ -73,12 +73,12 @@ Não precisas de dar às variáveis valores simples, ou seja, uma secção de va
 ```
 eurosNoBolso: eurosNoBolso + 1
 ```
-Esta secção de variáveis aumenta o valor de `eurosNoBolso` em 1, usando uma _expressão_. Podes pensar numa expressão como uma fórmula ou um cálculo. É qualquer coisa que pode ser transformado num único valor através de um processo de _avaliação_. Por exemplo, podes usar as operações matemáticas básicas — adição, subtração, multiplicação e divisão — com valores numéricos. Podes também usar a adição para juntar duas _strings_ — por exemplo, `nomeCompleto: primeiro + ' ' + último` — mas não podes usar mais nenhum operador matemático com _strings_.
+Esta secção de variáveis aumenta o valor de `eurosNoBolso` em 1, usando uma _expressão_. Podes pensar numa expressão como uma fórmula ou um cálculo. É qualquer coisa que pode ser transformada num único valor através de um processo de _avaliação_. Por exemplo, podes usar as operações matemáticas básicas — adição, subtração, multiplicação e divisão — com valores numéricos. Podes também usar a adição para juntar duas sequências — por exemplo, `nomeCompleto: primeiro + ' ' + último` — mas não podes usar mais nenhum operador matemático com sequências.
 
-Também podes comparar dois números ou duas _strings_, cujo resultado será uma booleana.
+Também podes comparar dois números ou duas sequências, resultado esse que será uma booleana.
 
 * `===`, "igual a"  
-Verdadeiro se ambos os lados forem o mesmo número ou _string_. As _strings_ têm de ser exatamente as mesmas: `'LEBRE'` não é igual a `'lebre'`, nem `'lebre '` (nota o espaço no final) é igual a `'lebre'`.
+Verdadeiro se ambos os lados forem o mesmo número ou sequência. As sequências têm de ser exatamente as mesmas: `'LEBRE'` não é igual a `'lebre'`, nem `'lebre'` é igual a `'lebre '` (nota o espaço no final do último exemplo).
 
 * `!==`, "não igual a"  
 Verdadeiro se ambos os lados não forem iguais.
@@ -90,7 +90,7 @@ Verdadeiro se o lado esquerdo for maior do que o lado direito. Se usares `>=`, e
 * `<`, "menor que," e `<=`, "menor que ou igual a"  
 Verdadeiro se o lado esquerdo for mais pequeno que o lado direito. Se usares `<=`, então também será verdadeiro quando os dois lados forem iguais.
 
-De uma forma geral, uma _string_ é considerada maior do que outra se vier depois na ordem alfabética. Por exemplo, `'b' > 'a'`. Mas estas comparações podem ser confusas e pouco intuitivas. Será que `'+'` é maior que `'&'`? Até é, mas como poderias sabê-lo só de olhar? Talvez te surpreenda saber que `'A' < 'a'`[^3] Portanto, o melhor é não usar operadores como "maior que" ou "menor que" com _strings_.
+De uma forma geral, uma sequência é considerada maior do que outra se vier depois na ordem alfabética. Por exemplo, `'b' > 'a'`. Mas estas comparações podem ser confusas e pouco intuitivas. Será que `'+'` é maior que `'&'`? Até é, mas como poderias sabê-lo só de olhar? Talvez te surpreenda saber que `'A' < 'a'`[^3] Portanto, o melhor é não usar operadores como "maior que" ou "menor que" com sequências.
 
 A seguir, temos um exemplo de uma secção de variáveis que demonstra como estes operadores podem ser usados.  
 
@@ -98,7 +98,7 @@ A seguir, temos um exemplo de uma secção de variáveis que demonstra como este
 correto: resposta === 3
 noite: hora >= 18
 --
-O apresentador do concurso encosta-se na sua cadeira e sorri.
+O apresentador do concurso refastela-se na sua cadeira e sorri.
 ```
 
 As variáveis booleanas têm o seu próprio conjunto de operadores.
@@ -126,12 +126,12 @@ Nestas situações, podes usar parêntesis para tornar a expressão mais fácil 
 
 ## A Avaliação Só Ocorre Uma Vez
 
-Uma coisa importante a lembrar ao se atribuir o valor de uma expressão a uma variável é que a avaliação ocorre apenas uma vez, quando defines a variável. Imagina o seguinte cenário:
+Uma coisa importante a reter quando se atribui o valor de uma expressão a uma variável é que a avaliação ocorre apenas uma vez, quando defines a variável. Imagina o seguinte cenário:
 
 1. Numa passagem, dás à variável `dentesABater` o valor `temperatura < 0`.
 2. Numa passagem mais à frente, o protagonista entra num sítio, e o valor da temperatura é alterado: `temperatura: temperatura + 20`.
 
-As variáveis são agora inconsistentes: `dentesABater` é verdadeiro mas a `temperatura` está acima de 0. A melhor forma de evitar este problema é não criar uma variável derivada de outra. Não precisas de uma variável separada chamada `dentesABater` se tudo o que faz é refletir se a `temperatura` é maior que 0. Uma forma melhor seria definir: `estaConstipado: temperatura < 0 && !casacoVestido`, para refletir que o protagonista apanhar uma constipação porque estava na rua sem casaco. Ele pode depois entrar em casa ou vestir um casaco, mas é óbvio que nenhum desses atos não irá nem alterar nem afetar o facto de que o protagonista `estaConstipado`.
+As variáveis são agora inconsistentes: `dentesABater` é verdadeiro mas a `temperatura` está acima de 0. A melhor forma de evitar este problema é não criar uma variável derivada de outra. Não precisas de uma variável separada chamada `dentesABater` se tudo o que faz é refletir se a `temperatura` é maior que 0. Uma forma melhor seria definir: `estaConstipado: temperatura < 0 && !casacoVestido`, para refletir que o protagonista apanha a constipação porque estava na rua sem casaco. Ele pode depois entrar em casa ou vestir um casaco, mas é óbvio que nenhum desses atos irá alterar nem afetar o facto de que o protagonista `estaConstipado`.
 
 ## Expressões Podem Ser Usadas em Insertos
 
@@ -140,31 +140,31 @@ Uma expressão pode ser usada em vez de um valor num inserto. Por exemplo, a seg
 ```
 alvo: 'outra passagem'
 --
-{embutir passagem: alvo}
+{integrar passagem: alvo}
 ```
 
-irá apresentar o conteúdo da passagem chamada 'outra passagem'. Lembra-te de que esta utilização é distinta da de se pôr o nome de uma variável entre aspas, que o Chapbook trata como uma _string_. Dessa forma, esta passagem:
+irá apresentar o conteúdo da passagem chamada 'outra passagem'. Lembra-te de que esta utilização é distinta da de se pôr o nome de uma variável entre aspas, que o Chapbook trata como uma sequência. Dessa forma, esta passagem:
 
 ```
 alvo: 'outra passagem'
 --
-{embed passage: 'alvo'}
+{integrar passagem: 'alvo'}
 ```
 
-irá mostrar o conteúdo da passagem chamada 'target'. Por isso, presta atenção, porque pode ser confuso. A regra mais importante a reter é que as aspas, ou as plicas, marcam sempre as _strings_. Se algo não estiver entre aspas, então ele será avaliado.
+irá mostrar o conteúdo da passagem chamada 'alvo'. Por isso, presta atenção, porque pode ser confuso. A regra mais importante a reter é que as aspas, ou as plicas, são usadas para marcar as sequências. Se algo não estiver entre aspas, então será avaliado.
 
-Como se diz no título, os insertos podem usar expressões, não apenas variáveis, como valores. Por exemplo:
+Como se diz no título, os insertos podem usar expressões como valores, não apenas variáveis. Por exemplo:
 
 ```
-tipoDeBicho: 'gato'
-atividade: 'Anda'
+tipoDeBicho: 'Gato'
+atividade: 'anda'
 --
-{embutir passagem: tipoDeBicho + atividade}
+{integrar passagem: atividade + tipoDeBicho}
 ```
 
-irá apresentar o conteúdo da passagem  'gatoAnda'.
+irá apresentar o conteúdo da passagem  'andaGato'.
 
-[^1]: Podes usar outros carateres que não sejam do alfabeto latino, como `órgão` or `мудрость`, mas lembra-te que os navegadores _web_ mais velhos que não suportam a norma Unicode — na prática, versões antigas do Internet Explorer que têm uma minúscula taxa de utilização hoje em dia — podem ficar profundamente confundidos com a sua presença.
-[^2]: O formato de história SugarCube popularizou esta prática, e de facto descarta-se das variáveis cujo nome começar com uma linha (_underscore_) depois de o jogador passar para uma outra passagem.
-[^3]: A autoridade derradeira sobre a ordenação dos carateres numa dada _string_ pertence à norma Unicode. Os carateres são comparados com base no seu código Unicode; um valor numérico de código mais elevado ditará que um certo caráter é maior do que outro.
+[^1]: Podes usar outros carateres que não sejam do alfabeto latino, como `órgão` or `мудрость`, mas lembra-te de que os navegadores _web_ mais velhos que não suportam a norma Unicode — na prática, versões antigas do Internet Explorer, que têm uma minúscula taxa de utilização hoje em dia — podem ficar profundamente confundidos com a sua presença.
+[^2]: O formato de história SugarCube popularizou esta prática, e de facto descarta-se das variáveis cujo nome comece com uma linha, depois de o jogador passar para uma outra passagem.
+[^3]: A autoridade derradeira sobre a ordenação dos carateres numa dada sequência pertence à norma Unicode. Os carateres são comparados com base no seu código Unicode; um valor numérico de código mais elevado ditará que um certo caráter é maior do que outro.
 [^4]: Caso tenhas curiosidade, `!verdadeiro || falso` é avaliado como falso. O operador _não_ tem precedência sobre o _ou_.

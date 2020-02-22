@@ -1,8 +1,8 @@
 # Reveladores (Reveal Links)
 
-Uma ligação pode também revelar mais texto na passagem em vez de apresentar uma completamente nova. A Liza Daly usa este efeito em _[Stone Harbor]_ (uma história que ela criou usando um outro sistema de autoria chamado [Windrift]) que dá à história uma certa parecença com um romance.
+Uma ligação pode também revelar mais texto na passagem em vez de apresentar uma outra completamente nova. A Liza Daly usa este efeito em _[Stone Harbor]_ (uma história que ela criou usando um outro sistema de autoria chamado [Windrift]), que dá à história uma certa parecença com um romance.
 
-O Chpbook chama-os _reveladores_, e eles podem tanto apresentar mais texto, como o conteúdo de uma passagem inteira.
+O Chapbook chama-os _reveladores_, e eles podem tanto apresentar mais texto, como o conteúdo de uma passagem inteira.
 
 Para apresentar mais texto, escreve:
 
@@ -14,7 +14,7 @@ Isto irá apresentar primeiro "Eu estava a regressar a casa de carro uma noite q
 
 O texto que introduzires em qualquer uma das partes do inserto será interpretado como código-fonte, por isso podes usar [formatação] para personalizares o seu aspeto.
 
-Revelar assim o texto funciona bem para substituições curtas, mas usar trechos longos pode ficar esquisito. Nestes casos, o melhor é tenta revelar uma passagem:
+Revelar assim o texto funciona bem para substituições curtas, mas usar trechos longos pode ser esquisito. Nestes casos, o melhor é tenta revelar uma passagem completa:
 
 ```
 Eu estava a regressar a casa de carro uma noite quando {revelador: 'algo estranho se passou', passagem: 'Um Incidente Perigoso'}.

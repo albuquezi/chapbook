@@ -1,6 +1,6 @@
 # Apresentação Condicional
 
-Um outro uso habitual de variáveis em histórias é para vedar o acesso a um ramo da história, ou pelo contrário, abrir uma parte escondida da história. Para fazeres isto com o Chapbook, precisas de combinar uma variável com um modificador.
+Habitualmente, também se usam variáveis em histórias para vedar o acesso a um ramo da história, ou pelo contrário, abrir uma parte escondida da história. Para fazeres isto com o Chapbook, precisas de combinar uma variável com um modificador.
 
 Por exemplo, imagina que tens uma passagem onde o protagonista encontra uma chave escondida entre as ervas:
 ```
@@ -23,10 +23,10 @@ Podes tentar [[destrancá-la]] com a chave que encontraste.
 Consideras [[voltar para trás]].
 ```
 
-Só se o jogador tiver encontrado a chave antes é que poderá ver "Podes tentar destrancá-la com a chave que encontraste," mas em todos os casos, o jogador irá ver sempre "Consideras voltar para trás."
+Só se o jogador tiver encontrado a chave antes é que irá ver "Podes tentar destrancá-la com a chave que encontraste," mas o jogador irá ver sempre "Consideras voltar para trás."
 O modificador `se` apenas apresenta o texto que tem em baixo se a expressão no modificador for avaliada como verdadeira. Podes escrever qualquer coisa que possa ser avaliado como uma booleana[^1]. Aqui vêm mais alguns exemplos:
 
-  - `[se variávelString === 'vermelho']`
+  - `[se variávelSequência === 'vermelho']`
   - `[se dólaresNoBolso > 5]`
   - `[se 2 + 2 === 4]`
 
@@ -39,21 +39,21 @@ Em certos casos, é mais expressivo dizer `salvo se` em vez de `se`.
 Ficaste sem tempo. A tua respiração fica presa na garganta; o teu corpo escorrega da cadeira, e o mundo tolda-se de preto.
 ```
 
-Os modificadores `salvo se` funcionam exatamente como os `se`, só que eles só apresentam o texto que os segue se a sua condição for avaliada como falsa.
+O modificador `salvo se` funciona exatamente como o `se`, só que só apresenta o texto que o segue se a sua condição for avaliada como falsa.
 
 ## Condições "senão"
 
-A redação do primeiro exemplo nesta secção deixa um bocadinho a desejar. Podíamos melhorá-lo se usássemos um modificador `senão`:
+A redação do primeiro exemplo nesta secção deixa um bocadinho a desejar. Podíamos melhorá-lo se usássemos o modificador `senão`:
 
 ```
 [se temChave]
 Podes tentar [[destrancá-la]] com a chave que encontraste, ou voltar [[para trás]].
 
 [senão]
-Não há nada para fazer aqui a não ser voltar [[para trás]].
+Não há nada a fazer aqui a não ser voltar [[para trás]].
 ```
 
-Os modificadores `senão` mostram o texto que têm a seguir se a anterior condição `se` não correr. Eles não têm nenhuma relação com as condições `salvo se`. As condições `senão` funcionam dentro da mesma passagem; se usares um `se` numa passagem, não podes pôr o `senão` a que está ligado numa outra passagem. Se, por acaso, achares que precisas de fazer uma coisa destas, então repete a mesma condição na segunda passagem e usa uma condição `senão` em vez de um `se`.
+O modificador `senão` mostra o texto que tem a seguir se a anterior condição `se` não correr. Não há nenhuma relação com a condição `salvo se`. A condição `senão` funciona dentro da mesma passagem; se usares um `se` numa passagem, não podes pôr o `senão` a que está ligado numa outra passagem. Se, por acaso, achares que precisas de fazer uma coisa destas, então repete a mesma condição na segunda passagem e usa uma condição `senão` em vez de um `se`.
 
 ## Os Modificadores (Incluindo os Condicionais) Não Podem Ir Encaixados
 
@@ -67,7 +67,7 @@ Podias [[abrir a porta]]...
 ... e talvez seja a melhor hipótese se quiseres continuar vivo.
 ```
 
-Apenas iria mostrar, se `temChave` é falso e `distânciaDoMonstro` é 1, o seguinte:
+Se `temChave` é falso e `distânciaDoMonstro` é 1, no texto da passagem iria apenas aparecer o seguinte:
 
 ```
 ... e talvez seja a melhor hipótese se quiseres continuar vivo.
@@ -126,9 +126,9 @@ mas ainda não encontraste uma chave que a consiga abrir.
 Parece que não há nada de especial aqui, mas talvez [[uma busca possa revelar alguma coisa]].
 ```
 
-Lembra-te que `portaEncontrada`, `portaDestrancada` e `temChave` são definidas em outras passagens. E atenção — não podes usar um `[senão]` em frente do `mas ainda não encontraste uma chave que a consiga abrir.` O `senão` irá mostrar a sua informação sempre que o `[se]` não correr, mesmo quando `portaEncontrada` seja `falso`.
+Lembra-te que `portaEncontrada`, `portaDestrancada` e `temChave` são definidas em outras passagens. E atenção — não podes usar um `[senão]` em frente do `mas ainda não encontraste uma chave que a consiga abrir.` O `senão` iria mostrar a sua informação sempre que o `[se]` não corresse, mesmo quando `portaEncontrada` fosse `falso`.
 
-Um método alternativo é mover partes da tua lógica para uma passagem separada e [embuti-la][embed-passage]:
+Um método alternativo é mover partes da tua lógica para uma passagem separada e [integrá-la][embed-passage]:
 
 ```
 _portaAberta: portaEncontrada && portaDestrancada
@@ -138,13 +138,13 @@ _portaTrancada: portaEncontrada && !portaDestrancada
 A porta ergue-se aberta e destrancada, aguardando que te decidas a [[entrar]].
 
 [if portaEncontrada && !portaDestrancada]
-{embutir passagem: 'lógica porta fechada'}
+{integrar passagem: 'lógica porta fechada'}
 
 [if !portaEncontrada]
 Parece que não há nada de especial aqui, mas talvez [[uma busca possa revelar alguma coisa]].
 ```
 
-Qual das abordagens é melhor depende inteiramente da situação. Mas lembra-te que não é uma boa ideia embutir várias camadas de passagens, umas nas outras, como se fossem matrioscas. Um nível de profundidade é suficiente.
+Qual das abordagens é melhor depende inteiramente da situação. Mas lembra-te de que não é uma boa ideia integrar várias passagens, umas nas outras, como se fossem matrioscas. Um nível de profundidade é suficiente.
 
 ## Desativar as Condições para Efeitos de Teste
 
@@ -155,7 +155,7 @@ Pode ser útil controlar um dado modificador condicional para que ou corra sempr
 Isto apareceria com um [se] normal, mas assim não vai aparecer.
 ```
 
-Isto afeta quaisquer modificadores `[senão]` que se sigam.
+Isto afeta o modificador `[senão]` que possa vir a seguir.
 
-[^1]: Para dizer a verdade, também é possível escrever `[se variávelString]` ou `[se 2 + 2]`. Nestes casos, qualquer _string_ que não esteja vazia (ex. não `''`) é tratada como verdadeira, e qualquer número que não seja zero é tratado como verdadeiro. No entanto, é sempre melhor ser explícito, e escrever `[se variávelString !== '']` e `[se 2 + 2 !== 0]`.
+[^1]: Para dizer a verdade, também é possível escrever `[se variávelString]` ou `[se 2 + 2]`. Nestes casos, qualquer sequência que não esteja vazia (ex. não `''`) é tratada como verdadeira, e qualquer número que não seja zero é tratado como verdadeiro. No entanto, é sempre melhor ser explícito, e escrever `[se variávelSequência !== '']` e `[se 2 + 2 !== 0]`.
 [embed-passage]: ../text-and-links/embedding-passages.html
