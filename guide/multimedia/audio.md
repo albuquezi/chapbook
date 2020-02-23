@@ -85,11 +85,11 @@ som.ambiente.floresta.descrição: 'sons de floresta à tarde'
 Está um belo dia.
 ```
 
-A única diferença aqui é que o som irá aumentar gradualmente, e se já houver um som ambiente a tocar, o segundo vai substituindo progressivamente o primeiro. A duração exata desta transição é determinada pela variável de estado `som.duraçãoTransição`. É uma _string_ semelhante à aceitada pelo [modificador depois].
+A única diferença aqui é que o som irá aumentar gradualmente, e se já houver um som ambiente a tocar, o segundo vai substituindo progressivamente o primeiro. A duração exata desta transição é determinada pela variável de estado `som.duraçãoTransição`. É uma variável "sequência" semelhante à que é aceite pelo [modificador depois].
 
 ## Controlo do Volume do Som
 
-Para definires o volume base do som da tua história, podes alterar a variável de estado `som.volume` para um número decimal entre 0 e 1. 0 significa silêncio, e 1 leva o volume ao máximo. Podes também silenciar temporariamente todo o som definindo `som.silêncio` como `verdadeiro`. A vantagem de usar `som.silêncio` é que ele permite-te alternar entre silêncio e um nível de volume previamente definido.
+Para definires o volume base do som da tua história, podes alterar a variável de estado `som.volume` para um número decimal entre 0 e 1. 0 significa silêncio, e 1 leva o volume ao máximo. Podes também silenciar temporariamente todo o som, definindo `som.silêncio` como `verdadeiro`. A vantagem de usar `som.silêncio` é que ele permite-te alternar entre silêncio e um nível de volume previamente definido.
 
 Também podes definir o volume de um som através de um inserto. Ambos os insertos em baixo põe um som a tocar a metade do volume normal.
 
@@ -100,7 +100,7 @@ Também podes definir o volume de um som através de um inserto. Ambos os insert
 
 ## Problemas com a Reprodução Automática nos Navegadores
 
-O Chapbook tenta ao máximo continuar a reprodução do som entre sessões de jogo, para que nos casos em que há um som a tocar quando deixas de jogar, ele continue quando o jogador regressa à história. No entanto, isto entra em conflito com as severas restrições que a maioria dos navegadores tem em relação a sons que são tocados imediatamente depois de uma página ser carregada. Alguns navegadores interditam este comportamento, enquanto outros tomam em conta o comportamento do jogador na página _web_ que aloja a tua história — se um jogador tiver anteriormente interagido muito com o _site_, talvez o permita, mas os critérios exatos são muitas vezes pouco claros.
+O Chapbook tenta ao máximo continuar a reprodução do som entre sessões de jogo, para que nos casos em que há um som a tocar quando deixas de jogar, ele continue quando o jogador regresse à história. No entanto, isto entra em conflito com as severas restrições que a maioria dos navegadores tem em relação a sons que são tocados imediatamente depois de uma página ser carregada. Alguns navegadores interditam este comportamento, enquanto outros tomam em conta o comportamento do jogador na página _web_ que aloja a tua história — se um jogador tiver anteriormente interagido muito com o _site_, talvez o permita, mas os critérios exatos são muitas vezes pouco claros.
 
 Tocar um som depois de um jogador seguir uma ligação ou depois de clicar ou carregar numa ligação da tua história, em princípio, deve sempre funcionar, qualquer que seja a política de reprodução automática do navegador.
 
@@ -119,7 +119,7 @@ Caminhas por entre as árvores.
 <audio>Som de fundo de uma floresta com chuva</audio>
 ```
 
-O texto dentro entre as etiquetas não será exibido da forma comum.
+O texto entre as etiquetas não será exibido da forma comum.
 
 [Audacity]: https://www.audacityteam.org/
 [objeto]: ../state/objects-and-lookups.md

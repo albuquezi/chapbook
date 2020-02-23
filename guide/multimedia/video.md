@@ -3,7 +3,7 @@
 ## Integrar o Teu Próprio Vídeo
 
 {% hint style='working' %}
-O Chapbook ainda não permite que integres os teus próprios vídeos, mas irá fazê-lo no futuro.
+O Chapbook ainda não permite a integração dos teus próprios vídeos, mas irá fazê-lo no futuro.
 {% endhint %}
 
 ## Integrar um Vídeo do YouTube
@@ -17,7 +17,7 @@ Avisa-me se já tiveres visto este.
 ```
 
 {% hint style='working' %}
-De momento, não é possível pôr um vídeo do YouTube a começar quando a passagem é apresentada. O jogador precisa de iniciar a reprodução.
+De momento, não é possível pôr um vídeo do YouTube a começar automaticamente quando a passagem é apresentada. O jogador precisa de iniciar a reprodução.
 {% endhint %}
 
 {% hint style='working' %}

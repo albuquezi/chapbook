@@ -2,10 +2,10 @@
 
 ## Integrar as Tuas Próprias Imagens
 
-Para apresentar uma imagem numa passagem, usa o inserto `{integrar imagem}`:
+Para apresentares uma imagem numa passagem, usa o inserto `{integrar imagem}`:
 
 ```
-Tanto quanto sabes, vai para milhares de anos desde que alguém entrou nesta caverna. A entrada está coberta de musgo e folhas.
+Tanto quanto sabes, já passaram milhares de anos desde que alguém entrou nesta caverna. A entrada está coberta de musgo e folhas.
 
 {integrar imagem: 'caverna.jpeg', alt: 'Entrada da caverna'}
 ```
@@ -14,7 +14,7 @@ A propriedade `alt` está explicada mais em baixo em "Texto Alternativo."
 
 ## Integrar Imagens do Flickr
 
-O [Flickr][flickr] é um venerável serviço de fotografia que permite que as pessoas marquem as fotos que carregam como "integráveis". Se uma foto puder ser integrada, verás um ícone que se parece um pouco a uma seta, no canto inferior direito da foto. Ao marcares essa opção, ser-te-á apresentado o código de integração, que é compridote. Certifica-te que usas o código que está no separador de integração, e não o de Partilha (Share) nem o BBC. Quando já tiveres o código, usa o inserto `{integrar imagem Flickr}` como apresentado de seguida:
+O [Flickr][flickr] é um venerável serviço de fotografia que permite que as pessoas marquem as fotos que carregam como "integráveis". Se uma foto puder ser integrada, verás um ícone que se parece um pouco a uma seta, no canto inferior direito da foto. Ao marcares essa opção, ser-te-á apresentado o código de integração, que é bem comprido. Certifica-te que usas o código que está no separador de integração, e não o de Partilha (Share) nem o BBC. Quando já tiveres o código, usa o inserto `{integrar imagem Flickr}` como apresentado de seguida:
 
 ```
 O céu noturno resplandece de vida:
@@ -23,7 +23,7 @@ O céu noturno resplandece de vida:
 ```
 
 {% hint style='danger' %}
-Lá por o Flickr te deixar integrar imagens, isto não significa que tens o  _direito_ de a usar na tua história livremente. Procura na página da imagem pela licença que a pessoa que carregou a foto está a usar. Algumas poderão não ser usadas em projetos comerciais, enquanto outras não poderão ser usadas de nenhuma maneira.
+Lá por o Flickr te deixar integrar imagens, isto não significa que tens o  _direito_ de as usares na tua história livremente. Procura na página da imagem pela licença que a pessoa que carregou a foto está a usar. Algumas poderão não ser usadas em projetos comerciais, enquanto outras não poderão ser usadas de nenhuma maneira.
 {% endhint %}
 
 ## Integrar Imagens do Unsplash
@@ -42,11 +42,11 @@ Outros tipos de integração de imagem poderão aparecer numa versão futura do 
 
 ## Texto Alternativo
 
-Independentemente de onde vierem as imagens, terás de lhes dar um _texto alternativo_. Isto permitirá oferecer aos jogadores que têm problemas de visão  uma experiência equivalente à dos outros jogadores. A [WebAIM][webaim-alt-text] faz uma análise aprofundada da ideia de texto alternativo, mas a ideia principal é que ele deverá conter uma breve descrição do que a imagem retrata, que ficaria bem se alguém estivesse a ler a história em voz alta. Isto porque os jogadores com problemas de visão, na realidade, irão muito provavelmente usar um programa de leitura do ecrã, para lhes ler a história em voz alta.
+Independentemente de onde vierem as imagens, terás de lhes dar um _texto alternativo_. Isto permitirá oferecer aos jogadores que têm problemas de visão  uma experiência equivalente à dos outros jogadores. A [WebAIM][webaim-alt-text] faz uma análise aprofundada da ideia de texto alternativo, mas a ideia principal é que ele deverá conter uma breve descrição do que a imagem retrata, algo que ficaria bem se uma pessoa estivesse a ler a história em voz alta. Isto porque os jogadores com problemas de visão, na realidade, irão muito provavelmente usar um programa de leitura do ecrã, para lhes ler a história em voz alta.
 
 Quando escreveres o texto alternativo, evita expressões como "imagem do Abraham Lincoln" ou "foto do porto de Boston" — escreve apenas "Abraham Lincoln" ou "Porto de Boston".
 
-Se a tua imagem for puramente decorativa — por exemplo, uma moldura estilosa — então o texto alternativo deve ficar vazio, para que os leitores de ecrã possam passar à frente. Isto não quer significa omitir o comando `alt`, mas apenas declará-lo como uma _string_ vazia, como em baixo.
+Se a tua imagem for puramente decorativa — por exemplo, uma moldura estilosa — então o texto alternativo deve ficar vazio, para que os leitores de ecrã possam passar à frente. Isto não quer significa omitir o comando `alt`, mas apenas declará-lo como uma sequência vazia, como em baixo.
 
 ```
 {integrar imagem: 'asterisco.jpeg', alt:''}
