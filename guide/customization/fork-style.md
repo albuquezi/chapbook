@@ -8,7 +8,7 @@ Primeiro, a variável `config.estilo.página.bifurcação.divisor.estilo` define
 -	`ponteado`
 -	`duplo`, que mostra duas linhas horizontais finas
 -	`sólido`
--	`nada`, que escondem completamente os divisores
+-	`nada`, que esconde completamente os divisores
 
 `config.estilo.página.bifurcação.divisor.tamanho` define a espessura da linha divisória, e `config.estilo.página.bifurcação.divisor.cor` define a sua cor.
 

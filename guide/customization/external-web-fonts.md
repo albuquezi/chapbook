@@ -1,6 +1,6 @@
 # Fontes Web Externas
 
-Criar um bom grupo de fontes é difícil porque a maior parte dos jogadores terá um número muito baixo de fontes instalado no seu computador. Felizmente, não tens de estar limitado às fontes que os jogadores têm instaladas — podes usar as fontes _web_.
+Criar um bom grupo de fontes é difícil porque a maioria dos jogadores terá um número muito baixo de fontes instalado no seu computador. Felizmente, não estás limitado às fontes que os jogadores têm instaladas — podes usar as fontes _web_.
 
 ## Usar o Google Fonts
 
@@ -19,7 +19,7 @@ config.estilo.página.fonte: 'Open Sans/sans-serif 18'
 Bem-vindos a bordo da fragata U.S.S. Hood.
 ```
 
-Nota que como `config.estilo.googleFont` é uma _string_, tens de pôr o seu valor entre plicas (É melhor usar plicas aqui, uma vez o código de integração tem aspas.)
+Nota que como `config.estilo.googleFont` é uma sequência, tens de pôr o seu valor entre plicas (É melhor usar plicas aqui, porque o código de integração tem aspas.)
 
 ## Usar o Adobe Typekit Fonts
 
@@ -42,7 +42,7 @@ Bem-vindos a bordo da fragata U.S.S. Hood.
 
 ## Outras Fontes _Web_
 
-Também podes usar separadamente fontes _web_ de um serviço na nuvem. Mas antes verifica sempre a licença de utilização dessa fonte; não é incomum, por exemplo, ser necessário pagar uma certa quantia para poderes usar essa fonte em projetos pessoais, mas um valor diferente para usá-la na Internet ou numa aplicação.
+Também podes usar separadamente fontes _web_ de um serviço na nuvem. Mas antes verifica sempre a licença de utilização dessa fonte; não é incomum, por exemplo, ser necessário pagar uma certa quantia para poderes usar essa fonte em projetos pessoais, em projetos na Internet ou numa aplicação.
 
 Para incluir uma fonte diretamente via URL, adiciona duas propriedade a `config.estilo.fontes`:
 
