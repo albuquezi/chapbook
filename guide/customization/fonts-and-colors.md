@@ -1,12 +1,12 @@
 # Fontes e Cores
 
-A forma mais simples de personalizar as fontes e as cores da tua história é através do separador **Estilo** na zona dos bastidores[^1], que introduz valores no objeto `config.estilo` por ti. À medida que fores fazendo alterações nos bastidores, o aspeto da tua história atualiza-se automaticamente, por isso podes facilmente fazer experiências até encontrares uma aparência que combine com a tua história. No entanto, as alterações que fizeres não serão permanentemente gravadas — da próxima vez que testares ou jogares a tua história, ela regressará ao seu aspeto anterior.
+A forma mais simples de personalizar as fontes e as cores da tua história é através do separador **Estilo**, na zona dos bastidores[^1], que introduz valores no objeto `config.estilo`. À medida que fores fazendo alterações nos bastidores, o aspeto da tua história atualiza-se automaticamente, por isso podes comodamente experimentar até encontrares uma aparência que combine com a tua história. No entanto, as alterações que fizeres não ficarão permanentemente gravadas — da próxima vez que testares ou jogares a tua história, ela regressará ao seu aspeto anterior.
 
-Para que as alterações no separador **Estilo** se tornem permanentes, tens de copiar o código do painel **Config** no topo do separador para a secção de variáveis da passagem inicial (esta passagem está marcada com um foguetão no mapa da história do Twine). Se clicares em qualquer sítio na caixa que tem o código, todo o seu conteúdo será automaticamente selecionado, o que facilita o processo de copiar e colar.
+Para que as alterações no separador **Estilo** se tornem permanentes, tens de copiar o código do painel **Config**, no topo do separador, para a secção de variáveis da passagem inicial (esta passagem está marcada com um foguetão no mapa da história do Twine). Se clicares em qualquer sítio na caixa que tem o código, todo o seu conteúdo será automaticamente selecionado, o que facilita o processo de copiar e colar.
 
-Ao fazeres isto, as variáveis certas ficarão logo definidas no início da história — o que não significa que este possa ser o único aspeto que a tua história possa adquirir. Podes mudar as variáveis no objeto `config.estilo` na secção de variáveis de uma passagem posterior, e o aspeto da tua história irá mudar quando essa passagem for visitada. Podes usar isto, por exemplo, para assinalar a sequência de um sonho ou uma analepse.
+Ao fazeres isto, as variáveis certas ficarão logo definidas no início da história. Mas isto não quer dizer que este será o único aspeto visual possível que a tua história poderá adquirir. Podes mudar as variáveis no objeto `config.estilo`, na secção de variáveis de uma outra passagem, e o aspeto da tua história irá mudar quando esta passagem for visitada. Podes usar esta possibilidade, por exemplo, para assinalar a sequência de um sonho ou uma analepse.
 
-Os outros painéis do separador **Estilo**, **Página**, **Cabeçalho** e **Rodapé**, têm todos os mesmos campos. E como já adivinhaste, **Página** define o estilo base da tua história e **Cabeçalho** e **Rodapé** gerem as áreas acima e abaixo do texto principal. Por defeito, as histórias do Chapbook não têm cabeçalho.
+Os outros painéis do separador **Estilo** — **Página**, **Cabeçalho** e **Rodapé**, têm todos os mesmos campos. E como já adivinhaste, **Página** define o estilo base da tua história, e **Cabeçalho** e **Rodapé** gerem as áreas acima e abaixo do texto principal. Por defeito, as histórias do Chapbook não têm cabeçalho.
 
 <div class="page-diagram">
 	<div class="header">cabeçalho</div>
@@ -14,7 +14,7 @@ Os outros painéis do separador **Estilo**, **Página**, **Cabeçalho** e **Roda
 	<div class="footer">rodapé</div>
 </div>
 
-Os valores que definires para os estilos de página, cabeçalho e rodapé passam de uns para os outros. Isto significa que se o valor do estilo de um cabeçalho ou rodapé não estiver definido, irá usar o valor correspondente da página. Se o valor da página também não estiver definido, então, irá ser usado o valor de estilo por defeito do Chapbook.
+Os valores que definires para os estilos de página, cabeçalho e rodapé passam de uns para os outros. Isto significa que se o valor de estilo de um cabeçalho ou rodapé não estiver definido, ele irá usar o valor correspondente da página. Se o valor da página também não estiver definido, então, irá ser usado o valor de estilo por defeito do Chapbook.
 
 ## Definir o Estilo de Texto
 
@@ -41,17 +41,17 @@ Isto escolhe a fonte Palatino com 18 pixéis de altura.[^2] Mas, numa situação
 Palatino/serif 18
 ```
 
-As barras separam fontes alternativas naquilo se chama um _grupo de fontes_. Antes do advento das fontes _web_, os grupos de fontes eram uma parte crucial do _web design_. Nesse tempo, os navegadores são conseguiam apresentar as fontes instaladas no sistema operativo, por isso os _designers_ tinham de especificar uma fonte alternativa para conseguirem criar uma aparência consistente nos vários sistemas operativos.
+As barras separam fontes alternativas ou aquilo que se chama um _grupo de fontes_. Antes do advento das fontes _web_, os grupos de fontes eram uma parte crucial do _web design_. Nesse tempo, os navegadores só conseguiam apresentar as fontes instaladas no sistema operativo, por isso os _designers_ tinham de especificar uma fonte alternativa para conseguirem criar uma aparência consistente nos vários sistemas operativos.
 
-Nos nossos tempos, os grupos de fontes afetam o aspeto que uma página tem à primeira vista — normalmente, o texto aparece imediatamente numa fonte do sistema, e depois numa fonte _web_, quando a página já está carregada. (Ver [Fontes Web Externas][external-web-fonts.md] para mais pormenores sobre como usar uma fonte _web_ com o Chapbook.) Mas há jogadores que terão as fontes _web_ desligadas, ou por preferência própria ou para pouparem largura de banda, e, por isso, é boa prática desenhar a tua história para dar resposta a isso.
+Nos nossos tempos, os grupos de fontes afetam o aspeto que uma página tem à primeira vista — normalmente, primeiro o texto aparece numa fonte do sistema, e só depois numa fonte _web_, quando a página já está carregada. (Ver [Fontes Web Externas][external-web-fonts.md] para mais pormenores sobre como usar uma fonte _web_ com o Chapbook.) Só que há jogadores que podem ter as fontes _web_ desligadas, ou por opção própria ou como forma de pouparem largura de banda, e, por isso, é boa prática desenhares a tua história com isto em mente.
 
-O exemplo acima indica que caso a fonte chamada Palatino não esteja disponível no navegador do jogador, a palavra `serif` sinaliza que deve reverter para uma fonte serifada genérica.[^3] Se quiseres que a tua história apareça em Helvetica, podes usar:
+O exemplo acima indica que, caso a fonte chamada Palatino não esteja disponível no navegador do jogador, a palavra `serif` sinaliza que se deve reverter para uma fonte serifada genérica.[^3] Se quiseres que a tua história apareça em Helvetica, podes usar:
 
 ```
 Helvetica/Arial/sans-serif 14
 ```
 
-Muitas das pessoas que virem a tua história num computador com o Windows não vão ter a fonte Helvetica, mas de certeza que terão a Arial, a [concorrente da Helvetica][helvetica-vs-arial], da Microsoft. E se por alguma razão não tiverem nem uma nem outra, a história irá usar qualquer fonte não serifada que estiver disponível.
+Muitas das pessoas que virem a tua história num computador com o Windows não vão ter a fonte Helvetica instalada, mas de certeza que terão a Arial, a [concorrente da Helvetica][helvetica-vs-arial], da Microsoft. E se por alguma razão não tiverem nem uma nem outra, a história irá usar qualquer fonte não serifada que esteja disponível.
 
 Quando quiseres especificar fontes que tenham espaços no nome, não tens de fazer nada de especial:
 
@@ -65,7 +65,7 @@ Também podes modificar uma fonte com as palavras `negrito`, `itálico`, `sublin
 Palatino 18 negrito itálico
 ```
 
-Há um estilo especial de fonte chamado `regular`, que remove qualquer estilo de negrito, itálico, sublinhado ou versaletes que uma fonte pode herdar. Os estilos de fonte _têm de_ ser digitados só com letras minúsculas. Isto é porque podes omitir partes da declaração. Todos os exemplos em baixo são notação de fonte válidas:
+Há um estilo especial de fonte chamado `regular`, que remove qualquer estilo de negrito, itálico, sublinhado ou versaletes que uma fonte possa ter herdado. Os estilos de fonte _têm de_ ser digitados só com letras minúsculas. Isto é porque podes omitir partes da declaração. Todos os exemplos em baixo são notações válidas de configuração da fonte:
 
 - `Palatino`
 - `18`
@@ -73,7 +73,7 @@ Há um estilo especial de fonte chamado `regular`, que remove qualquer estilo de
 - `Palatino negrito`
 - `18 versaletes`
 
-As partes omitidas são herdadas como descrito acima.
+A informação das partes omitidas será herdada, como foi explicado acima.
 
 ## Cores
 
@@ -326,7 +326,7 @@ No que diz respeito às fontes, podes omitir as partes sobre a declaração de c
 [^2]: Se estiveres familiarizado com as [unidades CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/length), também poderás usá-las, p. ex. `Palatino 1rem` ou `Palatino 25%`.
 
 [^3]: O que é uma serifa? A [Wikipedia](https://en.wikipedia.org/wiki/Serif) prontamente responde.
-
+[external-web-fonts.md]:
 [open-color]: https://yeun.github.io/open-color/
 [color-notation]: https://developer.mozilla.org/en-US/docs/Web/HTML/Applying_color#How_to_describe_a_color
 [helvetica-vs-arial]: https://ilovetypography.com/2007/10/06/arial-versus-helvetica/
