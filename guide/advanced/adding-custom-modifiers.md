@@ -1,6 +1,6 @@
 # Adicionar Modificadores Personalizados
 
-O Chapbook pode ser expandido com modificadores personalizados. Em baixo, tens um código que adiciona um modificador que passa todo o texto para maiúsculas:
+O Chapbook pode ser expandido com modificadores personalizados. Em baixo, tens o código de um modificador que passa todo o texto para maiúsculas:
 
 
 ```
@@ -17,14 +17,14 @@ engine.extend('1.0.0', () => {
 
 Também podes pôr código como este na página de JavaScript do Twine — este exemplo aqui está a usar o modificador `[JavaScript]`[^1].
 
-Vê [a primeira parte sobre como Adicionar Insertos Personalizados][adding-custom-inserts.md] para compreenderes como funciona a função `engine.extend()`, e como se altera `config.template.modifiers`. A propriedade `match` funciona da mesma maneira que a propriedade `match` de um inserto; o Chapbook compara vários textos do modificador com a propriedade `match` até encontrar o valor que corresponda.
+Vê [a primeira parte sobre como Adicionar Insertos Personalizados][adding-custom-inserts.md] para compreenderes como funciona a função `engine.extend()`, e como se altera `config.template.modifiers`. A propriedade `match` funciona da mesma maneira que a propriedade `match` de um inserto; o Chapbook compara vários textos do modificador com a propriedade `match` até encontrar o valor certo.
 
 A propriedade `process()` é onde ocorre o trabalho do modificador. O argumento `output`, que é passado, tem três propriedades. Cada uma delas está em código-fonte Markdown, _não_ em HTML, como acabará por ser processado.
 
 -   `text`, o texto ao qual se está a aplicar o modificador.
 -	`startsNewParagraph`, um valor booleano que indica se este bloco de texto deve abrir um novo parágrafo. (O [modificador juntar], por exemplo, marca isto como  `falso`.)
 
-Os modificadores também recebem dois outros argumentos que o exemplo acima não mostrou:
+Os modificadores também recebem dois outros argumentos, que o exemplo acima não mostrou:
 
 -   `state`, um objeto privado sobre o estado, que é transportado pelas chamadas de um modificador numa única passagem
 -   `invocation`, o texto exato que foi inserido no modificador, sem estar entre parêntesis retos
@@ -71,5 +71,5 @@ When the bombers got back to their base, the steel cylinders were taken from the
 
 Por fim, em alguns casos, podes querer que um modificador altere o texto-fonte introduzido pelo autor, antes de os insertos e as ligações serem transformadas no seu equivalente em Markdown/HTML. Para o fazeres, escreve uma função `processRaw()` em vez de `process`. Leva exatamente os mesmos argumento que `process()`.
 
-[^1]: Uma palavra de alerta — não podes definir um modificador na mesma passagem que irás usá-lo.
+[^1]: Uma palavra de alerta — não podes definir um modificador na mesma passagem em que irás usá-lo.
 [modificador juntar]: ../modifiers-and-inserts/delayed-text.md

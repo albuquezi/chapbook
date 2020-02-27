@@ -265,7 +265,7 @@ Para usá-los, introduz o nome adequado. A Open Color também disponibiliza 10 t
 <div class="swatch" style="background: #d9480f">laranja-9</div>
 </div>
 
-Como acima, para usar um tom em particular, escreve o nome na sua caixa, p. ex. `amarelo-6`. Também podes usar [qualquer outra notação de cor][color-notation] que os navegadores compreendam, desde a tradicional notação hexadecimal (p. ex. `0b7285`) até às  mais modernas, como a `hsla(0%, 65%, 48%, 0.75)`.
+Como acima, para usares um tom em particular, escreve o nome na sua caixa, p. ex. `amarelo-6`. Também podes usar [qualquer outra notação de cor][color-notation] que os navegadores compreendam, desde a tradicional notação hexadecimal (p. ex. `0b7285`) até às mais modernas, como a `hsla(0%, 65%, 48%, 0.75)`.
 
 Quando estiveres a definir as cores em `config`, podes especificar tanto a do fundo, como a que fica em primeiro plano. Por exemplo, podes definir  `config.estilo.página.cor` como `'laranja-9 sobre laranja-0'`. No entanto, quando especificares a cor da borda, por exemplo `config.estilo.página.ligação.corDaLinha`, só a cor de primeiro plano será usada.
 
@@ -321,9 +321,9 @@ No que diz respeito às fontes, podes omitir as partes sobre a declaração de c
 }
 </style>
 
-[^1]: Para recapitular, se começares a tua história através do botão do Twine **Testar**, fará aparecer a vista de bastidores, incluindo o separador de **Estilo**
+[^1]: Para recapitular, a vista de bastidores, incluindo o separador de **Estilo**, aparecerá sempre que começares a tua história através do botão do Twine **Testar**.
 
-[^2]: Se estiveres familiarizado com as [unidades CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/length), também poderás usá-las, p. ex. `Palatino 1rem` ou `Palatino 25%`.
+[^2]: Se estiveres familiarizado com as [unidades CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/length), também as poderás usar, p. ex. `Palatino 1rem` ou `Palatino 25%`.
 
 [^3]: O que é uma serifa? A [Wikipedia](https://en.wikipedia.org/wiki/Serif) prontamente responde.
 [external-web-fonts.md]:

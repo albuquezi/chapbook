@@ -25,7 +25,7 @@ Apresenta uma ligação à passagem anterior. O <code>rótulo</code> pode ser om
 </td>
 
 <dd>
-Apresenta uma ligação cíclica que corre todas as opções listadas em <code>escolhas</code>, e depois grava a opção selecionada pelo jogador na variável apresentada. <code>para 'nomeDaVariável'</code> pode ser omitido; o Chapbook não irá gravar o valor selecionado.
+Apresenta uma ligação cíclica que corre todas as opções listadas em <code>escolhas</code>, e depois grava a opção selecionada pelo jogador na variável indicada. O segmento <code>para 'nomeDaVariável'</code> pode ser omitido; o Chapbook não irá gravar o valor selecionado.
 </dd>
 
 <dt>
@@ -33,7 +33,7 @@ Apresenta uma ligação cíclica que corre todas as opções listadas em <code>e
 </td>
 
 <dd>
-Apresenta um menu retráctil que corre todas as opções listadas em <code>escolhas</code>, e depois grava a opção selecionada pelo jogador na variável apresentada. <code>para 'nomeDaVariável'</code> pode ser omitido; o Chapbook não irá gravar o valor selecionado.
+Apresenta um menu retráctil que corre todas as opções listadas em <code>escolhas</code>, e depois grava a opção selecionada pelo jogador na variável indicada. O segmento <code>para 'nomeDaVariável'</code> pode ser omitido; o Chapbook não irá gravar o valor selecionado.
 </dd>
 
 <dt>
@@ -90,7 +90,7 @@ Apresenta um reprodutor de vídeo para um vídeo alojado no YouTube.
 </dt>
 
 <dd>
-Apresenta uma ligação à passagem identificada ou a um endereço de Internet. O <code>rótulo</code> pode ser omitido; O Chapbook irá usar o nome da passagem ou o URL como rótulo, nestes casos.
+Apresenta uma ligação à passagem identificada ou a um endereço de Internet. O <code>rótulo</code> pode ser omitido; o Chapbook irá usar o nome da passagem ou o URL como rótulo, nestes casos.
 </dd>
 
 <dt>
@@ -110,7 +110,7 @@ Apresenta uma ligação que, quando clicada, se expande para mostrar o conteúdo
 </dd>
 
 <dt>
-<code>{reveal: 'rótulo', passagem: 'nome da passagem'}</code>
+<code>{revelar: 'rótulo', passagem: 'nome da passagem'}</code>
 </dt>
 
 <dd>
@@ -130,7 +130,7 @@ Começa a tocar um [efeito sonoro previamente definido][sound]. O <code>volume</
 </td>
 
 <dd>
-Apresenta um campo de texto, e grava o texto introduzido na variável indicada. <code>para 'nome da variável'</code> pode ser omitido; o Chapbook não irá gravar o texto introduzido. O valor <code>necessário</code> também pode ser omitido; o Chapbook, por defeito, marca o campo como obrigatório, salvo indicação em contrário.
+Apresenta um campo de texto, e grava o texto introduzido na variável indicada. O segmento <code>para 'nome da variável'</code> pode ser omitido; o Chapbook não irá gravar o texto introduzido. O valor <code>necessário</code> também pode ser omitido; o Chapbook, por defeito, marca o campo como obrigatório, salvo indicação em contrário.
 </dd>
 
 </dl>
