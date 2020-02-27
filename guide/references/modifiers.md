@@ -9,7 +9,7 @@ Todos os exemplos de modificadores abaixo afetam o texto que ocorre imediatament
 </dt>
 
 <dd>
-Faz aparecer o texto depois de um certo período de tempo a contar desde o momento em que a passagem é apresentada pela primeira vez.
+Faz aparecer o texto depois de um certo período de tempo, a contar desde o momento em que a passagem é apresentada pela primeira vez.
 </dd>
 
 <dt>
@@ -17,7 +17,7 @@ Faz aparecer o texto depois de um certo período de tempo a contar desde o momen
 </dt>
 
 <dd>
-Alinha o texto de uma forma particular. Em circunstâncias normais, não é necessário alinhar à esquerda, mas está incluído por um questão de completude — neste caso, usa o comando <code>[continuar]</code>.
+Alinha o texto de uma forma particular. Em circunstâncias normais, não é necessário alinhar à esquerda, mas está incluído por um questão de completude — nestes casos, é melhor usar o comando <code>[continuar]</code>.
 </dd>
 
 <dt>
@@ -25,7 +25,7 @@ Alinha o texto de uma forma particular. Em circunstâncias normais, não é nece
 </dt>
 
 <dd>
-Deve ser usado em conjugação com outro modificador para fazer aparecer o texto imediatamente a seguir ao texto que o precede, em vez de o fazer aparecer num novo parágrafo.
+Deve ser usado em conjugação com outro modificador, para fazer aparecer o texto imediatamente a seguir ao texto que o precede, em vez de o fazer aparecer num novo parágrafo.
 </dd>
 
 <dt>
@@ -49,7 +49,7 @@ Atua como uma etiqueta de <code>&lt;style&gt;</code> na passagem; o seu conteúd
 </dt>
 
 <dd>
-Apenas apresenta o texto se a anterior condição <code>[se]</code> não for verificada. Se não tiver ocorrido antes uma condição <code>[se]</code> no código-fonte da passagem, irá ocorrer um erro.
+Apenas apresenta o texto se a anterior condição <code>[se]</code> não correr. Se não tiver ocorrido antes uma condição <code>[se]</code> no código-fonte da passagem, irá ocorrer um erro.
 </dd>
 
 <dt>
@@ -57,7 +57,7 @@ Apenas apresenta o texto se a anterior condição <code>[se]</code> não for ver
 </dt>
 
 <dd>
-Apenas apresenta o texto se a expressão for avaliada como verdadeira ou considerada verdadeira (ver o conceito de _truthy_<a href="https://developer.mozilla.org/en-US/docs/Glossary/Truthy"> em JavaScript</a>).
+Apenas apresenta o texto se a expressão for avaliada como verdadeira ou considerada verdadeira (ver o conceito de _truthy_ <a href="https://developer.mozilla.org/en-US/docs/Glossary/Truthy">em JavaScript</a>).
 </dd>
 
 <dt>
@@ -65,7 +65,7 @@ Apenas apresenta o texto se a expressão for avaliada como verdadeira ou conside
 </dt>
 
 <dd>
-Atua como o modificador <code>[se]</code>, só que apresenta sempre o texto que afeta, independentemente da condição. Pode ser útil para realizar testes rápidos.
+Atua como o modificador <code>[se]</code>, só que apresenta sempre o texto que rege, independentemente da condição. Pode ser útil para realizar testes rápidos.
 </dd>
 
 <dt>
@@ -73,7 +73,7 @@ Atua como o modificador <code>[se]</code>, só que apresenta sempre o texto que 
 </dt>
 
 <dd>
-Atua como o modificador <code>[se]</code>, só que nunca apresenta o texto que afeta, independentemente da condição. Pode ser útil para realizar testes rápidos.
+Atua como o modificador <code>[se]</code>, só que nunca apresenta o texto que rege, independentemente da condição. Pode ser útil para realizar testes rápidos.
 </dd>
 
 <dt>
@@ -97,7 +97,7 @@ O texto que segue um destes modificadores nunca será apresentado ao jogador. É
 </dt>
 
 <dd>
-Apenas irá mostrar o texto se a <i>expressão</i> for avaliada como falsa ou considerada falsa (ver o conceito de<a href="https://developer.mozilla.org/en-US/docs/Glossary">em JavaScript</a>)
+Apenas irá mostrar o texto se a <i>expressão</i> for avaliada como falsa ou considerada falsa (ver o conceito de _falsy_ <a href="https://developer.mozilla.org/en-US/docs/Glossary">em JavaScript</a>).
 </dd>
 </dl>
 
